@@ -1,0 +1,29 @@
+{
+  "serverConfig": {
+    "adminPort": "11000",
+    "ioPort": "8084",
+    "stateApiPort": "3040"
+  },
+  "loggingConfig": {
+    "reportToConsole": true,
+    "reportToServer": false
+  },
+  "debugMode": true,
+  "defaultTimeoutMS": 30000,
+  "defaultPageSize": 270,
+  "loginAddress": "http://localhost:4201/login",
+  "dateFormat": "MM/dd/yyyy",
+  "dateTimeLongFormat": "MM/dd/yyyy HH:mm:ss",
+  "dateTimeShortFormat": "MM/dd/yyyy HH:mm",
+  "locale": "en-US",
+  "inMemoryGridItemsThreshold": 50000,
+  "exportGridItemsThreshold": 10000,
+  "gridConfig": {
+    "inMemoryGridBulkActionThreshold": 10000,
+    "remoteGridBulkActionThreshold": 10000,
+    "stateVersion": 1
+  },
+  "serviceWorker": {
+    "enabled": false
+  }
+}
