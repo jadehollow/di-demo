@@ -1,0 +1,75 @@
+{
+  "name": "mgmt-icon-lib",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/mgmt-icon-lib/src",
+  "prefix": "di-saas-fe",
+  "tags": [],
+  "projectType": "library",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/mgmt-icon-lib/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/mgmt-icon-lib/**/*.ts",
+          "libs/mgmt-icon-lib/**/*.html"
+        ]
+      }
+    },
+    "storybook": {
+      "executor": "@storybook/angular:start-storybook",
+      "options": {
+        "port": 4400,
+        "configDir": "libs/mgmt-icon-lib/.storybook",
+        "browserTarget": "mgmt-icon-lib:build-storybook",
+        "compodoc": false
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "build-storybook": {
+      "executor": "@storybook/angular:build-storybook",
+      "outputs": ["{options.outputDir}"],
+      "options": {
+        "outputDir": "dist/storybook/mgmt-icon-lib",
+        "configDir": "libs/mgmt-icon-lib/.storybook",
+        "browserTarget": "mgmt-icon-lib:build-storybook",
+        "compodoc": false
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "static-storybook": {
+      "executor": "@nrwl/web:file-server",
+      "options": {
+        "buildTarget": "mgmt-icon-lib:build-storybook",
+        "staticFilePath": "dist/storybook/mgmt-icon-lib"
+      },
+      "configurations": {
+        "ci": {
+          "buildTarget": "mgmt-icon-lib:build-storybook:ci"
+        }
+      }
+    }
+  }
+}

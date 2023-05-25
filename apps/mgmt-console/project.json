@@ -2,11 +2,12 @@
   "name": "mgmt-console",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
+  "prefix": "di-saas-fe",
   "sourceRoot": "apps/mgmt-console/src",
-  "prefix": "di",
+  "tags": [],
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:browser",
+      "executor": "@nrwl/angular:webpack-browser",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/mgmt-console",
@@ -14,13 +15,18 @@
         "main": "apps/mgmt-console/src/main.ts",
         "polyfills": ["zone.js"],
         "tsConfig": "apps/mgmt-console/tsconfig.app.json",
-        "inlineStyleLanguage": "scss",
         "assets": [
           "apps/mgmt-console/src/favicon.ico",
           "apps/mgmt-console/src/assets"
         ],
-        "styles": ["apps/mgmt-console/src/styles.scss"],
-        "scripts": []
+        "styles": [
+          "node_modules/devextreme/dist/css/dx.light.css",
+          "apps/mgmt-console/src/styles.scss"
+        ],
+        "scripts": [],
+        "customWebpackConfig": {
+          "path": "apps/mgmt-console/webpack.config.js"
+        }
       },
       "configurations": {
         "production": {
@@ -36,7 +42,10 @@
               "maximumError": "4kb"
             }
           ],
-          "outputHashing": "all"
+          "outputHashing": "all",
+          "customWebpackConfig": {
+            "path": "apps/mgmt-console/webpack.prod.config.js"
+          }
         },
         "development": {
           "buildOptimizer": false,
@@ -50,7 +59,11 @@
       "defaultConfiguration": "production"
     },
     "serve": {
-      "executor": "@angular-devkit/build-angular:dev-server",
+      "executor": "@nrwl/angular:module-federation-dev-server",
+      "options": {
+        "port": 4200,
+        "publicHost": "http://localhost:4200"
+      },
       "configurations": {
         "production": {
           "browserTarget": "mgmt-console:build:production"
@@ -59,11 +72,7 @@
           "browserTarget": "mgmt-console:build:development"
         }
       },
-      "defaultConfiguration": "development",
-      "options": {
-        "port": 4000,
-        "hmr": true
-      }
+      "defaultConfiguration": "development"
     },
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
@@ -94,7 +103,13 @@
           "codeCoverage": true
         }
       }
+    },
+    "serve-static": {
+      "executor": "@nrwl/web:file-server",
+      "options": {
+        "buildTarget": "mgmt-console:build",
+        "port": 4200
+      }
     }
-  },
-  "tags": []
+  }
 }

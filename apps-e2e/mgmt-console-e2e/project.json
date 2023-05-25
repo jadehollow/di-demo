@@ -1,19 +1,22 @@
 {
   "name": "mgmt-console-e2e",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "src",
+  "sourceRoot": "apps/mgmt-console-e2e/src",
   "projectType": "application",
   "targets": {
     "e2e": {
       "executor": "@nrwl/cypress:cypress",
       "options": {
-        "cypressConfig": "apps-e2e/mgmt-console-e2e/cypress.config.ts",
+        "cypressConfig": "apps/mgmt-console-e2e/cypress.config.ts",
         "devServerTarget": "mgmt-console:serve:development",
         "testingType": "e2e"
       },
       "configurations": {
         "production": {
           "devServerTarget": "mgmt-console:serve:production"
+        },
+        "ci": {
+          "devServerTarget": "mgmt-console:serve-static"
         }
       }
     },
@@ -21,7 +24,7 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps-e2e/mgmt-console-e2e/**/*.{js,ts}"]
+        "lintFilePatterns": ["apps/mgmt-console-e2e/**/*.{js,ts}"]
       }
     }
   },

@@ -1,4 +1,4 @@
 module.exports = {
   name: 'mgmt-console',
-  remotes: [],
+  remotes: ['mgmt-login', 'mgmt-dashboard'],
 };

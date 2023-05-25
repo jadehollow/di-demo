@@ -1,6 +1,12 @@
-App Component <br/>
-
-Router outlet:
-<div class="main-router-outlet-wrapper">
-  <router-outlet></router-outlet>
-</div>
+<ul class="remote-menu">
+  <li><a routerLink="/">Home</a></li>
+  <li><a routerLink="mgmt-login">MgmtLogin</a></li>
+  <li><a routerLink="mgmt-dashboard">MgmtDashboard</a></li>
+</ul>
+<di-checkbox
+  [value]="true"
+  [name]="chkboxName"
+  [text]="chkboxText"
+  (onValueChanged)="chkboxClick($event)"
+></di-checkbox>
+<router-outlet></router-outlet>

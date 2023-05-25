@@ -1,0 +1,20 @@
+// :host::ng-deep svg{
+//     width: 50px; height: 50px
+// }
+
+:host::ng-deep .x-sm {
+    width: 12px; height: 12px
+}
+
+
+:host::ng-deep .sm {
+    width: 12px; height: 12px
+}
+
+:host::ng-deep .md {
+    width: 16px; height: 16px
+}
+
+:host::ng-deep .lg {
+    width: 20px; height: 20px
+}

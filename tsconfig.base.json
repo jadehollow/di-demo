@@ -15,12 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@di/mgmt-auth-ux": ["libs/mgmt-auth-ux/src/"],
-      "@di/mgmt-charts": ["libs/mgmt-charts/src/"],
-      "@di/mgmt-core": ["libs/mgmt-core/src/"],
-      "@di/mgmt-core-ux": ["libs/mgmt-core-ux/src/"],
-      "@di/mgmt-forms": ["libs/mgmt-forms/src/"],
-      "@di/mgmt-grid": ["libs/mgmt-grid/src/"]
+      "@di-saas-fe/mgmt-icon-lib": ["libs/mgmt-icon-lib/src/index.ts"],
+      "@mgmt-ui-components": ["libs/mgmt-ui-components/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

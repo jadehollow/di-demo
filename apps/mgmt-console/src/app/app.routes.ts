@@ -1,17 +1,19 @@
-import {Route} from '@angular/router';
-import {inject} from '@angular/core';
-import {RouteAvailabilityService} from './services/route-availability.service';
+import { NxWelcomeComponent } from './nx-welcome.component';
+import { Route } from '@angular/router';
 
 export const appRoutes: Route[] = [
   {
-    path: '',
-    canMatch: [() => inject(RouteAvailabilityService).redirectToUserHomePage()],
-    redirectTo: '',
-    pathMatch: 'full'
+    path: 'mgmt-dashboard',
+    loadChildren: () =>
+      import('mgmt-dashboard/Module').then((m) => m.RemoteEntryModule),
   },
   {
-    path: 'alerts',
-    loadChildren: () => import('./entry-modules/alerts/alerts.module')
-      .then(m => m.AlertsModule)
-  }
+    path: 'mgmt-login',
+    loadChildren: () =>
+      import('mgmt-login/Module').then((m) => m.RemoteEntryModule),
+  },
+  {
+    path: '',
+    component: NxWelcomeComponent,
+  },
 ];

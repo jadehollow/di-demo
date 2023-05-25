@@ -1,20 +1,21 @@
-import {NgModule} from '@angular/core';
-import {BrowserModule} from '@angular/platform-browser';
-
-import {AppComponent} from './app.component';
-import {RouterModule} from '@angular/router';
-import {appRoutes} from './app.routes';
-import {MgmtCoreModule} from '@di/mgmt-core';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
+import { AppComponent } from './app.component';
+import { appRoutes } from './app.routes';
+import { NxWelcomeComponent } from './nx-welcome.component';
+import { CheckboxComponentModule } from "@mgmt-ui-components";
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, NxWelcomeComponent],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes, {initialNavigation: 'enabledBlocking'}),
-    MgmtCoreModule
+    CheckboxComponentModule,
+    FormsModule,
+    RouterModule.forRoot(appRoutes, { initialNavigation: 'enabledBlocking' }),
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {
-}
+export class AppModule {}

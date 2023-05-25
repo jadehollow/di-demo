@@ -2,11 +2,12 @@
   "name": "mgmt-login",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
+  "prefix": "di-saas-fe",
   "sourceRoot": "apps/mgmt-login/src",
-  "prefix": "di",
+  "tags": [],
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:browser",
+      "executor": "@nrwl/angular:webpack-browser",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/mgmt-login",
@@ -14,13 +15,15 @@
         "main": "apps/mgmt-login/src/main.ts",
         "polyfills": ["zone.js"],
         "tsConfig": "apps/mgmt-login/tsconfig.app.json",
-        "inlineStyleLanguage": "scss",
         "assets": [
           "apps/mgmt-login/src/favicon.ico",
           "apps/mgmt-login/src/assets"
         ],
         "styles": ["apps/mgmt-login/src/styles.scss"],
-        "scripts": []
+        "scripts": [],
+        "customWebpackConfig": {
+          "path": "apps/mgmt-login/webpack.config.js"
+        }
       },
       "configurations": {
         "production": {
@@ -36,7 +39,10 @@
               "maximumError": "4kb"
             }
           ],
-          "outputHashing": "all"
+          "outputHashing": "all",
+          "customWebpackConfig": {
+            "path": "apps/mgmt-login/webpack.prod.config.js"
+          }
         },
         "development": {
           "buildOptimizer": false,
@@ -50,7 +56,11 @@
       "defaultConfiguration": "production"
     },
     "serve": {
-      "executor": "@angular-devkit/build-angular:dev-server",
+      "executor": "@nrwl/angular:webpack-dev-server",
+      "options": {
+        "port": 4201,
+        "publicHost": "http://localhost:4201"
+      },
       "configurations": {
         "production": {
           "browserTarget": "mgmt-login:build:production"
@@ -59,10 +69,7 @@
           "browserTarget": "mgmt-login:build:development"
         }
       },
-      "defaultConfiguration": "development",
-      "options": {
-        "port": 4001
-      }
+      "defaultConfiguration": "development"
     },
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
@@ -93,7 +100,22 @@
           "codeCoverage": true
         }
       }
+    },
+    "serve-static": {
+      "executor": "@nrwl/web:file-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "mgmt-login:build",
+        "port": 4201
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "mgmt-login:build:development"
+        },
+        "production": {
+          "buildTarget": "mgmt-login:build:production"
+        }
+      }
     }
-  },
-  "tags": []
+  }
 }
