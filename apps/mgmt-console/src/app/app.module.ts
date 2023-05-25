@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { appRoutes } from './app.routes';
 import { NxWelcomeComponent } from './nx-welcome.component';
-import { CheckboxComponentModule } from "@mgmt-ui-components";
+import { CheckboxComponentModule } from "@mgmt-ui-components/form";
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
