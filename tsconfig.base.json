@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@di-saas-fe/mgmt-icon-lib": ["libs/mgmt-icon-lib/src/index.ts"],
+      "@mgmt-icon-lib": ["libs/mgmt-icon-lib/src/index.ts"],
       "@mgmt-ui-components": ["libs/mgmt-ui-components/src/index.ts"]
     }
   },

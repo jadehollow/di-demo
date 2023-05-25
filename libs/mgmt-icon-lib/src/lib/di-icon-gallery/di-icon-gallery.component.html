@@ -1,7 +1,7 @@
 <div class="icon-gallery">
     <ng-template ngFor let-icon [ngForOf]="icons" class="icon">
         <div class="icon">
-            <di-icon [name]="icon" size="lg"></di-icon>
+            <di-icon [name]="icon" [size]="'lg'"></di-icon>
             <span>{{icon}}</span>
         </div>
     </ng-template>
