@@ -1,0 +1,11 @@
+<dx-popover
+  [target]="target"
+  showEvent="mouseenter"
+  position="bottom"
+>
+  <ng-content
+    *dxTemplate="let data = model; of: 'content'"
+    class="tooltip-content"
+  >
+  </ng-content>
+</dx-popover>
