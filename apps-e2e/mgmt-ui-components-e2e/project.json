@@ -1,19 +1,19 @@
 {
-  "name": "mgmt-icon-lib-e2e",
+  "name": "mgmt-ui-components-e2e",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/mgmt-icon-lib-e2e/src",
+  "sourceRoot": "apps/mgmt-ui-components-e2e/src",
   "projectType": "application",
   "targets": {
     "e2e": {
       "executor": "@nrwl/cypress:cypress",
       "options": {
-        "cypressConfig": "apps/mgmt-icon-lib-e2e/cypress.config.ts",
-        "devServerTarget": "mgmt-icon-lib:storybook",
+        "cypressConfig": "apps/mgmt-ui-components-e2e/cypress.config.ts",
+        "devServerTarget": "mgmt-ui-components:storybook",
         "testingType": "e2e"
       },
       "configurations": {
         "ci": {
-          "devServerTarget": "mgmt-icon-lib:static-storybook:ci"
+          "devServerTarget": "mgmt-ui-components:static-storybook:ci"
         }
       }
     },
@@ -21,10 +21,10 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/mgmt-icon-lib-e2e/**/*.{js,ts}"]
+        "lintFilePatterns": ["apps/mgmt-ui-components-e2e/**/*.{js,ts}"]
       }
     }
   },
   "tags": [],
-  "implicitDependencies": ["mgmt-icon-lib"]
+  "implicitDependencies": ["mgmt-ui-components"]
 }

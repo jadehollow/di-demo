@@ -29,6 +29,47 @@
           "libs/mgmt-ui-components/**/*.html"
         ]
       }
+    },
+    "storybook": {
+      "executor": "@storybook/angular:start-storybook",
+      "options": {
+        "port": 4400,
+        "configDir": "libs/mgmt-ui-components/.storybook",
+        "browserTarget": "mgmt-ui-components:build-storybook",
+        "compodoc": false
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "build-storybook": {
+      "executor": "@storybook/angular:build-storybook",
+      "outputs": ["{options.outputDir}"],
+      "options": {
+        "outputDir": "dist/storybook/mgmt-ui-components",
+        "configDir": "libs/mgmt-ui-components/.storybook",
+        "browserTarget": "mgmt-ui-components:build-storybook",
+        "compodoc": false
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "static-storybook": {
+      "executor": "@nrwl/web:file-server",
+      "options": {
+        "buildTarget": "mgmt-ui-components:build-storybook",
+        "staticFilePath": "dist/storybook/mgmt-ui-components"
+      },
+      "configurations": {
+        "ci": {
+          "buildTarget": "mgmt-ui-components:build-storybook:ci"
+        }
+      }
     }
   }
 }
