@@ -15,14 +15,52 @@
 
 }
 
-::ng-deep.dx-popover-wrapper .dx-overlay-content {
-  background: #171829;
-  border: 1px #171829 solid;
-  border-radius: 4px;
-}
+::ng-deep.tooltip-light-mode.dx-popover-wrapper, ::ng-deep.tooltip-dark-mode.dx-popover-wrapper {
+  .dx-overlay-content {
+    border-radius: 4px;
+  }
+  .dx-popover-arrow::after {
+    border-radius: 1px;
+  }
+  .dx-popup-content {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    
+    display: flex;
+    align-items: center;
+    font-feature-settings: 'pnum' on, 'lnum' on;
 
-::ng-deep.dx-popover-wrapper .dx-popover-arrow::after {
-  background: #171829 !important;
-  border: 1px #171829 solid;
-  border-radius: 1px;
+    padding: 8px 12px;
+  }
+}  
+
+::ng-deep.tooltip-light-mode.dx-popover-wrapper {
+  .dx-overlay-content {
+    background: #171829;
+    border: 1px #171829 solid;
+  }
+  .dx-popover-arrow::after {
+    background: #171829 !important;
+    border: 1px #171829 solid;
+  }
+  .dx-popup-content {
+    color: #CECFD7;
+  }
+}  
+
+::ng-deep.tooltip-dark-mode.dx-popover-wrapper  {
+  .dx-overlay-content {
+    background: #FFFFFF;
+    border: 1px #FFFFFF solid;
+  }
+  .dx-popover-arrow::after {
+    background: #FFFFFF !important;
+    border: 1px #FFFFFF solid;
+  }
+  .dx-popup-content {
+    color: #54576A;
+  }
 }

@@ -1,11 +1,9 @@
 <dx-popover
   [target]="target"
   showEvent="mouseenter"
-  position="bottom"
+  hideEvent="mouseleave"
+  [position]="position"
+  [wrapperAttr]="{ class: styleMode === 'dark' ? 'tooltip-dark-mode' : 'tooltip-light-mode' }"
 >
-  <ng-content
-    *dxTemplate="let data = model; of: 'content'"
-    class="tooltip-content"
-  >
-  </ng-content>
+  <ng-content></ng-content>
 </dx-popover>

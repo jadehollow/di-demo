@@ -4,13 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { DxPopoverModule, DxTooltipModule } from 'devextreme-angular';
 
 @Component({
-  selector: 'app-tooltip',
+  selector: 'di-tooltip',
   templateUrl: './tooltip.component.html',
   styleUrls: ['./tooltip.component.scss'],
 })
 export class TooltipComponent {
   @Input() target: any;
-  @Input() position?: string;
+  @Input() position: string = 'bottom';
+  @Input() styleMode: string = 'light';
 }
 
 @NgModule({

@@ -7,6 +7,24 @@
   [value]="true"
   [name]="chkboxName"
   [text]="chkboxText"
+  id="checkbox"
   (onValueChanged)="chkboxClick($event)"
 ></di-checkbox>
+<div class="light-box">
+  <div id="light-tooltip" class="d-inline-block">Light mode tooltip</div>
+</div>
+<div class="dark-box">
+  <div id="dark-tooltip" class="d-inline-block">Dark mode tooltip</div>
+</div>
+<di-tooltip
+  target="#light-tooltip"
+>
+  Light Tooltip Content
+</di-tooltip>
+<di-tooltip
+  target="#dark-tooltip"
+  styleMode="dark"
+>
+  Dark Tooltip Content
+</di-tooltip>
 <router-outlet></router-outlet>
