@@ -6,6 +6,22 @@
   "tags": [],
   "projectType": "library",
   "targets": {
+    "build": {
+      "executor": "@nrwl/angular:package",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/mgmt-icon-lib/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/mgmt-icon-lib/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/mgmt-icon-lib/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
     "test": {
       "executor": "@nrwl/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
@@ -28,47 +44,6 @@
           "libs/mgmt-icon-lib/**/*.ts",
           "libs/mgmt-icon-lib/**/*.html"
         ]
-      }
-    },
-    "storybook": {
-      "executor": "@storybook/angular:start-storybook",
-      "options": {
-        "port": 4400,
-        "configDir": "libs/mgmt-icon-lib/.storybook",
-        "browserTarget": "mgmt-icon-lib:build-storybook",
-        "compodoc": false
-      },
-      "configurations": {
-        "ci": {
-          "quiet": true
-        }
-      }
-    },
-    "build-storybook": {
-      "executor": "@storybook/angular:build-storybook",
-      "outputs": ["{options.outputDir}"],
-      "options": {
-        "outputDir": "dist/storybook/mgmt-icon-lib",
-        "configDir": "libs/mgmt-icon-lib/.storybook",
-        "browserTarget": "mgmt-icon-lib:build-storybook",
-        "compodoc": false
-      },
-      "configurations": {
-        "ci": {
-          "quiet": true
-        }
-      }
-    },
-    "static-storybook": {
-      "executor": "@nrwl/web:file-server",
-      "options": {
-        "buildTarget": "mgmt-icon-lib:build-storybook",
-        "staticFilePath": "dist/storybook/mgmt-icon-lib"
-      },
-      "configurations": {
-        "ci": {
-          "buildTarget": "mgmt-icon-lib:build-storybook:ci"
-        }
       }
     }
   }
