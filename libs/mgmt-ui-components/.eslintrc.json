@@ -9,7 +9,7 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "diSaasFe",
+            "prefix": "di",
             "style": "camelCase"
           }
         ],
