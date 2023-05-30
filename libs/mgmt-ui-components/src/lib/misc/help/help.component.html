@@ -1,0 +1,22 @@
+
+<!-- TODO: Replace this with help-circle icon -->
+<div 
+  [ngClass]="{'selected': selected}"
+  class="help-button-wrapper"
+  (click)="onClick()"
+  (mouseenter)="onHover(true)"
+  (mouseleave)="onHover(false)"
+>
+  <div
+    [ngClass]="{'help-light': styleMode === 'light', 'help-dark': styleMode === 'dark'}"
+    class="help-button"
+    #helpTarget
+  ></div>
+</div>
+
+<di-tooltip
+  [target]="helpTarget"
+  [forceVisibleSubject]="forceVisibleSubject"
+>
+  <ng-content></ng-content>
+</di-tooltip>

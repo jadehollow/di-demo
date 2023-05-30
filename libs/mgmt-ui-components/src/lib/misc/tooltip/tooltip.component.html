@@ -1,9 +1,23 @@
 <dx-popover
+  *ngIf="forceVisibleSubject"
+  #popover
   [target]="target"
-  showEvent="mouseenter"
-  hideEvent="mouseleave"
+  [visible]="visible"
+  [position]="position"
+  [hideOnOutsideClick]="false"
+  [wrapperAttr]="{ class: styleMode === 'dark' ? 'tooltip-dark-mode' : 'tooltip-light-mode' }"
+>
+  <ng-container *ngTemplateOutlet="contentTpl"></ng-container>
+</dx-popover>
+<dx-popover
+  *ngIf="!forceVisibleSubject"
+  #popover
+  [target]="target"
+  showEvent="dxhoverstart"
+  hideEvent="dxhoverend"
   [position]="position"
   [wrapperAttr]="{ class: styleMode === 'dark' ? 'tooltip-dark-mode' : 'tooltip-light-mode' }"
 >
-  <ng-content></ng-content>
+  <ng-container *ngTemplateOutlet="contentTpl"></ng-container>
 </dx-popover>
+<ng-template #contentTpl><ng-content></ng-content></ng-template>

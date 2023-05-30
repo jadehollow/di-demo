@@ -1,0 +1,23 @@
+.help-button {
+  width: 13.33px;
+  height: 13.33px;
+  border-radius: 100%;
+  &.help-light {
+    border: 1px #6D7278 solid;
+  }
+  &.help-dark {
+    border: 1px #9396A5 solid;
+  }
+}
+
+.help-button-wrapper {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  border-radius: 100%;
+  justify-content: center;
+  align-items: center;
+  &.selected {
+    border: 4px #2547FE solid;   
+  }
+}
