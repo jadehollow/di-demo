@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+@use "light-colors" as light;
+@use "dark-colors" as dark;
+
+.light-mode {
+    background: light.$base-01;
+    color: light.$typography-primary;
+}
+
+.dark-mode {
+    background: dark.$base-01;
+    color: dark.$typography-primary;
+}

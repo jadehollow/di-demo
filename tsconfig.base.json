@@ -19,7 +19,8 @@
         "libs/mgmt-storybook-host/src/index.ts"
       ],
       "@mgmt-icon-lib": ["libs/mgmt-icon-lib/src/index.ts"],
-      "@mgmt-ui-components/*": ["libs/mgmt-ui-components/src/lib/*/index.ts"]
+      "@mgmt-ui-components/*": ["libs/mgmt-ui-components/src/lib/*/index.ts"],
+      "@mgmt-ui-theming": ["libs/mgmt-ui-theming/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
