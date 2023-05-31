@@ -15,7 +15,7 @@
 
 }
 
-::ng-deep.tooltip-light-mode.dx-popover-wrapper, ::ng-deep.tooltip-dark-mode.dx-popover-wrapper {
+::ng-deep.dx-popover-wrapper {
   .dx-overlay-content {
     border-radius: 4px;
   }
@@ -38,7 +38,7 @@
   }
 }  
 
-::ng-deep.tooltip-light-mode.dx-popover-wrapper {
+::ng-deep.light-mode .dx-popover-wrapper {
   .dx-overlay-content {
     background: #171829;
     border: 1px #171829 solid;
@@ -52,7 +52,7 @@
   }
 }  
 
-::ng-deep.tooltip-dark-mode.dx-popover-wrapper  {
+::ng-deep.dark-mode .dx-popover-wrapper  {
   .dx-overlay-content {
     background: #FFFFFF;
     border: 1px #FFFFFF solid;

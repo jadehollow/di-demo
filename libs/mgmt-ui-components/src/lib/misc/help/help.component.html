@@ -6,12 +6,13 @@
   (click)="onClick()"
   (mouseenter)="onHover(true)"
   (mouseleave)="onHover(false)"
+  #helpTarget
 >
-  <div
-    [ngClass]="{'help-light': styleMode === 'light', 'help-dark': styleMode === 'dark'}"
+  <di-icon 
     class="help-button"
-    #helpTarget
-  ></div>
+    [name]="'help'" [size]="'md'"
+  >
+  </di-icon>
 </div>
 
 <di-tooltip
