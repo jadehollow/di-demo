@@ -1,0 +1,121 @@
+.tag {
+  /* Size=sm, Icon=False, Action=Text only, Mode=Light */
+  box-sizing: border-box;
+
+  /* Auto layout */
+
+  display: flex;
+  width: fit-content;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+
+  /* Base/Light mode/01 */
+
+  background: #FFFFFF;
+  /* Base/Light mode/Keylines 02 */
+
+
+  border-radius: 4px;
+
+  /* Paragraph/XS/SM Regular */
+
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+
+  /* identical to box height, or 160% */
+
+  display: flex;
+  align-items: center;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+
+  &.sm {
+    padding: 2px 8px;
+    font-size: 10px;
+    line-height: 16px;
+  }
+
+  &.md {
+    padding: 2px 8px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  
+  &.lg {
+    padding: 4px 8px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  &.dark {
+    border: 1px solid #696D8C;
+    color: #FFFFFF;
+    background: #171829;
+  }
+
+  &.light {
+    border: 1px solid #7878CD;
+    color: #00072D;
+    background: #FFFFFF;
+  }
+}
+
+.sm {
+  /* Size=sm, Icon=False, Action=Text only, Mode=Light */
+  box-sizing: border-box;
+
+  /* Auto layout */
+
+  display: flex;
+  width: fit-content;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 2px 8px;
+  gap: 4px;
+
+  /* Base/Light mode/01 */
+
+  background: #FFFFFF;
+  /* Base/Light mode/Keylines 02 */
+
+  border: 1px solid #7878CD;
+  border-radius: 4px;
+
+  /* Paragraph/XS/SM Regular */
+
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 16px;
+  /* identical to box height, or 160% */
+
+  display: flex;
+  align-items: center;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+  color: #00072D;
+}
+
+.md {
+  box-sizing: border-box;
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 2px 8px;
+  gap: 4px;
+
+  /* Base/Light mode/01 */
+
+  background: #FFFFFF;
+  /* Base/Light mode/Keylines 02 */
+
+  border: 1px solid #7878CD;
+  border-radius: 4px;
+}
