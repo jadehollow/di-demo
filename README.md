@@ -4,7 +4,7 @@
 
 Run `nx serve mgmt-console` to serve the mgmt-console app.
 
-Run `nx run mgmt-ui-components:storybook` to serve storybook.
+Run `nx run mgmt-storybook-host:storybook` to serve storybook.
 
 ## Understand this workspace
 
