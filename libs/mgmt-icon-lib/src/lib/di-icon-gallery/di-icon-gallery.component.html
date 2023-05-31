@@ -1,5 +1,14 @@
+<div class="icon-header">
+<h1>DI Icons</h1>
+<div class="search" style="margin-bottom: 20px">
+    <label>Icon Search:
+        <input type="text" name="input" [(ngModel)]="searchString" (input)="updateFilter($event)"ng-trim="false">
+      </label>
+</div>
+</div>
+
 <div class="icon-gallery">
-    <ng-template ngFor let-icon [ngForOf]="icons" class="icon">
+    <ng-template ngFor let-icon [ngForOf]="displayIcons" class="icon">
         <div class="icon">
             <di-icon [name]="icon" [size]="'lg'"></di-icon>
             <span>{{icon}}</span>

@@ -26,6 +26,9 @@
         "scripts": [],
         "customWebpackConfig": {
           "path": "apps/mgmt-console/webpack.config.js"
+        },
+        "stylePreprocessorOptions": {
+          "includePaths": [ "libs/mgmt-ui-theming/src/lib/styles" ]
         }
       },
       "configurations": {
@@ -72,7 +75,11 @@
           "browserTarget": "mgmt-console:build:development"
         }
       },
-      "defaultConfiguration": "development"
+      "defaultConfiguration": "development",
+      "styles": ["color.scss"],
+      "stylePreprocessorOptions": {
+        "includePaths": [ "libs/mgmt-ui-theming/src/lib/styles" ]
+      }
     },
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
