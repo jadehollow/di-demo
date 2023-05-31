@@ -1,7 +1,7 @@
 {
-  "name": "mgmt-ui-components",
+  "name": "mgmt-ui-theming",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/mgmt-ui-components/src",
+  "sourceRoot": "libs/mgmt-ui-theming/src",
   "prefix": "di-saas-fe",
   "tags": [],
   "projectType": "library",
@@ -10,14 +10,14 @@
       "executor": "@nrwl/angular:package",
       "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
       "options": {
-        "project": "libs/mgmt-ui-components/ng-package.json"
+        "project": "libs/mgmt-ui-theming/ng-package.json"
       },
       "configurations": {
         "production": {
-          "tsConfig": "libs/mgmt-ui-components/tsconfig.lib.prod.json"
+          "tsConfig": "libs/mgmt-ui-theming/tsconfig.lib.prod.json"
         },
         "development": {
-          "tsConfig": "libs/mgmt-ui-components/tsconfig.lib.json"
+          "tsConfig": "libs/mgmt-ui-theming/tsconfig.lib.json"
         }
       },
       "defaultConfiguration": "production"
@@ -26,7 +26,7 @@
       "executor": "@nrwl/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "libs/mgmt-ui-components/jest.config.ts",
+        "jestConfig": "libs/mgmt-ui-theming/jest.config.ts",
         "passWithNoTests": true
       },
       "configurations": {
@@ -41,8 +41,8 @@
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": [
-          "libs/mgmt-ui-components/**/*.ts",
-          "libs/mgmt-ui-components/**/*.html"
+          "libs/mgmt-ui-theming/**/*.ts",
+          "libs/mgmt-ui-theming/**/*.html"
         ]
       }
     }
