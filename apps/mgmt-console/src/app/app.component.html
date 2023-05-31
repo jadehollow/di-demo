@@ -3,10 +3,29 @@
   <li><a routerLink="mgmt-login">MgmtLogin</a></li>
   <li><a routerLink="mgmt-dashboard">MgmtDashboard</a></li>
 </ul>
-<di-checkbox
-  [value]="true"
-  [name]="chkboxName"
-  [text]="chkboxText"
-  (onValueChanged)="chkboxClick($event)"
-></di-checkbox>
-<router-outlet></router-outlet>
+
+<div class="ms-3 mb-2">
+  <di-checkbox
+    [ariaLabelledBy]="lightModeId"
+    [iconSize]="smIconSize"
+    [isDisabled]="isFalse"
+    [name]="chkboxName"
+    [tabindex]="tabindex"
+    [value]="isTrue"
+    (onValueChanged)="chkboxClick1($event)"
+  ></di-checkbox>
+  <span [id]="lightModeId" class="ps-2">{{lightModeLabel}}</span>
+</div>
+
+<div class="ms-3">
+  <di-checkbox
+    [ariaLabelledBy]="darkModeId"
+    [iconSize]="mdIconSize"
+    [isDisabled]="isFalse"
+    [name]="chkboxName"
+    [tabindex]="tabindex"
+    [value]="isNull"
+    (onValueChanged)="chkboxClick2($event)"
+  ></di-checkbox>
+  <span [id]="darkModeId" class="ps-2">{{darkModeLabel}}</span>
+</div>

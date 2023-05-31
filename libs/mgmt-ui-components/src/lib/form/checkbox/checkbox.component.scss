@@ -1,0 +1,53 @@
+@use 'light-colors' as light;
+
+::ng-deep .dx-checkbox-icon {
+  font-size: 9px !important;
+  background-color: light.$base-01;
+  border-radius: 4px;
+  border: 1px solid light.$typography-secondary;
+}
+
+::ng-deep .dx-checkbox-icon:hover {
+  background-color: light.$states-hover-bg-01;
+}
+
+::ng-deep .dx-checkbox-checked .dx-checkbox-icon {
+  background-color: light.$cta-primary-base;
+  color: light.$base-01;
+}
+
+::ng-deep .dx-checkbox-checked .dx-checkbox-icon:hover {
+  background-color: light.$cta-primary-hover;
+}
+
+::ng-deep .dx-state-disabled {
+  background-color: light.$base-02;
+}
+
+::ng-deep .dx-state-disabled .dx-checkbox-icon {
+  border: 1px solid light.$keylines-01;
+}
+
+::ng-deep .dx-state-disabled .dx-checkbox-checked .dx-checkbox-icon,
+::ng-deep .dx-state-disabled .dx-checkbox-indeterminate .dx-checkbox-icon {
+  background-color: light.$base-02;
+  color: light.$typography-tertiary;
+}
+
+::ng-deep .dx-checkbox-indeterminate .dx-checkbox-icon::before {
+  color: light.$typography-primary !important;
+  content: '\2014' !important;
+  background-color: transparent !important;
+  font-weight: bold !important;
+  margin-top: -0.6em !important;
+}
+
+::ng-deep .dx-checkbox-indeterminate .dx-checkbox-icon:hover {
+  background-color: light.$states-hover-bg-01;
+}
+
+::ng-deep .dx-state-focused:focus-visible {
+  box-shadow: 0px 0px 1px rgba(37, 71, 254, 0.25), 0px 0px 0px 4px light.$cta-primary-base;
+  border-radius: 7px;
+  padding: 4px;
+}
