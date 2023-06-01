@@ -21,14 +21,15 @@
         ],
         "styles": [
           "node_modules/devextreme/dist/css/dx.light.css",
-          "apps/mgmt-console/src/styles.scss"
+          "apps/mgmt-console/src/styles.scss",
+          "libs/mgmt-ui-components/src/assets/mgmt-ui-components.css"
         ],
         "scripts": [],
         "customWebpackConfig": {
           "path": "apps/mgmt-console/webpack.config.js"
         },
         "stylePreprocessorOptions": {
-          "includePaths": [ "libs/mgmt-ui-theming/src/lib/styles" ]
+          "includePaths": ["libs/mgmt-ui-theming/src/lib/styles"]
         }
       },
       "configurations": {

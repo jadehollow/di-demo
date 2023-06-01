@@ -1,7 +1,11 @@
 <dx-check-box
-  name="{{ name }}"
-  text="{{ text }}"
+  [attr.aria-labelledby]="ariaLabelledBy"
+  [iconSize]="iconSize"
+  [disabled]="isDisabled"
+  [name]="name"
+  [tabindex]="tabindex"
   [value]="value"
+  [text]="text || ''"
   (onValueChanged)="handle($event)"
 >
 </dx-check-box>

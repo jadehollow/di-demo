@@ -1,9 +1,18 @@
-import { Meta } from '@storybook/angular';
+import { Meta, moduleMetadata } from '@storybook/angular';
 import { CheckboxComponent } from './checkbox.component';
+import { CommonModule } from '@angular/common';
+import { DxCheckBoxModule } from 'devextreme-angular';
 
 export default {
   title: 'CheckboxComponent',
   component: CheckboxComponent,
+  decorators: [
+    moduleMetadata({
+      //👇 Imports both components to allow component composition with Storybook
+      declarations: [CheckboxComponent, ],
+      imports: [CommonModule, DxCheckBoxModule],
+    }),
+  ]
 } as Meta<CheckboxComponent>;
 
 export const Primary = {
@@ -11,8 +20,12 @@ export const Primary = {
     props: args,
   }),
   args: {
+    ariaLabel: '',
+    ariaLabelledBy: '',
+    iconSize: 20,
+    isDisabled: false,
     name: '',
-    tabIndex: 0,
+    tabindex: 0,
     text: '',
     validationStatus: '',
     value: false,

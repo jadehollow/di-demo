@@ -36,7 +36,17 @@
         "port": 4400,
         "configDir": "libs/mgmt-storybook-host/.storybook",
         "browserTarget": "mgmt-storybook-host:build-storybook",
-        "compodoc": false
+        "compodoc": false,
+        "styles": [
+          "node_modules/devextreme/dist/css/dx.light.css",
+          "apps/mgmt-console/src/styles.scss",
+          "libs/mgmt-ui-components/src/assets/mgmt-ui-components.css"
+        ],
+        "stylePreprocessorOptions": {
+          "includePaths": [
+            "libs/mgmt-ui-theming/src/lib/styles"
+          ]
+        }
       },
       "configurations": {
         "ci": {
