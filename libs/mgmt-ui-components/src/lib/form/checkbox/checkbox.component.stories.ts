@@ -20,8 +20,12 @@ export const Primary = {
     props: args,
   }),
   args: {
+    ariaLabel: '',
+    ariaLabelledBy: '',
+    iconSize: 20,
+    isDisabled: false,
     name: '',
-    tabIndex: 0,
+    tabindex: 0,
     text: '',
     validationStatus: '',
     value: false,
