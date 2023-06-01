@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [CommonModule, FormsModule],
-  exports: [DiIconComponent, DiIconGalleryComponent],
   declarations: [DiIconComponent, DiIconGalleryComponent],
+  exports: [DiIconComponent, DiIconGalleryComponent],
 })
 export class MgmtIconLibModule {}

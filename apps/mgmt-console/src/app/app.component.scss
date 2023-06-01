@@ -1,11 +1,15 @@
-.light-box {
-  width: 200px;
-  height: 100px;
-  background-color: #ffffff;
+.flex {
+  display: flex;
 }
-.dark-box {
-  width: 200px;
-  height: 100px;
-  background-color:#171829;
-  color: #ffffff;
+
+.tiny-margin {
+  margin: 2px;
+}
+
+.small-margin {
+  margin: 4px;
+}
+
+.large-margin {
+  margin: 8px;
 }
