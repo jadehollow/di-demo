@@ -12,9 +12,15 @@ export class CheckboxComponent {
   @Input() ariaLabel?: string;
   @Input() ariaLabelledBy?: string;
   @Input() id?: string;
-  // For a small checkbox, pass 16 to the iconSize property.
-  // For a medium checkbox, pass 20 to the iconSize property.
-  @Input() iconSize?: number | string;
+  iconSize!: number | string;
+  @Input() set size(size: 'sm' | 'md') {
+    if(size === 'sm') {
+      this.iconSize = 16;
+    }
+    else {
+      this.iconSize = 20;
+    }
+  }
   @Input() isDisabled!: boolean;
   @Input() name!: string;
   @Input() text?: string;

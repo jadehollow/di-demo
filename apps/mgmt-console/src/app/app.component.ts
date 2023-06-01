@@ -19,8 +19,6 @@ export class AppComponent {
   isFalse = false;
   isNull = null;
   isTrue = true;
-  smIconSize = 16;
-  mdIconSize = 20;
   tabindex = 1;
 
   constructor(@Inject(DOCUMENT) private document: Document) {
