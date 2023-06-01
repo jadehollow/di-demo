@@ -1,3 +1,7 @@
-<div class="tag" [ngClass]="[size, styleMode]">
-  <ng-content></ng-content>
+<div class="tag" [ngClass]="size">
+  <div *ngIf="showDot" class="dot"></div>
+  <div class="text">
+    <ng-content></ng-content>
+  </div>
+  <di-icon class="close" (click)="closeEmitter.emit()" *ngIf="showClose" name="x" size="sm"></di-icon>
 </div>

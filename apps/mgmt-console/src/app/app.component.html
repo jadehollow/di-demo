@@ -9,13 +9,13 @@
   [text]="chkboxText"
   (onValueChanged)="chkboxClick($event)"
 ></di-checkbox>
-<di-tag>
-  Test tag
-</di-tag>
-<di-tag size="md">
-  Test tag
-</di-tag>
-<di-tag size="lg" styleMode="dark">
-  Test tag
-</di-tag>
+<div class="flex large-margin" *ngFor="let size of ['sm', 'md', 'lg']">
+  <div class="small-margin" *ngFor="let dot of [false, true]">
+    <div class="tiny-margin" *ngFor="let close of [false, true]">
+      <di-tag [size]="size" [showDot]="dot" [showClose]="close">
+        Test tag
+      </di-tag>
+    </div>
+  </div>
+</div>
 <router-outlet></router-outlet>
