@@ -5,6 +5,7 @@
   [visible]="visible"
   [position]="position"
   [hideOnOutsideClick]="false"
+  [wrapperAttr]="{class: 'reverse-style-mode'}"
 >
   <ng-container *ngTemplateOutlet="contentTpl"></ng-container>
 </dx-popover>
@@ -15,6 +16,7 @@
   showEvent="dxhoverstart"
   hideEvent="dxhoverend"
   [position]="position"
+  [wrapperAttr]="{class: 'reverse-style-mode'}"
 >
   <ng-container *ngTemplateOutlet="contentTpl"></ng-container>
 </dx-popover>

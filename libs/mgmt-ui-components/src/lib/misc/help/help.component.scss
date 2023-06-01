@@ -8,26 +8,15 @@
   user-select: none;
 }
 
-.light-mode {
-  .help-button-wrapper.selected {
-    border: 4px #2547FE solid;
-  }  
-
-  .help-button {
-    color: #6D7278;
-  }
+.help-button-wrapper.selected {
+  border: 4px var(--cta-tertiary-base) solid;
 }
 
-.dark-mode {
-  .help-button-wrapper.selected {
-    border: 4px #FFFFFF solid;   
-  }
+.help-button {
+  color: var(--typography-tertiary);
+  display: flex;
+}
 
-  .help-button {
-    color: #9396A5;
-  }
-
-  .selected .help-button {
-    color: #FFFFFF;
-  }
+.selected .help-button {
+  color: var(--typography-primary);
 }

@@ -2,7 +2,7 @@
 @use "light-colors" as light;
 @use "dark-colors" as dark;
 
-.light-mode {
+.light-mode, .dark-mode .reverse-style-mode {
     --background: #{light.$base-01};
     --text-color: #{light.$base-01};
 
@@ -82,7 +82,7 @@
     --modal-icon-error: #{light.$modal-icon-error};
 }
 
-.dark-mode {
+.dark-mode, .light-mode .reverse-style-mode {
     --background: #{dark.$base-01};
     --text-color: #{dark.$base-01};
 
