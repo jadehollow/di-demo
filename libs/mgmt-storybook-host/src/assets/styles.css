@@ -1,4 +1,4 @@
-.lights-out {
+.dark-mode, .light-mode .reverse {
     --background: #171829;
     --text-color: #171829;
     --base-01: #171829;
@@ -58,7 +58,7 @@
     --modal-icon-error: #5A1A2A;
 }
 
-.light-mode {
+.light-mode, .dark-mode .reverse {
     --background: #FFFFFF;
     --text-color: #FFFFFF;
     --base-01: #FFFFFF;

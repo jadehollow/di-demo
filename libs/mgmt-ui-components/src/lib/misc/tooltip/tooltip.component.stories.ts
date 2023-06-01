@@ -6,9 +6,11 @@ export default {
   component: TooltipComponent,
 } as Meta<TooltipComponent>;
 
-export const Primary = {
-  render: (args: TooltipComponent) => ({
-    props: args,
-  }),
+export const Primary = (args: TooltipComponent) => ({
+  props: args,
+  template: `
+    <span id="target">Mouse over me!</span>
+    <di-tooltip target="#target">This is a helpful tip!</di-tooltip>
+  `,
   args: {},
-};
+});
