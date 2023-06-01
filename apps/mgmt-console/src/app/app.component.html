@@ -7,9 +7,9 @@
 <div class="ms-3 mb-2">
   <di-checkbox
     [ariaLabelledBy]="lightModeId"
-    [iconSize]="smIconSize"
     [isDisabled]="isFalse"
     [name]="chkboxName"
+    size="sm"
     [tabindex]="tabindex"
     [value]="isTrue"
     (onValueChanged)="chkboxClick1($event)"
@@ -20,9 +20,9 @@
 <div class="ms-3">
   <di-checkbox
     [ariaLabelledBy]="darkModeId"
-    [iconSize]="mdIconSize"
     [isDisabled]="isFalse"
     [name]="chkboxName"
+    size="md"
     [tabindex]="tabindex"
     [value]="isNull"
   ></di-checkbox>
