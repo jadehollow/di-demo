@@ -3,8 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { appRoutes } from './app.routes';
-import { CheckboxComponentModule } from "@mgmt-ui-components/form";
 import { FormsModule } from '@angular/forms';
+import { CheckboxComponentModule } from "@mgmt-ui-components/form";
+import { NavBarComponentModule } from "@mgmt-ui-components/navigation";
 
 @NgModule({
   declarations: [AppComponent],
@@ -12,6 +13,7 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     CheckboxComponentModule,
     FormsModule,
+    NavBarComponentModule,
     RouterModule.forRoot(appRoutes, { initialNavigation: 'enabledBlocking' }),
   ],
   providers: [],
