@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { appRoutes } from './app.routes';
 import { NxWelcomeComponent } from './nx-welcome.component';
-import { CheckboxComponentModule } from "@mgmt-ui-components/form";
+import { CheckboxComponentModule, RadioComponentModule } from "@mgmt-ui-components/form";
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     CheckboxComponentModule,
+    RadioComponentModule,
     FormsModule,
     RouterModule.forRoot(appRoutes, { initialNavigation: 'enabledBlocking' }),
   ],

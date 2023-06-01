@@ -1,6 +1,6 @@
-/* You can add global styles to this file, and also import other style files */
-@use "light-colors" as light;
-@use "dark-colors" as dark;
+// /* You can add global styles to this file, and also import other style files */
+@use "libs/mgmt-ui-theming/src/lib/styles/light-colors" as light;
+@use "libs/mgmt-ui-theming/src/lib/styles/dark-colors" as dark;
 
 .light-mode {
     --background: #{light.$base-01};

@@ -1,6 +1,15 @@
 module.exports = {
   stories: ['../../**/src/lib/**/*.stories.@(js|jsx|ts|tsx|mdx)'],
-  addons: ['@storybook/addon-essentials'],
+  addons: ['@storybook/addon-essentials',
+  {
+    name: '@storybook/addon-styling',
+    options: {
+      sass: {
+        // Require your Sass preprocessor here
+        implementation: require('sass'),
+      },
+    },
+  }],
   framework: {
     name: '@storybook/angular',
     options: {}

@@ -12,6 +12,9 @@ export class AppComponent {
   // Checkbox
   chkboxName = 'testChkbox';
   chkboxText = 'Check Me!';
+  items = ['Option a', 'Option B', 'Option C'];
+  radioVal = 'Option a';
+
   
   constructor(@Inject(DOCUMENT) private document: Document) { 
     this.document.body.classList.add('light-mode');
