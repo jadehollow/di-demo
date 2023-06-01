@@ -1,15 +1,8 @@
+
+
 module.exports = {
   stories: ['../../**/src/lib/**/*.stories.@(js|jsx|ts|tsx|mdx)'],
-  addons: ['@storybook/addon-essentials',
-  {
-    name: '@storybook/addon-styling',
-    options: {
-      sass: {
-        // Require your Sass preprocessor here
-        implementation: require('sass'),
-      },
-    },
-  }],
+  addons: ['@storybook/addon-essentials', 'storybook-dark-mode'],
   framework: {
     name: '@storybook/angular',
     options: {}

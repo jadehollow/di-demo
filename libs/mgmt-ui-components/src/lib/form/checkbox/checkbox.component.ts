@@ -17,6 +17,7 @@ export class CheckboxComponent {
   @Input() iconSize?: number | string;
   @Input() isDisabled!: boolean;
   @Input() name!: string;
+  @Input() text?: string;
   @Input() tabindex?: number;
   @Input() validationStatus?: string;
   // For a checked checkbox, pass true as the value.
