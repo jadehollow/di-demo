@@ -1,0 +1,23 @@
+.help-button-wrapper {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  border-radius: 100%;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  box-sizing: border-box;
+}
+
+.help-button-wrapper.selected {
+  border: 4px var(--cta-tertiary-base) solid;
+}
+
+.help-button {
+  color: var(--typography-tertiary);
+  display: flex;
+}
+
+.selected .help-button {
+  color: var(--typography-primary);
+}

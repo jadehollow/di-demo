@@ -9,7 +9,7 @@ import { iconNames } from '../di-icon/di-icon.component';
 export class DiIconGalleryComponent {
   allIcons = Object.keys(iconNames);
   displayIcons = Object.keys(iconNames);
-  public searchString = '';
+  public searchString : any = '';
   constructor() {
     console.log(this.displayIcons);
   }

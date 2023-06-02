@@ -1,0 +1,43 @@
+::ng-deep.dx-popover-wrapper .dx-popup-content {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  
+  display: flex;
+  align-items: center;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+
+  padding: 8px 12px;
+}
+
+::ng-deep.dx-popover-wrapper {
+  .dx-overlay-content {
+    border-radius: 4px;
+    background: var(--base-01);
+    border: 1px var(--base-01) solid;
+  }
+  .dx-popover-arrow {
+    border-radius: 1px;
+    pointer-events: none;
+  }
+  .dx-popover-arrow::after {
+    background: var(--base-01) !important;
+    border: 1px var(--base-01) solid;
+  }
+  .dx-popup-content {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    
+    display: flex;
+    align-items: center;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+
+    padding: 8px 12px;
+    color: var(--typography-secondary);
+  }
+}

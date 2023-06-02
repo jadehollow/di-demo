@@ -28,3 +28,25 @@
   ></di-checkbox>
   <span [id]="darkModeId" class="ps-2">{{darkModeLabel}}</span>
 </div>
+
+<div class="ms-3 d-flex">
+  <div id="light-tooltip" class="d-inline-block">tooltip</div>
+  <di-tooltip
+    target="#light-tooltip"
+  >
+    Tooltip Content
+  </di-tooltip>
+  <di-help class="d-inline-block">Test</di-help>
+</div>
+
+<div class="ms-3">
+  <div class="flex large-margin" *ngFor="let size of ['sm', 'md', 'lg']">
+    <div class="small-margin" *ngFor="let dot of [false, true]">
+      <div class="tiny-margin" *ngFor="let close of [false, true]">
+        <di-tag [size]="size" [showDot]="dot" [showClose]="close">
+          Test tag
+        </di-tag>
+      </div>
+    </div>
+  </div>  
+</div>

@@ -1,0 +1,22 @@
+
+<div 
+  [ngClass]="{'selected': selected}"
+  class="help-button-wrapper"
+  (click)="onClick()"
+  (mouseenter)="onHover(true)"
+  (mouseleave)="onHover(false)"
+  #helpTarget
+>
+  <di-icon 
+    class="help-button"
+    [name]="'help'" [size]="'md'"
+  >
+  </di-icon>
+</div>
+
+<di-tooltip
+  [target]="helpTarget"
+  [forceVisibleSubject]="forceVisibleSubject"
+>
+  <ng-content></ng-content>
+</di-tooltip>
