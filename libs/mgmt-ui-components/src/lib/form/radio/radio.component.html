@@ -1,7 +1,7 @@
 <dx-radio-group
-    id="radio-group-with-selection"
     [items]="items"
     [displayExpr]="displayExpr"
-    [value]="items[0]"
+    [value]="value"
+    (onValueChanged)="handleOnValueChanged"
 >
 </dx-radio-group>

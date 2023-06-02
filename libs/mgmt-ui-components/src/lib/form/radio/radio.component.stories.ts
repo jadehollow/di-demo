@@ -15,13 +15,19 @@ export default {
   ]
 } as Meta<RadioComponent>;
 
+const items = [
+  {display: 'Option A', value: 'A'},
+  {display: 'Option B', value: 'B'},
+  {display: 'Option C', value: 'C'}
+];
+
 export const Secondary = {
   render: (args: RadioComponent) => ({
     props: args,
   }),
   args: {
-    items: ['a', 'b', 'c'],
-    value: 'a',
-    displayExpr: 'Test'
+    items: items,
+    value: items[1],
+    displayExpr: 'display'
   },
 };
