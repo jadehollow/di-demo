@@ -21,6 +21,18 @@ export class AppComponent {
   isTrue = true;
   tabindex = 1;
 
+  tabs = [
+    { text: 'user' },
+    { text: 'analytics' },
+    { text: 'customers' },
+    { text: 'search' },
+    { text: 'favorites' },
+    { text: 'additional' },
+    { text: 'clients' },
+    { text: 'orders' },
+    { text: 'shipment' },
+  ]
+
   constructor(@Inject(DOCUMENT) private document: Document) {
     this.document.body.classList.add('light-mode');
   }
