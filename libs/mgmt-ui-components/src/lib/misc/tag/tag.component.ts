@@ -12,6 +12,8 @@ export class TagComponent {
   @Input() size = 'sm'
   @Input() showClose = false;
   @Input() showDot = false;
+  @Input() ariaLabelledBy = '';
+  @Input() ariaLabel = '';
 
   @Output() closeEmitter = new EventEmitter<void>()
 }
