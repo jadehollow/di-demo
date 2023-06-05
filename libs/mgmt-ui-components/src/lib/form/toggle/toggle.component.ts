@@ -23,11 +23,11 @@ export class ToggleComponent {
   @Input() tabindex?: number;
   @Input() inputId?: string;
   @Input() name?: string;
-  @Input() disabled?: boolean = false;
-  @Input() readOnly?: boolean = false;
+  @Input() disabled!: boolean;
+  @Input() readOnly!: boolean;
   @Input() ariaLabel?: string;
   @Input() ariaLabelledBy?: string;
-  @Input() value: boolean = false;
+  @Input() value!: boolean;
   // eslint-disable-next-line @angular-eslint/no-output-on-prefix
   @Output() onValueChanged = new EventEmitter<any>();
 
