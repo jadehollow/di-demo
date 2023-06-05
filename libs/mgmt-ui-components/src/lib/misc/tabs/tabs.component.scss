@@ -1,0 +1,192 @@
+::ng-deep.dx-tabs {  
+  &.sm svg, &.sm .dx-icon {
+    width: 12px;
+    height: 12px;
+  }
+
+  &.md svg, &.md .dx-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  &.lg svg, &.lg .dx-icon {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+::ng-deep.dx-tab {
+  .dx-icon {
+    margin: 0;
+  }
+
+  .dx-tab-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+::ng-deep.normal {
+  &.dx-tabs {
+    border: none;
+    border-bottom: 1px solid var(--keylines-02)
+  }
+
+  .dx-tab {
+    background: none;
+    padding: 1px 12px 11px;
+  }
+
+  .dx-tab-selected::after {
+    border: none;
+    border-bottom: 4px solid var(--states-focus-01)
+  }
+
+  .dx-tabs-wrapper {
+    border: none;
+  }
+  
+  .dx-tab-text {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+
+    color: var(--typography-secondary);
+  }
+
+  .dx-tab-selected .dx-tab-text {
+    color: var(--typography-primary);
+  }
+}
+
+::ng-deep.low {
+  &.dx-tabs {
+    border: none;
+    border-bottom: 1px solid var(--keylines-02)
+  }
+
+  .dx-tab {
+    background: none;
+    padding: 0px 12px 4px;
+  }
+
+  .dx-tab-selected::after {
+    border: none;
+    border-bottom: 4px solid var(--states-focus-01)
+  }
+
+  .dx-tabs-wrapper {
+    border: none;
+  }
+  
+  .dx-tab-text {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+
+    color: var(--typography-secondary);
+  }
+
+  .dx-tab-selected .dx-tab-text {
+    color: var(--typography-primary);
+  }
+}
+
+::ng-deep.round {
+  &.dx-tabs {
+    border: 1px solid var(--keylines-01);
+    border-radius: 8px;
+  }
+
+  .dx-tab {
+    background: none;
+    padding: 8px 12px;
+  }
+
+  .dx-tab-selected {
+    background: var(--states-selected);
+    border-radius: 8px;
+    box-sizing: border-box;
+
+    &::after {
+      border: 1px solid var(--states-focus-01);
+      border-radius: 8px;
+      box-sizing: border-box;
+    }
+  }
+
+  .dx-tabs-wrapper {
+    border: none;
+  }
+  
+  .dx-tab-text {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    /* identical to box height, or 160% */
+
+    display: flex;
+    align-items: center;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+
+    /* Typography/Light mode/Secondary */
+
+    color: var(--cta-links);
+  }
+
+  .dx-tab-selected .dx-tab-text {
+    color: var(--typography-primary);
+  }
+}
+
+::ng-deep.icons {
+  &.dx-tabs {
+    border: none;
+    border-bottom: 1px solid var(--keylines-02)
+  }
+
+  .dx-tab {
+    background: none;
+    padding: 1px 12px 11px;
+  }
+
+  .dx-tab-selected::after {
+    border: none;
+    border-bottom: 4px solid var(--states-focus-01)
+  }
+
+  .dx-tabs-wrapper {
+    border: none;
+  }
+  
+  .dx-tab-text {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+
+    color: var(--typography-secondary);
+  }
+
+  .dx-tab-selected .dx-tab-text {
+    color: var(--typography-primary);
+  }
+}

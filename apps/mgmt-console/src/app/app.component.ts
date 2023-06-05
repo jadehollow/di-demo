@@ -1,6 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import notify from 'devextreme/ui/notify';
+import { iconNames } from '@mgmt-icon-lib';
 
 @Component({
   selector: 'di-saas-fe-root',
@@ -22,15 +23,20 @@ export class AppComponent {
   tabindex = 1;
 
   tabs = [
-    { text: 'user' },
-    { text: 'analytics' },
-    { text: 'customers' },
-    { text: 'search' },
-    { text: 'favorites' },
-    { text: 'additional' },
-    { text: 'clients' },
-    { text: 'orders' },
-    { text: 'shipment' },
+    { text: 'tabname', icon: iconNames.x },
+    { text: 'b' },
+    { text: 'c' },
+    { text: 'd' },
+    { text: 'e' },
+    { text: 'f' },
+    { text: 'g' },
+    { text: 'h' },
+    { text: 'i' },
+  ]
+
+  iconTabs = [
+    { text: 'Dashboard', icon: 'grid'},
+    { text: 'Alerts', icon: 'alert-octagon' }
   ]
 
   constructor(@Inject(DOCUMENT) private document: Document) {

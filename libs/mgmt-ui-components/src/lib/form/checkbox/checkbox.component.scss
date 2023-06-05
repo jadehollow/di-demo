@@ -44,7 +44,7 @@
   background-color: var(--states-hover-bg-01);
 }
 
-::ng-deep .dx-state-focused:focus-visible {
+::ng-deep di-checkbox .dx-state-focused:focus-visible {
   box-shadow: 0px 0px 1px rgba(37, 71, 254, 0.25), 0px 0px 0px 4px var(--cta-primary-base);
   border-radius: 7px;
   padding: 4px;

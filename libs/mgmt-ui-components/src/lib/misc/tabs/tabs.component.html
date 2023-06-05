@@ -1,0 +1,11 @@
+<dx-tabs 
+  [ngClass]="styleMode"
+  [elementAttr]="{ class: iconSize }"
+  [dataSource]="dataSource"
+  [width]="width"
+  [scrollByContent]="scrollByContent"
+  [showNavButtons]="showNavButtons"
+  [selectedIndex]="selectedIndex"
+  [scrollingEnabled]="scrollingEnabled"
+  (onItemClick)="onItemClick.emit($event)"
+></dx-tabs>

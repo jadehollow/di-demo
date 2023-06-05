@@ -7,7 +7,7 @@ import { CheckboxComponentModule } from "@mgmt-ui-components/form";
 import { TagComponentModule } from "@mgmt-ui-components/misc";
 import { TooltipComponentModule } from "@mgmt-ui-components/misc";
 import { HelpComponentModule } from "@mgmt-ui-components/misc";
-import { TabsComponentModule } from "@mgmt-ui-components/tabs";
+import { TabsComponentModule } from "@mgmt-ui-components/misc";
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
