@@ -1,20 +1,8 @@
 <dx-popover
-  *ngIf="forceVisibleSubject"
   #popover
   [target]="target"
-  [visible]="visible"
-  [position]="position"
-  [hideOnOutsideClick]="false"
-  [wrapperAttr]="{class: 'reverse-style-mode'}"
->
-  <ng-container *ngTemplateOutlet="contentTpl"></ng-container>
-</dx-popover>
-<dx-popover
-  *ngIf="!forceVisibleSubject"
-  #popover
-  [target]="target"
-  showEvent="dxhoverstart"
-  hideEvent="dxhoverend"
+  showEvent="dxhoverstart focus"
+  hideEvent="dxhoverend blur"
   [position]="position"
   [wrapperAttr]="{class: 'reverse-style-mode'}"
 >

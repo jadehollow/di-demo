@@ -11,20 +11,9 @@ import { MgmtIconLibModule } from "@mgmt-icon-lib";
 })
 export class HelpComponent {
   @ViewChild('helpTarget') helpTarget?: ElementRef;
-
-  @Input() styleMode: string = 'light';
-
-  forceVisibleSubject: BehaviorSubject<boolean> = new BehaviorSubject(false);
-  selected: boolean = false;
-
-  onClick() {
-    this.selected = !this.selected;
-    this.forceVisibleSubject?.next(this.selected);
-  }
-
-  onHover(event: any) {
-    this.forceVisibleSubject?.next(event || this.selected);
-  }
+  
+  @Input() ariaLabel: string = '';
+  @Input() ariaLabelledBy: string = '';
 }
 
 @NgModule({
