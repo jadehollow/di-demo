@@ -35,8 +35,13 @@ export class AppComponent {
   ]
 
   iconTabs = [
-    { text: 'Dashboard', icon: 'grid'},
-    { text: 'Alerts', icon: 'alert-octagon' }
+    { text: 'Dashboard', icon: iconNames.action },
+    { text: 'Alerts', icon: iconNames.add },
+    { text: 'Policies', icon: iconNames['add-new'] },
+    { text: 'Assets', icon: iconNames['add-circle'] },
+    { text: 'Reports', icon: iconNames['add-file'] },
+    { text: 'Logs', icon: iconNames.analysys },
+    { text: 'Settings', icon: iconNames['add-application'] },
   ]
 
   constructor(@Inject(DOCUMENT) private document: Document) {
