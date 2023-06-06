@@ -1,16 +1,16 @@
 import { Meta, moduleMetadata } from '@storybook/angular';
-import { TabsComponent } from './tabs.component';
-import { iconNames } from '@mgmt-icon-lib';
 import { CommonModule } from '@angular/common';
-import { DxTabsComponent } from 'devextreme-angular';
+import { TabsComponent } from './tabs.component';
+import { DxTabsModule } from 'devextreme-angular';
+import { MgmtIconLibModule } from '@mgmt-icon-lib';
 
 export default {
   title: 'TabsComponent',
   component: TabsComponent,
   decorators: [
     moduleMetadata({
-      declarations: [DxTabsComponent],
-      imports: [CommonModule],
+      declarations: [],
+      imports: [CommonModule, DxTabsModule, MgmtIconLibModule ],
     })
   ],
   render: (args: TabsComponent) => ({
@@ -31,13 +31,13 @@ const tabs = [
 ]
 
 const iconTabs = [
-  { text: 'Dashboard', icon: iconNames.action },
-  { text: 'Alerts', icon: iconNames.add },
-  { text: 'Policies', icon: iconNames['add-new'] },
-  { text: 'Assets', icon: iconNames['add-circle'] },
-  { text: 'Reports', icon: iconNames['add-file'] },
-  { text: 'Logs', icon: iconNames.analysys },
-  { text: 'Settings', icon: iconNames['add-application'] },
+  { text: 'Dashboard', icon: 'add' },
+  { text: 'Alerts', icon: 'airplane' },
+  { text: 'Policies', icon: 'bookmark' },
+  { text: 'Assets', icon: 'box' },
+  { text: 'Reports', icon: 'car' },
+  { text: 'Logs', icon: 'card' },
+  { text: 'Settings', icon: 'cart' },
 ]
 
 export const Normal = {
