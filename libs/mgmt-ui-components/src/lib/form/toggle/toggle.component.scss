@@ -1,0 +1,54 @@
+::ng-deep {
+    dx-switch.dx-switch {
+        width: 52px;
+        height: 32px;
+        border: 2px solid transparent;
+
+        .dx-switch-wrapper {
+            padding: 2px;
+        }
+        .dx-switch-container {
+            padding: 2px;
+            width: 44px;
+            height: 24px;
+            background-color: var(--typography-secondary);
+            border-radius: 12px;
+            border: none;
+        }
+        .dx-switch-handle {
+            margin-top: 0px;
+            width: 20px;
+            height: 20px;
+            flex-basis: 20px;
+            color: #FFFFFF;
+        }
+        .dx-switch-handle::before {
+            border-radius: 20px;
+            background-color: #FFFFFF !important;
+        }
+    }
+    dx-switch.dx-state-hover {
+        .dx-switch-container {
+            background-color: var(--typography-tertiary) !important;
+        }
+    }
+    dx-switch.dx-switch-on-value.dx-state-hover {
+        .dx-switch-container {
+            background-color: var(--cta-primary-hover) !important;
+        }
+    }
+    dx-switch.dx-switch-on-value {
+        .dx-switch-container {
+            background-color: var(--cta-primary-base);
+        }
+    }
+    dx-switch.dx-state-disabled {
+        .dx-switch-container {
+            background-color: var(--keylines-01);
+        }
+    }
+    dx-switch.dx-switch.dx-state-focused:focus-visible {
+        border: 2px solid var(--cta-primary-base);
+        border-radius: 16px;
+    }
+}

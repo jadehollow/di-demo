@@ -22,6 +22,7 @@ export class AppComponent {
   isTrue = true;
   tabindex = 1;
 
+  // Tabs
   tabs = [
     { text: 'tabname', icon: iconNames.x },
     { text: 'b' },
@@ -33,7 +34,6 @@ export class AppComponent {
     { text: 'h' },
     { text: 'i' },
   ]
-
   iconTabs = [
     { text: 'Dashboard', icon: iconNames.action },
     { text: 'Alerts', icon: iconNames.add },
@@ -43,6 +43,12 @@ export class AppComponent {
     { text: 'Logs', icon: iconNames.analysys },
     { text: 'Settings', icon: iconNames['add-application'] },
   ]
+
+  // Toggle
+  toggleId = 'toggleId';
+  toggleValue = false;
+  isDisabled = false;
+  isReadOnly = false;
 
   constructor(@Inject(DOCUMENT) private document: Document) {
     this.document.body.classList.add('light-mode');

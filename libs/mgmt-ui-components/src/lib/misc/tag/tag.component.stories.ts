@@ -1,9 +1,16 @@
-import { Meta } from '@storybook/angular';
+import { Meta, moduleMetadata } from '@storybook/angular';
 import { TagComponent } from './tag.component';
+import { DiIconComponent } from 'libs/mgmt-icon-lib/src/lib/di-icon/di-icon.component';
 
 export default {
   title: 'TagComponent',
   component: TagComponent,
+  decorators: [
+    moduleMetadata({
+      //👇 Imports both components to allow component composition with Storybook
+      declarations: [TagComponent, DiIconComponent],
+    }),
+  ]
 } as Meta<TagComponent>;
 
 export const Small = (args: TagComponent) => ({

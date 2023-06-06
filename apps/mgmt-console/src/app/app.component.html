@@ -17,7 +17,7 @@
   <span [id]="lightModeId" class="ps-2">{{lightModeLabel}}</span>
 </div>
 
-<div class="ms-3">
+<div class="ms-3 mb-3">
   <di-checkbox
     [ariaLabelledBy]="darkModeId"
     [isDisabled]="isFalse"
@@ -36,7 +36,7 @@
   >
     Tooltip Content
   </di-tooltip>
-  <di-help class="d-inline-block">Test</di-help>
+  <di-help ariaLabelledBy="Help Tooltip" class="d-inline-block">Test</di-help>
 </div>
 
 <div class="ms-3">
@@ -60,4 +60,17 @@
   </di-tabs>
   <di-tabs class="py-1" styleMode="icons" [dataSource]="iconTabs" iconSize="lg">
   </di-tabs>
+</div>
+  </div>
+</div>
+
+<div class="ms-3 mb-2">
+  <di-toggle
+    [inputId]="toggleId"
+    [value]="toggleValue"
+    [disabled]="isDisabled"
+    [readOnly]="isReadOnly"
+    switchedOffText=""
+    switchedOnText=""
+  ></di-toggle>
 </div>

@@ -1,51 +1,54 @@
-::ng-deep .dx-checkbox-icon {
-  font-size: 9px !important;
-  background-color: var(--base-01);
-  border-radius: 4px;
-  border: 1px solid var(--typography-secondary);
-}
+::ng-deep {
+  dx-check-box.dx-checkbox {
+    .dx-checkbox-icon {
+      font-size: 9px !important;
+      background-color: var(--base-01);
+      border-radius: 4px;
+      border: 1px solid var(--typography-secondary);
+    }
 
-::ng-deep .dx-checkbox-icon:hover {
-  background-color: var(--states-hover-bg-01);
-}
+    .dx-checkbox-icon:hover {
+      background-color: var(--states-hover-bg-01);
+    }
+  }
 
-::ng-deep .dx-checkbox-checked .dx-checkbox-icon {
-  background-color: var(--cta-primary-base);
-  color: var(--base-01);
-}
+  dx-check-box.dx-checkbox-checked {
+    .dx-checkbox-icon {
+      background-color: var(--cta-primary-base);
+      color: var(--base-01);
+    }
 
-::ng-deep .dx-checkbox-checked .dx-checkbox-icon:hover {
-  background-color: var(--cta-primary-hover);
-}
+    .dx-checkbox-icon:hover {
+      background-color: var(--cta-primary-hover);
+    }
+  }
 
-::ng-deep .dx-state-disabled {
-  background-color: var(--base-02);
-}
+  dx-check-box.dx-state-disabled.dx-checkbox {
+    .dx-checkbox-icon {
+      border: 1px solid var(--keylines-01);
+      background-color: var(--base-02);
+      color: var(--typography-tertiary);
+    }
+  }
 
-::ng-deep .dx-state-disabled .dx-checkbox-icon {
-  border: 1px solid var(--keylines-01);
-}
+  dx-check-box.dx-checkbox-indeterminate {
+    .dx-checkbox-icon::before {
+      color: var(--typography-tertiary) !important;
+      content: '\2014' !important;
+      background-color: transparent !important;
+      font-weight: bold !important;
+      margin-top: -0.6em !important;
+    }
 
-::ng-deep .dx-state-disabled .dx-checkbox-checked .dx-checkbox-icon,
-::ng-deep .dx-state-disabled .dx-checkbox-indeterminate .dx-checkbox-icon {
-  background-color: var(--base-02);
-  color: var(--typography-tertiary);
-}
+    .dx-checkbox-icon:hover {
+      background-color: var(--states-hover-bg-01);
+    }
+  }
 
-::ng-deep .dx-checkbox-indeterminate .dx-checkbox-icon::before {
-  color: var(--typography-tertiary) !important;
-  content: '\2014' !important;
-  background-color: transparent !important;
-  font-weight: bold !important;
-  margin-top: -0.6em !important;
-}
-
-::ng-deep .dx-checkbox-indeterminate .dx-checkbox-icon:hover {
-  background-color: var(--states-hover-bg-01);
-}
-
-::ng-deep di-checkbox .dx-state-focused:focus-visible {
-  box-shadow: 0px 0px 1px rgba(37, 71, 254, 0.25), 0px 0px 0px 4px var(--cta-primary-base);
-  border-radius: 7px;
-  padding: 4px;
+  dx-check-box.dx-state-focused:focus-visible {
+    box-shadow: 0px 0px 1px rgba(37, 71, 254, 0.25),
+      0px 0px 0px 4px var(--cta-primary-base);
+    border-radius: 7px;
+    padding: 4px;
+  }
 }
