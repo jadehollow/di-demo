@@ -9,8 +9,9 @@
   box-sizing: border-box;
 }
 
-.help-button-wrapper.selected {
+.help-button-wrapper:focus-visible {
   border: 4px var(--cta-tertiary-base) solid;
+  outline: none;
 }
 
 .help-button {
@@ -18,6 +19,6 @@
   display: flex;
 }
 
-.selected .help-button {
+:focus-visible .help-button, :hover .help-button {
   color: var(--typography-primary);
 }
