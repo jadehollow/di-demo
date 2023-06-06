@@ -1,7 +1,9 @@
 <dx-radio-group
     [items]="items"
     [displayExpr]="displayExpr"
-    [value]="value"
-    (onValueChanged)="handleOnValueChanged"
+    [(value)]="value"
+    (onValueChanged)="handleValueChanged($event)"
+    [layout]="layout"
+    [disabled]="disabled"
 >
 </dx-radio-group>

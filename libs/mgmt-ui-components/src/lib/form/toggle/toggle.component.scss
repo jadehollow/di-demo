@@ -51,8 +51,4 @@
         border: 2px solid var(--cta-primary-base);
         border-radius: 16px;
     }
-    // Have to override dark mode because they want this to switch to white
-    // .dark-mode dx-switch.dx-switch.dx-state-focused {
-    //     border: 2px solid #FFFFFF;
-    // }
 }
