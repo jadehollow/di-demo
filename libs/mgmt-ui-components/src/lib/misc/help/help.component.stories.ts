@@ -1,7 +1,6 @@
 import { Meta, moduleMetadata } from '@storybook/angular';
 import { HelpComponent } from './help.component';
 import { DiIconComponent } from '@mgmt-icon-lib';
-import { TooltipComponent } from '../tooltip/tooltip.component';
 
 export default {
   title: 'HelpComponent',
