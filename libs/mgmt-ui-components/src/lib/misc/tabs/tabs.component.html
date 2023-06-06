@@ -1,4 +1,6 @@
 <dx-tabs 
+  [attr.aria-label]="ariaLabel"
+  [attr.aria-labelledby]="ariaLabelledBy"
   [ngClass]="styleMode"
   [elementAttr]="{ class: iconSize, tabindex: 0 }"
   [dataSource]="dataSource"

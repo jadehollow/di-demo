@@ -8,6 +8,8 @@ import { DxTabsModule } from 'devextreme-angular';
   styleUrls: ['./tabs.component.scss'],
 })
 export class TabsComponent {
+  @Input() ariaLabel: string = '';
+  @Input() ariaLabelledBy: string = '';
   @Input() dataSource: any = [];
   @Input() width?: any;
   @Input() scrollByContent: boolean = false;
