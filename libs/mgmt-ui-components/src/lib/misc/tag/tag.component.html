@@ -1,1 +1,19 @@
-<p>tag works!</p>
+<div class="tag" [ngClass]="size">
+  <div *ngIf="showDot" class="dot"></div>
+  <div class="text">
+    <ng-content></ng-content>
+  </div>
+  <button
+    [attr.aria-labelledby]="ariaLabelledBy"
+    [attr.aria-label]="ariaLabel"
+    class="close" 
+    (click)="closeEmitter.emit()"
+    *ngIf="showClose" 
+  >
+    <di-icon
+      class="close-icon"
+      name="x" 
+      size="sm"   
+    ></di-icon>
+  </button>
+</div>

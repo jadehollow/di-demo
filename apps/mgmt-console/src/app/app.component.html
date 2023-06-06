@@ -21,7 +21,7 @@
   <span [id]="lightModeId" class="ps-2">{{lightModeLabel}}</span>
 </div>
 
-<div class="ms-3">
+<div class="ms-3 mb-3">
   <di-checkbox
     [ariaLabelledBy]="darkModeId"
     [isDisabled]="isFalse"
@@ -31,4 +31,37 @@
     [value]="isNull"
   ></di-checkbox>
   <span [id]="darkModeId" class="ps-2">{{darkModeLabel}}</span>
+</div>
+
+<div class="ms-3 d-flex">
+  <div id="light-tooltip" class="d-inline-block">tooltip</div>
+  <di-tooltip
+    target="#light-tooltip"
+  >
+    Tooltip Content
+  </di-tooltip>
+  <di-help ariaLabelledBy="Help Tooltip" class="d-inline-block">Test</di-help>
+</div>
+
+<div class="ms-3">
+  <div class="flex large-margin" *ngFor="let size of ['sm', 'md', 'lg']">
+    <div class="small-margin" *ngFor="let dot of [false, true]">
+      <div class="tiny-margin" *ngFor="let close of [false, true]">
+        <di-tag [size]="size" [showDot]="dot" [showClose]="close">
+          Test tag
+        </di-tag>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ms-3 mb-2">
+  <di-toggle
+    [inputId]="toggleId"
+    [value]="toggleValue"
+    [disabled]="isDisabled"
+    [readOnly]="isReadOnly"
+    switchedOffText=""
+    switchedOnText=""
+  ></di-toggle>
 </div>

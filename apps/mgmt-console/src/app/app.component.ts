@@ -21,6 +21,12 @@ export class AppComponent {
   isTrue = true;
   tabindex = 1;
 
+  // Toggle
+  toggleId = 'toggleId';
+  toggleValue = false;
+  isDisabled = false;
+  isReadOnly = false;
+
   constructor(@Inject(DOCUMENT) private document: Document) {
     this.document.body.classList.add('light-mode');
   }

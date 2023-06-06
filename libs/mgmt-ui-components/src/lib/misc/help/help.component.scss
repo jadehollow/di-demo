@@ -1,0 +1,24 @@
+.help-button-wrapper {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  border-radius: 100%;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  box-sizing: border-box;
+}
+
+.help-button-wrapper:focus-visible {
+  border: 4px var(--cta-tertiary-base) solid;
+  outline: none;
+}
+
+.help-button {
+  color: var(--typography-tertiary);
+  display: flex;
+}
+
+:focus-visible .help-button, :hover .help-button {
+  color: var(--typography-primary);
+}

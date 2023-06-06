@@ -1,0 +1,19 @@
+
+<div
+  [attr.aria-label]="ariaLabel"
+  [attr.aria-labelledby]="ariaLabelledBy"
+  tabindex="0"
+  class="help-button-wrapper"
+  #helpTarget
+>
+  <di-icon 
+    class="help-button"
+    [name]="'help'" [size]="'md'"
+  >
+  </di-icon>
+</div>
+<di-tooltip
+  [target]="helpTarget"
+>
+  <ng-content></ng-content>
+</di-tooltip>

@@ -1,0 +1,19 @@
+.flex {
+  display: flex;
+}
+
+.tiny-margin {
+  margin: 2px;
+}
+
+.small-margin {
+  margin: 4px;
+}
+
+.large-margin {
+  margin: 8px;
+}
+
+#lightMode, #darkMode {
+  color: var(--typography-primary);
+}

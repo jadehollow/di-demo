@@ -1,0 +1,11 @@
+<dx-popover
+  #popover
+  [target]="target"
+  showEvent="dxhoverstart focus"
+  hideEvent="dxhoverend blur"
+  [position]="position"
+  [wrapperAttr]="{class: 'reverse-style-mode'}"
+>
+  <ng-container *ngTemplateOutlet="contentTpl"></ng-container>
+</dx-popover>
+<ng-template #contentTpl><ng-content></ng-content></ng-template>
