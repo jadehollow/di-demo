@@ -1,9 +1,15 @@
-import { Meta } from '@storybook/angular';
+import { Meta, moduleMetadata } from '@storybook/angular';
 import { HelpComponent } from './help.component';
+import { DiIconComponent } from '@mgmt-icon-lib';
 
 export default {
   title: 'HelpComponent',
   component: HelpComponent,
+  decorators: [
+    moduleMetadata({
+      declarations: [DiIconComponent]
+    })
+  ]
 } as Meta<HelpComponent>;
 
 export const Primary = (args: HelpComponent) => ({
