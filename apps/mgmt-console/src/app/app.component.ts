@@ -24,7 +24,7 @@ export class AppComponent {
 
   // Tabs
   tabs = [
-    { text: 'tabname', icon: iconNames.x },
+    { text: 'a' },
     { text: 'b' },
     { text: 'c' },
     { text: 'd' },
