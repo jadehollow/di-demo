@@ -8,6 +8,7 @@ import { TagComponentModule } from "@mgmt-ui-components/misc";
 import { ToggleComponentModule } from "@mgmt-ui-components/form";
 import { TooltipComponentModule } from "@mgmt-ui-components/misc";
 import { HelpComponentModule } from "@mgmt-ui-components/misc";
+import { TabsComponentModule } from "@mgmt-ui-components/misc";
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
@@ -19,6 +20,7 @@ import { FormsModule } from '@angular/forms';
     ToggleComponentModule,
     TooltipComponentModule,
     HelpComponentModule,
+    TabsComponentModule,
     FormsModule,
     RouterModule.forRoot(appRoutes, { initialNavigation: 'enabledBlocking' }),
   ],
