@@ -1,0 +1,64 @@
+::ng-deep {
+    dx-text-box.dx-textbox {
+        &.dx-editor-outlined {
+            background: var(--base-01);
+            border: 1px solid var(--keylines-02);
+            border-radius: 4px;
+            color: var(--typography-secondary);
+
+            &.dx-state-focused {
+                border: 2px solid var(--states-focus-01);
+                box-shadow: 0px 1px 2px var(--states-focus-02), 0px 0px 0px 4px var(--states-focus-02);
+            }
+        }
+
+        .dx-texteditor-input {
+            color: var(--typography-secondary);
+        }
+    }
+}
+.di-input-wrapper {
+    position: relative;
+    display: inline-block;
+
+    &.di-input-icon-left> di-icon:first-of-type {
+        position: absolute;
+        top: 50%;
+        margin-top: -0.5rem;
+        left: 0.75rem;
+        color: #6c757d;
+    }
+
+    &.di-input-icon-left ::ng-deep input {
+        padding-left: 2.5rem;
+    }
+
+    &.di-input-icon-right ::ng-deep input {
+        padding-right: 2.5rem;
+    }
+
+    &.di-input-icon-right> di-icon:last-of-type {
+        position: absolute;
+        top: 50%;
+        margin-top: -0.5rem;
+        right: 0.75rem;
+        color: #6c757d;
+    }
+}
+.di-input-message {
+    padding-top: 5px;
+
+    span.alert-message{
+        font-style: normal;
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 16px;
+        color: var(--typography-primary);
+        display: flex;
+        align-items: center;
+        & di-icon {
+            color: var(--states-error-01);
+            padding-right: 5px;
+        }
+    }
+}

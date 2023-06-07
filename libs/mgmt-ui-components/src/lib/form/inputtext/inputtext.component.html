@@ -1,1 +1,27 @@
-<p>inputtext works!</p>
+
+<div class="di-input-wrapper" [ngClass]="{'di-input-icon-left': leftIcon, 'di-input-icon-right': hint !== ''}">
+    <di-icon
+        *ngIf="leftIcon !== ''"
+        [name]="leftIcon"
+        size="md"
+    ></di-icon>
+    <dx-text-box 
+    [placeholder]="placeholder"
+    [value]="value"
+    (onValueChanged)="handleValueChanged($event)"
+    ></dx-text-box>
+    <di-icon
+        *ngIf="hint !== ''"
+        name="help"
+        size="md"
+    ></di-icon>
+</div>
+<div class="di-input-message">
+    <span class="alert-message" *ngIf="error !== ''">
+        <di-icon
+            name="shield-alert"
+            size="sm"
+        ></di-icon>
+        {{error}}
+    </span>
+</div>
