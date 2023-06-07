@@ -6,7 +6,7 @@ import { DxToolbarModule } from 'devextreme-angular';
 @Component({
   selector: 'di-toolbar',
   templateUrl: './toolbar.component.html',
-  styleUrls: ['./toolbar.component.css'],
+  styleUrls: ['./toolbar.component.scss'],
 })
 export class ToolbarComponent {
   // Toolbar documentation: https://js.devexpress.com/Documentation/ApiReference/UI_Components/dxToolbar/

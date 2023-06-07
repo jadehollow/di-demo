@@ -1,0 +1,56 @@
+::ng-deep {
+  di-navbar > di-toolbar > dx-toolbar {
+
+    .dx-widget {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 400;
+      font-size: 10px;
+    }
+
+    .dx-toolbar-items-container {
+      height: 68px !important;
+      background: var(--base-01);
+      border-bottom: 1px solid var(--keylines-01);
+    }
+
+    .dx-button-has-icon .dx-icon {
+      margin-right: 0;
+    }
+
+    .dx-button-text {
+      padding-top: 7px;
+    }
+
+    .dx-button-has-text .dx-button-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 0;
+    }
+
+    .drawer-btn .dx-button-has-icon .dx-icon {
+      width: 32px;
+      height: 32px;
+    }
+
+    .logo-btn {
+      border-right: 1px solid var(--keylines-01);
+      padding-right: 15px !important;
+
+      .dx-button-has-icon .dx-icon {
+        width: 50px;
+      }
+    }
+
+    .dashboard-btn {
+      padding-left: 20px !important;
+      padding-right: 10px !important;
+    }
+
+    .alerts-btn, .policies-btn, .assets-btn, .reports-btn, .logs-btn, .settings-btn {
+      padding-left: 10px !important;
+      padding-right: 10px !important;
+    }
+
+  }
+}
