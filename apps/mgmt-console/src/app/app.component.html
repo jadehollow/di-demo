@@ -61,3 +61,12 @@
     switchedOnText=""
   ></di-toggle>
 </div>
+
+<button (click)="toastAddNotification()">Click for notification</button>
+
+<di-toast-notification
+  of="body"
+  actionText="test"
+  actionDescription="this is a description!"
+  [isVisible]="showNotification"
+></di-toast-notification>

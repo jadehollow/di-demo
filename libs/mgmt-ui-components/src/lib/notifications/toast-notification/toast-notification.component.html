@@ -1,0 +1,21 @@
+<dx-toast
+  [(visible)]="isVisible"
+  width="fit-content"
+  type="custom"
+  [contentTemplate]="notificationType"
+  [displayTime]=100000
+>
+  <dxo-position
+    [my]="my"
+    [at]="at"
+    [of]="of"
+  >
+  </dxo-position>
+  <div *dxTemplate="let data of NotificationType.INFO">
+    <div class="dark-mode info">
+      <di-icon class="icon" name="info-feature" size="md"></di-icon>
+      <span class="title">{{ actionText }}</span>
+      <span class="desc">{{ actionDescription }}</span>
+    </div>
+  </div>
+</dx-toast>

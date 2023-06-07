@@ -27,6 +27,9 @@ export class AppComponent {
   isDisabled = false;
   isReadOnly = false;
 
+  // Toast Notification
+  showNotification = false;
+
   constructor(@Inject(DOCUMENT) private document: Document) {
     this.document.body.classList.add('light-mode');
   }
@@ -58,4 +61,9 @@ export class AppComponent {
     const chkboxName = e.component.option('name');
     notify(`The ${this.capitalize(chkboxName)} checkbox was clicked`);
   };
+
+  toastAddNotification = () => {
+    console.log("add toast");
+    this.showNotification = !this.showNotification;
+  }
 }
