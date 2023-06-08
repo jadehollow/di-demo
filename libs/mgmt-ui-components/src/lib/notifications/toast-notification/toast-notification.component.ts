@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, NgModule } from '@angular/core';
+import { Component, EventEmitter, Input, NgModule, Output } from '@angular/core';
 import { MgmtIconLibModule } from '@mgmt-icon-lib';
 import { DxToastModule } from 'devextreme-angular';
 
@@ -22,7 +22,18 @@ export class ToastNotificationComponent {
   @Input() of: string = '';
   @Input() actionText: string = '';
   @Input() actionDescription: string = '';
-  @Input() isVisible: boolean = false;
+  @Input() visible: boolean = false;
+  @Input() displayTime = 3500;
+
+  @Output() visibleChange = new EventEmitter<boolean>();
+  @Output() takeAction: EventEmitter<void> = new EventEmitter();
+
+  toastIcon = {
+    [NotificationType.INFO]: 'info-feature',
+    [NotificationType.WARNING]: 'warning-feature',
+    [NotificationType.ERROR]: 'warning-feature',
+    [NotificationType.SUCCESS]: 'check',
+  }
 
   NotificationType = NotificationType
 

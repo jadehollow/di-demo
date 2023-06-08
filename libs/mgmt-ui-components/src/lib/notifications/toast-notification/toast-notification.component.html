@@ -1,9 +1,9 @@
 <dx-toast
-  [(visible)]="isVisible"
+  [visible]="visible"
+  (visibleChange)="visibleChange.emit($event)"
   width="fit-content"
   type="custom"
-  [contentTemplate]="notificationType"
-  [displayTime]=100000
+  [displayTime]="displayTime"
 >
   <dxo-position
     [my]="my"
@@ -11,11 +11,16 @@
     [of]="of"
   >
   </dxo-position>
-  <div *dxTemplate="let data of NotificationType.INFO">
-    <div class="dark-mode info">
-      <di-icon class="icon" name="info-feature" size="md"></di-icon>
-      <span class="title">{{ actionText }}</span>
-      <span class="desc">{{ actionDescription }}</span>
+  <div *dxTemplate="let data of 'content'">
+    <div class="dark-mode toast-wrapper" [ngClass]="notificationType">
+      <div class="icon-wrapper (click)=log(data)">
+        <di-icon class="icon" [name]="toastIcon[notificationType]" size="md"></di-icon>
+      </div>
+      <div class="content-wrapper">
+        <span class="title">{{ actionText }}</span>
+        <span class="desc">{{ actionDescription }}</span>
+        <button class="optional-action" (click)="takeAction.emit()">test button</button>
+      </div>
     </div>
   </div>
 </dx-toast>

@@ -62,11 +62,17 @@
   ></di-toggle>
 </div>
 
-<button (click)="toastAddNotification()">Click for notification</button>
-
-<di-toast-notification
-  of="body"
-  actionText="test"
-  actionDescription="this is a description!"
-  [isVisible]="showNotification"
-></di-toast-notification>
+<div class="ms-3 mb-2">
+  <button class="mx-2" (click)="toastAddNotification(NotificationType.INFO)">Click for info</button>
+  <button class="mx-2" (click)="toastAddNotification(NotificationType.WARNING)">Click for warning</button>
+  <button class="mx-2" (click)="toastAddNotification(NotificationType.ERROR)">Click for error</button>
+  <button class="mx-2" (click)="toastAddNotification(NotificationType.SUCCESS)">Click for success</button>
+  
+  <di-toast-notification
+    of="body"
+    actionText="test"
+    actionDescription="this is a description!"
+    [(visible)]="showNotification"
+    [notificationType]="notificationType"
+  ></di-toast-notification>
+</div>

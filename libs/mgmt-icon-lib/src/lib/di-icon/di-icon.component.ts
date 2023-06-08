@@ -17,9 +17,9 @@ export class DiIconComponent {
 
   @Input() 
   set size(size: 'x-sm' | 'sm' | 'md' | 'lg') {
-    if(['x-sm', 'sm', 'md','lg'].includes(size) && this.element && this.element.nativeElement) {
-      this.element.nativeElement.firstChild.classList.remove('x-sm', 'sm', 'md','lg');
-      this.element.nativeElement.firstChild.classList.add(size);
+    if(['x-sm', 'sm', 'md', 'lg'].includes(size) && this.element && this.element.nativeElement) {
+      this.element.nativeElement.firstChild?.classList.remove('x-sm', 'sm', 'md','lg');
+      this.element.nativeElement.firstChild?.classList.add(size);
     }
   }
 
@@ -124,7 +124,7 @@ export const iconNames: any = {
   'os-windows': '<svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.50011 12.9718L9.91176 12.9947V18.025L3.50107 17.2585L3.50011 12.9718ZM9.91176 5.97878V11.0053L3.50117 11.0282V6.78832L9.91176 5.97878ZM11.9706 11.0271V5.69633L20.5 4.57034V10.9958L11.9706 11.0271ZM11.9706 12.9719L20.5 13.0042V19.433L11.9706 18.3573V12.9719Z" stroke="#1E1D24"/></svg>',
   'os-chrome': '<svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8ZM12 8H21.17M3.95 6.06L8.54 14M10.88 21.94L15.46 14M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke="#1E1D24" stroke-linecap="round" stroke-linejoin="round"/></svg>',
   'calendar': '<svg width="25" height="24" viewbox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.5 2V6M8.5 2V6M3.5 10H21.5M5.5 4H19.5C20.6046 4 21.5 4.89543 21.5 6V20C21.5 21.1046 20.6046 22 19.5 22H5.5C4.39543 22 3.5 21.1046 3.5 20V6C3.5 4.89543 4.39543 4 5.5 4Z" stroke="#1E1D24" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-  'check': '<svg width="25" height="24" viewbox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.5 6L9.5 17L4.5 12" stroke="#1E1D24" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  'check': '<svg width="25" height="24" viewbox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.5 6L9.5 17L4.5 12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>',
   'x': '<svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>',
   'close': '<svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 6L6 18M6 6L18 18" stroke="#1E1D24" stroke-linecap="round" stroke-linejoin="round"/></svg>',
   'clipboard': '<svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 4C16.93 4 17.395 4 17.7765 4.10222C18.8117 4.37962 19.6204 5.18827 19.8978 6.22354C20 6.60504 20 7.07003 20 8V17.2C20 18.8802 20 19.7202 19.673 20.362C19.3854 20.9265 18.9265 21.3854 18.362 21.673C17.7202 22 16.8802 22 15.2 22H8.8C7.11984 22 6.27976 22 5.63803 21.673C5.07354 21.3854 4.6146 20.9265 4.32698 20.362C4 19.7202 4 18.8802 4 17.2V8C4 7.07003 4 6.60504 4.10222 6.22354C4.37962 5.18827 5.18827 4.37962 6.22354 4.10222C6.60504 4 7.07003 4 8 4M9 10H15M9 13.5H15M9 17H13M9.6 6H14.4C14.9601 6 15.2401 6 15.454 5.89101C15.6422 5.79513 15.7951 5.64215 15.891 5.45399C16 5.24008 16 4.96005 16 4.4V3.6C16 3.03995 16 2.75992 15.891 2.54601C15.7951 2.35785 15.6422 2.20487 15.454 2.10899C15.2401 2 14.9601 2 14.4 2H9.6C9.03995 2 8.75992 2 8.54601 2.10899C8.35785 2.20487 8.20487 2.35785 8.10899 2.54601C8 2.75992 8 3.03995 8 3.6V4.4C8 4.96005 8 5.24008 8.10899 5.45399C8.20487 5.64215 8.35785 5.79513 8.54601 5.89101C8.75992 6 9.03995 6 9.6 6Z" stroke="#1E1D24" stroke-linecap="round" stroke-linejoin="round"/></svg>',
@@ -209,6 +209,6 @@ export const iconNames: any = {
   'severity-dark-high-line': '<svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 16V11M12 8H12.01M12 22C12 22 20 18.2 20 12.5V5.85L12 3L4 5.85V12.5C4 18.2 12 22 12 22Z" stroke="#FF9900" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
   'severity-dark-critical-filled': '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 22C12 22 20 18.2 20 12.5V5.85L12 3L4 5.85V12.5C4 18.2 12 22 12 22Z" fill="#FF4646"/><path d="M12 16V11M12 8H12.01M12 22C12 22 20 18.2 20 12.5V5.85L12 3L4 5.85V12.5C4 18.2 12 22 12 22Z" stroke="#E1E1E3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
   'severity-dark-critical-line': '<svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 16V11M12 8H12.01M12 22C12 22 20 18.2 20 12.5V5.85L12 3L4 5.85V12.5C4 18.2 12 22 12 22Z" stroke="#FF4646" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-  'info-feature': '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="11" y="10" width="2" height="11" rx="1" stroke="#currentColor"/><rect x="11" y="3" width="2" height="2" rx="1" stroke="currentColor"/></svg>',
-  'warning-feature': '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="13" y="14" width="2" height="11" rx="1" transform="rotate(-180 13 14)" stroke="currentColor"/><rect x="13" y="21" width="2" height="2" rx="1" transform="rotate(-180 13 21)" stroke="currentColor"/></svg>'
+  'info-feature': '<svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 11V20M12 4H12.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  'warning-feature': '<svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 4V13M12 20H12.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
 }

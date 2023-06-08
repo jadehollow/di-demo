@@ -1,6 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import notify from 'devextreme/ui/notify';
+import { NotificationType } from '@mgmt-ui-components/notifications';
 
 @Component({
   selector: 'di-saas-fe-root',
@@ -29,6 +30,8 @@ export class AppComponent {
 
   // Toast Notification
   showNotification = false;
+  notificationType: NotificationType = NotificationType.INFO;
+  NotificationType = NotificationType;
 
   constructor(@Inject(DOCUMENT) private document: Document) {
     this.document.body.classList.add('light-mode');
@@ -62,8 +65,10 @@ export class AppComponent {
     notify(`The ${this.capitalize(chkboxName)} checkbox was clicked`);
   };
 
-  toastAddNotification = () => {
-    console.log("add toast");
-    this.showNotification = !this.showNotification;
+  toastAddNotification = (notificationType: NotificationType) => {
+    if (notificationType === this.notificationType || !this.showNotification) {
+      this.showNotification = !this.showNotification;
+    }
+    this.notificationType = notificationType;
   }
 }
