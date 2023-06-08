@@ -32,6 +32,7 @@ export class AppComponent {
   showNotification = false;
   notificationType: NotificationType = NotificationType.INFO;
   NotificationType = NotificationType;
+  showToastAction = false;
 
   constructor(@Inject(DOCUMENT) private document: Document) {
     this.document.body.classList.add('light-mode');
@@ -66,6 +67,7 @@ export class AppComponent {
   };
 
   toastAddNotification = (notificationType: NotificationType) => {
+    this.showToastAction = !this.showToastAction;
     if (notificationType === this.notificationType || !this.showNotification) {
       this.showNotification = !this.showNotification;
     }

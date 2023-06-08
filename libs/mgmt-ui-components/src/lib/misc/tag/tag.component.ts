@@ -6,7 +6,6 @@ import { MgmtIconLibModule } from '@mgmt-icon-lib'
   selector: 'di-tag',
   templateUrl: './tag.component.html',
   styleUrls: ['./tag.component.scss'],
-  encapsulation: ViewEncapsulation.None
 })
 export class TagComponent {
   @Input() size = 'sm'

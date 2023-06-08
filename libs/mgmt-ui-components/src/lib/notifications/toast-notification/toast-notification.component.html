@@ -13,14 +13,19 @@
   </dxo-position>
   <div *dxTemplate="let data of 'content'">
     <div class="dark-mode toast-wrapper" [ngClass]="notificationType">
-      <div class="icon-wrapper (click)=log(data)">
-        <di-icon class="icon" [name]="toastIcon[notificationType]" size="md"></di-icon>
+      <div class="left-content-wrapper">
+        <div class="icon-wrapper (click)=log(data)">
+          <di-icon class="icon" [name]="toastIcon[notificationType]" size="md"></di-icon>
+        </div>
+        <div class="content-wrapper">
+          <span class="title">{{ actionText }}</span>
+          <span class="desc">{{ actionDescription }}</span>
+          <button *ngIf="showAction" class="optional-action" (click)="takeAction.emit()">test button</button>
+        </div>
       </div>
-      <div class="content-wrapper">
-        <span class="title">{{ actionText }}</span>
-        <span class="desc">{{ actionDescription }}</span>
-        <button class="optional-action" (click)="takeAction.emit()">test button</button>
-      </div>
+      <button class="close" (click)="close()">
+        <di-icon class="close-icon" name="x" size="md"></di-icon>
+      </button>
     </div>
   </div>
 </dx-toast>

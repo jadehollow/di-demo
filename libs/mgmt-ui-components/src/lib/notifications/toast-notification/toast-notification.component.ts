@@ -24,6 +24,7 @@ export class ToastNotificationComponent {
   @Input() actionDescription: string = '';
   @Input() visible: boolean = false;
   @Input() displayTime = 3500;
+  @Input() showAction: boolean = false;
 
   @Output() visibleChange = new EventEmitter<boolean>();
   @Output() takeAction: EventEmitter<void> = new EventEmitter();
@@ -36,6 +37,11 @@ export class ToastNotificationComponent {
   }
 
   NotificationType = NotificationType
+
+  close() {
+    this.visible = false;
+    this.visibleChange.emit(false);
+  }
 
 }
 
