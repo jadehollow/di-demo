@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, NgModule, Output, ViewEncapsulation } from '@angular/core';
+import { Component, EventEmitter, Input, NgModule, Output } from '@angular/core';
 import { MgmtIconLibModule } from '@mgmt-icon-lib'
 
 @Component({

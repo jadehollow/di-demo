@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, NgModule, Output } from '@angular/core';
+import { Component, EventEmitter, Input, NgModule, Output, ViewEncapsulation } from '@angular/core';
 import { MgmtIconLibModule } from '@mgmt-icon-lib';
 import { DxToastModule } from 'devextreme-angular';
 
@@ -14,17 +14,19 @@ export enum NotificationType {
   selector: 'di-toast-notification',
   templateUrl: './toast-notification.component.html',
   styleUrls: ['./toast-notification.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class ToastNotificationComponent {
   @Input() notificationType: NotificationType = NotificationType.INFO;
   @Input() my: string = 'top right';
   @Input() at: string = 'top right';
   @Input() of: string = '';
-  @Input() actionText: string = '';
-  @Input() actionDescription: string = '';
+  @Input() notificationTitle: string = '';
+  @Input() notificationDescription: string = '';
   @Input() visible: boolean = false;
   @Input() displayTime = 3500;
   @Input() showAction: boolean = false;
+  @Input() actionText: string = '';
 
   @Output() visibleChange = new EventEmitter<boolean>();
   @Output() takeAction: EventEmitter<void> = new EventEmitter();

@@ -4,6 +4,8 @@
   width="fit-content"
   type="custom"
   [displayTime]="displayTime"
+  [copyRootClassesToWrapper]="true"
+  class="di-toast-wrapper"
 >
   <dxo-position
     [my]="my"
@@ -18,9 +20,9 @@
           <di-icon class="icon" [name]="toastIcon[notificationType]" size="md"></di-icon>
         </div>
         <div class="content-wrapper">
-          <span class="title">{{ actionText }}</span>
-          <span class="desc">{{ actionDescription }}</span>
-          <button *ngIf="showAction" class="optional-action" (click)="takeAction.emit()">test button</button>
+          <span class="title">{{ notificationTitle }}</span>
+          <span class="desc">{{ notificationDescription }}</span>
+          <button *ngIf="showAction" class="optional-action" (click)="takeAction.emit()">{{ actionText }}</button>
         </div>
       </div>
       <button class="close" (click)="close()">
