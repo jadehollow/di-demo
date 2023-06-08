@@ -18,3 +18,8 @@
 :host::ng-deep .lg {
     width: 20px; height: 20px
 }
+
+// default color
+:host::ng-deep di-icon {
+    color: #1E1D24;
+}

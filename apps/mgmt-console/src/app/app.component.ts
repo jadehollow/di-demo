@@ -2,6 +2,7 @@ import { Component, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import notify from 'devextreme/ui/notify';
 import { NotificationType } from '@mgmt-ui-components/notifications';
+import { iconNames } from '@mgmt-icon-lib';
 
 @Component({
   selector: 'di-saas-fe-root',
@@ -21,6 +22,28 @@ export class AppComponent {
   isNull = null;
   isTrue = true;
   tabindex = 1;
+
+  // Tabs
+  tabs = [
+    { text: 'a' },
+    { text: 'b' },
+    { text: 'c' },
+    { text: 'd' },
+    { text: 'e' },
+    { text: 'f' },
+    { text: 'g' },
+    { text: 'h' },
+    { text: 'i' },
+  ]
+  iconTabs = [
+    { text: 'Dashboard', icon: iconNames.action },
+    { text: 'Alerts', icon: iconNames.add },
+    { text: 'Policies', icon: iconNames['add-new'] },
+    { text: 'Assets', icon: iconNames['add-circle'] },
+    { text: 'Reports', icon: iconNames['add-file'] },
+    { text: 'Logs', icon: iconNames.analysys },
+    { text: 'Settings', icon: iconNames['add-application'] },
+  ]
 
   // Toggle
   toggleId = 'toggleId';

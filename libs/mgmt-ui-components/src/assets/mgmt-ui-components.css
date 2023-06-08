@@ -90,3 +90,11 @@
 .dx-radiogroup.dx-state-disabled.dx-widget .dx-radiobutton-icon.dx-radiobutton-icon-checked .dx-radiobutton-icon-dot {
     background: var(--typography-tertiary);
 }
+
+di-icon.sm > svg {
+    height: 12px; width: 12px;
+}
+
+di-icon.md > svg {
+    height: 16px; width: 16px;
+}
