@@ -21,6 +21,7 @@
 
     --cta-secondary-base: #{light.$cta-secondary-base};
     --cta-secondary-hover: #{light.$cta-secondary-hover};
+    --cta-dark-secondary-hover: #{light.$cta-dark-secondary-hover};
 
     --cta-tertiary-base: #{light.$cta-tertiary-base};
     --cta-tertiary-hover: #{light.$cta-tertiary-hover};
@@ -63,7 +64,7 @@
     --states-hover-bg-01: #{light.$states-hover-bg-01};
     --states-hover-primary: #{light.$states-hover-primary};
 
-    /*Data Viz Pallette*/
+    /*Data Viz Palette*/
     --data-point-01: #{light.$data-point-01};
     --data-point-02: #{light.$data-point-02};
     --data-point-03: #{light.$data-point-03};
@@ -101,6 +102,7 @@
 
     --cta-secondary-base: #{dark.$cta-secondary-base};
     --cta-secondary-hover: #{dark.$cta-secondary-hover};
+    --cta-dark-secondary-hover: #{dark.$states-focus-01};
 
     --cta-tertiary-base: #{dark.$cta-tertiary-base};
     --cta-tertiary-hover: #{dark.$cta-tertiary-hover};
@@ -143,7 +145,7 @@
     --states-hover-bg-01: #{dark.$states-hover-bg-01};
     --states-hover-primary: #{dark.$states-hover-primary};
 
-    /*Data Viz Pallette*/
+    /*Data Viz Palette*/
     --data-point-01: #{dark.$data-point-01};
     --data-point-02: #{dark.$data-point-02};
     --data-point-03: #{dark.$data-point-03};

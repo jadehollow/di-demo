@@ -15,6 +15,7 @@ import { Router } from '@angular/router';
 })
 export class NavBarComponent {
   toolbarItems: any;
+  userName: string = 'User Name';
 
   constructor(private router: Router) {
     this.toolbarItems = [
@@ -264,6 +265,35 @@ export class NavBarComponent {
         onClick: () => {
           notify('User button has been clicked!');
         },
+      },
+      {
+        cssClass: 'user-name',
+        location: 'after',
+        name: 'userName',
+        locateInMenu: 'never',
+        sortIndex: 12,
+        text: `${this.userName}`,
+        // locateInMenu: 'never',
+        // sortIndex: 12,
+        // name: 'userName',
+        // locateInMenu: 'never',
+        // sortIndex: 12,
+        // widget: 'dxButton',
+        // cssClass: 'row user-name',
+        // options: {
+        //   text: `${this.userName}`,
+        //   hint: 'User Name',
+        //   stylingMode: 'text',
+        //   hoverStateEnabled: false,
+        //   focusStateEnabled: false,
+        //   activeStateEnabled: false,
+        //   width: '40px',
+        //   tabIndex: 12,
+        // },
+        // location: 'after',
+        // name: 'userName',
+        // locateInMenu: 'never',
+        // sortIndex: 12,
       },
     ];
   }

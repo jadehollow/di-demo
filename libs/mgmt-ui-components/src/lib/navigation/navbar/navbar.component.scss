@@ -38,11 +38,12 @@
     .dx-button-mode-text.dx-state-active {
       background-color: var(--states-selected);
       border-bottom: 4px solid var(--states-focus-01);
+      border-radius: 3px;
     }
 
     .dx-button-mode-text.dx-state-hover {
       background-color: var(--states-hover-bg-01);
-      border-bottom: 4px solid #3E4266;
+      border-bottom: 4px solid var(--cta-dark-secondary-hover);
     }
 
     .drawer-btn .dx-toolbar-item-content:hover {
@@ -75,6 +76,23 @@
         height: 24px;
       }
     }
+
+    .dx-toolbar-after {
+      display: inline-grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .user-name {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 10px !important;
+      line-height: 16px;
+      text-align: right;
+      grid-column: 1 / 4;
+      grid-row: 2;
+      padding-right: 10px !important;
+    }
+
   }
 
   .light-mode > di-saas-fe-root > di-navbar > di-toolbar > dx-toolbar {
