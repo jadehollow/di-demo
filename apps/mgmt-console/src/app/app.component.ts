@@ -56,6 +56,7 @@ export class AppComponent {
   notificationType: NotificationType = NotificationType.INFO;
   NotificationType = NotificationType;
   showToastAction = false;
+  showFullPageError = false;
 
   constructor(@Inject(DOCUMENT) private document: Document) {
     this.document.body.classList.add('light-mode');
@@ -95,5 +96,9 @@ export class AppComponent {
       this.showNotification = !this.showNotification;
     }
     this.notificationType = notificationType;
+  }
+
+  errorAddNotification = () => {
+    this.showFullPageError = !this.showFullPageError;
   }
 }

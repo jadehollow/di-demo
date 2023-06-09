@@ -16,7 +16,7 @@
   <div *dxTemplate="let data of 'content'">
     <div class="dark-mode toast-wrapper" [ngClass]="notificationType">
       <div class="left-content-wrapper">
-        <div class="icon-wrapper (click)=log(data)">
+        <div class="icon-wrapper">
           <di-icon class="icon" [name]="toastIcon[notificationType]" size="md"></di-icon>
         </div>
         <div class="content-wrapper">

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FullPageErrorComponent } from './notifications/full-page-error/full-page-error/full-page-error.component';
 //
 // import { CheckboxComponent } from './form/checkbox/checkbox.component';
 // import { ToggleComponent } from './form/toggle/toggle.component';
@@ -18,6 +19,7 @@ import { CommonModule } from '@angular/common';
     // TagComponent,
     // InputtextComponent,
     // ButtonComponent,
+    FullPageErrorComponent,
   ],
 })
 export class MgmtUiComponentsModule {}
