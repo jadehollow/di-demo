@@ -25,11 +25,11 @@ export class NavBarComponent {
           icon: iconNames['nav-menu'],
           hint: 'Open Navigation Drawer',
           stylingMode: 'text',
-          hoverStateEnabled: true,
-          focusStateEnabled: true,
-          activeStateEnabled: true,
-          width: '110px',
-          height: '67px',
+          hoverStateEnabled: false,
+          focusStateEnabled: false,
+          activeStateEnabled: false,
+          width: '60px',
+          height: '60px',
           tabIndex: 1,
         },
         location: 'before',
@@ -225,10 +225,10 @@ export class NavBarComponent {
       },
       {
         widget: 'dxButton',
-        cssClass: 'user-settings-btn',
+        cssClass: 'notification-btn',
         options: {
-          icon: iconNames['settings'],
-          hint: 'Go to User Settings',
+          icon: iconNames['new-notification'],
+          hint: 'Go to Notifications',
           stylingMode: 'text',
           hoverStateEnabled: true,
           focusStateEnabled: true,
@@ -237,11 +237,11 @@ export class NavBarComponent {
           tabIndex: 10,
         },
         location: 'after',
-        name: 'userSettingsBtn',
+        name: 'notificationsBtn',
         locateInMenu: 'never',
         sortIndex: 10,
         onClick: () => {
-          notify('User settings button has been clicked!');
+          notify('Notifications button has been clicked!');
         },
       },
       {
