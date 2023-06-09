@@ -1,1 +1,13 @@
-<p>badge works!</p>
+<div class="badge"
+    [ngClass]="'size-' + size + ' risk-' + risk +  ' default-' + default + (outline ? ' outline' : '')"
+>
+    <di-icon 
+    *ngIf="icon !== 'False' && !iconTrailing" 
+    [name]="icon" 
+    [size]="7"></di-icon>
+    <span>{{label}}</span>
+    <di-icon 
+    *ngIf="icon !== 'False' && iconTrailing" 
+    [name]="icon" 
+    [size]="7"></di-icon>
+</div>

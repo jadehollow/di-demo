@@ -6,7 +6,6 @@
     width: 10px; height: 10px
 }
 
-
 :host::ng-deep .sm {
     width: 12px; height: 12px
 }
@@ -17,4 +16,8 @@
 
 :host::ng-deep .lg {
     width: 20px; height: 20px
+}
+
+:host {
+    color: var(--typography-primary);
 }
