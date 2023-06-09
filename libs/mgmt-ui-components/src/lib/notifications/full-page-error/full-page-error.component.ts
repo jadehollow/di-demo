@@ -15,7 +15,7 @@ export class FullPageErrorComponent {
   @Input() of: string = '';
   @Input() errorText: string = '';
   @Input() visible: boolean = false;
-  @Input() displayTime = 350000;
+  @Input() displayTime = 7000;
 
   @Output() visibleChange = new EventEmitter<boolean>();
 }
