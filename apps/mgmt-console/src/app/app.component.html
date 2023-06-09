@@ -55,7 +55,18 @@
         </di-tag>
       </div>
     </div>
-  </div>
+  </div>  
+</div>
+
+<div class="mx-3 d-flex flex-column">
+  <di-tabs class="py-1" [dataSource]="tabs">
+  </di-tabs>
+  <di-tabs class="py-1" styleMode="low" [dataSource]="tabs">
+  </di-tabs>
+  <di-tabs class="py-1" styleMode="round" [dataSource]="tabs" iconSize="lg">
+  </di-tabs>
+  <di-tabs class="py-1" styleMode="icons" [dataSource]="iconTabs" iconSize="lg">
+  </di-tabs>
 </div>
 
 <div class="ms-3 mb-2">
