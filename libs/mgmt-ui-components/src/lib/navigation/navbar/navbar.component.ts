@@ -24,7 +24,8 @@ export class NavBarComponent {
         cssClass: 'drawer-btn',
         options: {
           icon: iconNames['nav-menu'],
-          hint: 'Open Navigation Drawer',
+          elementAttr: {'aria-label': 'Open menu to switch between services'},
+          hint: 'Open navigation drawer',
           stylingMode: 'text',
           hoverStateEnabled: false,
           focusStateEnabled: false,
@@ -36,7 +37,6 @@ export class NavBarComponent {
         location: 'before',
         name: 'drawerBtn',
         locateInMenu: 'never',
-        sortIndex: 1,
         html: '<i class="dx-icon-logo"></i>',
         onClick: () => {
           notify('Drawer button has been clicked!');
@@ -47,7 +47,8 @@ export class NavBarComponent {
         cssClass: 'dashboard-btn',
         options: {
           icon: iconNames['dashboard'],
-          hint: 'Go to Dashboard',
+          elementAttr: {'aria-label': 'Go to dashboard'},
+          hint: 'Go to dashboard',
           text: 'Dashboard',
           stylingMode: 'text',
           hoverStateEnabled: true,
@@ -60,7 +61,6 @@ export class NavBarComponent {
         location: 'before',
         name: 'dashboardBtn',
         locateInMenu: 'never',
-        sortIndex: 2,
         onClick: () => {
           this.router.navigateByUrl('/mgmt-dashboard');
         },
@@ -70,7 +70,8 @@ export class NavBarComponent {
         cssClass: 'alerts-btn',
         options: {
           icon: iconNames['error'],
-          hint: 'Go to Alerts',
+          elementAttr: {'aria-label': 'Go to alerts page'},
+          hint: 'Go to alerts',
           text: 'Alerts',
           stylingMode: 'text',
           hoverStateEnabled: true,
@@ -83,7 +84,6 @@ export class NavBarComponent {
         location: 'before',
         name: 'alertsBtn',
         locateInMenu: 'never',
-        sortIndex: 3,
         onClick: () => {
           this.router.navigateByUrl('/');
         },
@@ -93,7 +93,8 @@ export class NavBarComponent {
         cssClass: 'policies-btn',
         options: {
           icon: iconNames['protected-entity'],
-          hint: 'Go to Policies',
+          elementAttr: {'aria-label': 'Go to policies page'},
+          hint: 'Go to policies',
           text: 'Policies',
           stylingMode: 'text',
           hoverStateEnabled: true,
@@ -106,7 +107,6 @@ export class NavBarComponent {
         location: 'before',
         name: 'policiesBtn',
         locateInMenu: 'never',
-        sortIndex: 4,
         onClick: () => {
           notify('Policies button has been clicked!');
         },
@@ -116,7 +116,8 @@ export class NavBarComponent {
         cssClass: 'assets-btn',
         options: {
           icon: iconNames['monitor'],
-          hint: 'Go to Assets',
+          elementAttr: {'aria-label': 'Go to assets page'},
+          hint: 'Go to assets',
           text: 'Assets',
           stylingMode: 'text',
           hoverStateEnabled: true,
@@ -129,7 +130,6 @@ export class NavBarComponent {
         location: 'before',
         name: 'assetsBtn',
         locateInMenu: 'never',
-        sortIndex: 5,
         onClick: () => {
           notify('Assets button has been clicked!');
         },
@@ -139,7 +139,8 @@ export class NavBarComponent {
         cssClass: 'reports-btn',
         options: {
           icon: iconNames['log'],
-          hint: 'Go to Reports',
+          elementAttr: {'aria-label': 'Go to reports page'},
+          hint: 'Go to reports',
           text: 'Reports',
           stylingMode: 'text',
           hoverStateEnabled: true,
@@ -152,7 +153,6 @@ export class NavBarComponent {
         location: 'before',
         name: 'reportsBtn',
         locateInMenu: 'never',
-        sortIndex: 6,
         onClick: () => {
           notify('Reports button has been clicked!');
         },
@@ -162,7 +162,8 @@ export class NavBarComponent {
         cssClass: 'logs-btn',
         options: {
           icon: iconNames['book'],
-          hint: 'Go to Logs',
+          elementAttr: {'aria-label': 'Go to logs page'},
+          hint: 'Go to logs',
           text: 'Logs',
           stylingMode: 'text',
           hoverStateEnabled: true,
@@ -175,7 +176,6 @@ export class NavBarComponent {
         location: 'before',
         name: 'logsBtn',
         locateInMenu: 'never',
-        sortIndex: 7,
         onClick: () => {
           notify('Logs button has been clicked!');
         },
@@ -185,7 +185,8 @@ export class NavBarComponent {
         cssClass: 'settings-btn',
         options: {
           icon: iconNames['settings'],
-          hint: 'Go to Settings',
+          elementAttr: {'aria-label': 'Go to settings page'},
+          hint: 'Go to settings',
           text: 'Settings',
           stylingMode: 'text',
           hoverStateEnabled: true,
@@ -198,7 +199,6 @@ export class NavBarComponent {
         location: 'before',
         name: 'settingsBtn',
         locateInMenu: 'never',
-        sortIndex: 8,
         onClick: () => {
           notify('Settings button has been clicked!');
         },
@@ -208,7 +208,8 @@ export class NavBarComponent {
         cssClass: 'help-btn',
         options: {
           icon: iconNames['help'],
-          hint: 'Go to Help',
+          elementAttr: {'aria-label': 'Go to help page'},
+          hint: 'Go to help',
           stylingMode: 'text',
           hoverStateEnabled: true,
           focusStateEnabled: true,
@@ -219,7 +220,6 @@ export class NavBarComponent {
         location: 'after',
         name: 'helpBtn',
         locateInMenu: 'never',
-        sortIndex: 9,
         onClick: () => {
           notify('Help button has been clicked!');
         },
@@ -229,7 +229,8 @@ export class NavBarComponent {
         cssClass: 'notification-btn',
         options: {
           icon: iconNames['new-notification'],
-          hint: 'Go to Notifications',
+          elementAttr: {'aria-label': 'Go to notifications'},
+          hint: 'Go to notifications',
           stylingMode: 'text',
           hoverStateEnabled: true,
           focusStateEnabled: true,
@@ -240,7 +241,6 @@ export class NavBarComponent {
         location: 'after',
         name: 'notificationsBtn',
         locateInMenu: 'never',
-        sortIndex: 10,
         onClick: () => {
           notify('Notifications button has been clicked!');
         },
@@ -250,7 +250,8 @@ export class NavBarComponent {
         cssClass: 'user-btn',
         options: {
           icon: iconNames['user'],
-          hint: 'Go to User',
+          elementAttr: {'aria-label': 'Go to user account'},
+          hint: 'Go to user account',
           stylingMode: 'text',
           hoverStateEnabled: true,
           focusStateEnabled: true,
@@ -261,39 +262,18 @@ export class NavBarComponent {
         location: 'after',
         name: 'userBtn',
         locateInMenu: 'never',
-        sortIndex: 11,
         onClick: () => {
           notify('User button has been clicked!');
         },
       },
       {
         cssClass: 'user-name',
+        elementAttr: {'aria-label': 'User name display'},
         location: 'after',
         name: 'userName',
         locateInMenu: 'never',
-        sortIndex: 12,
+        tabIndex: 12,
         text: `${this.userName}`,
-        // locateInMenu: 'never',
-        // sortIndex: 12,
-        // name: 'userName',
-        // locateInMenu: 'never',
-        // sortIndex: 12,
-        // widget: 'dxButton',
-        // cssClass: 'row user-name',
-        // options: {
-        //   text: `${this.userName}`,
-        //   hint: 'User Name',
-        //   stylingMode: 'text',
-        //   hoverStateEnabled: false,
-        //   focusStateEnabled: false,
-        //   activeStateEnabled: false,
-        //   width: '40px',
-        //   tabIndex: 12,
-        // },
-        // location: 'after',
-        // name: 'userName',
-        // locateInMenu: 'never',
-        // sortIndex: 12,
       },
     ];
   }
