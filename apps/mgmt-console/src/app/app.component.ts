@@ -1,5 +1,5 @@
-import { Component, Inject } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
+import {Component, Inject} from '@angular/core';
+import {DOCUMENT} from '@angular/common';
 import notify from 'devextreme/ui/notify';
 import { iconNames } from '@mgmt-icon-lib';
 import { testTree } from './test-tree';
@@ -61,11 +61,10 @@ export class AppComponent {
   capitalize = (text: string) => text.charAt(0).toUpperCase() + text.slice(1);
 
   chkboxClick1 = (e: any) => {
-    if(e.value) {
+    if (e.value) {
       this.document.body.classList.add('light-mode');
       this.document.body.classList.remove('dark-mode');
-    }
-    else {
+    } else {
       this.document.body.classList.add('dark-mode');
       this.document.body.classList.remove('light-mode');
     }
@@ -74,11 +73,10 @@ export class AppComponent {
   };
 
   chkboxClick2 = (e: any) => {
-    if(e.value) {
+    if (e.value) {
       this.document.body.classList.add('dark-mode');
       this.document.body.classList.remove('light-mode');
-    }
-    else {
+    } else {
       this.document.body.classList.add('light-mode');
       this.document.body.classList.remove('dark-mode');
     }

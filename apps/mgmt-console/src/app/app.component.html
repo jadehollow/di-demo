@@ -1,10 +1,17 @@
-<ul class="remote-menu">
+<!-- Navbar -->
+<di-navbar></di-navbar>
+
+<!-- Router -->
+<div class="mt-3">
+  <ul class="remote-menu">
   <li><a routerLink="/">Home</a></li>
   <li><a routerLink="mgmt-login">MgmtLogin</a></li>
   <li><a routerLink="mgmt-dashboard">MgmtDashboard</a></li>
 </ul>
+</div>
 
-<div class="ms-3 mb-2">
+<!-- Checkboxes -->
+<div class="ms-3 mt-2 mb-2">
   <di-checkbox
     [ariaLabelledBy]="lightModeId"
     [isDisabled]="isFalse"

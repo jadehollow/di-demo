@@ -10,6 +10,7 @@ import { TooltipComponentModule } from "@mgmt-ui-components/misc";
 import { HelpComponentModule } from "@mgmt-ui-components/misc";
 import { TabsComponentModule } from "@mgmt-ui-components/misc";
 import { FormsModule } from '@angular/forms';
+import { NavBarComponentModule } from "@mgmt-ui-components/navigation";
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,6 +24,7 @@ import { FormsModule } from '@angular/forms';
     TabsComponentModule,
     TreeViewComponentModule,
     FormsModule,
+    NavBarComponentModule,
     RouterModule.forRoot(appRoutes, { initialNavigation: 'enabledBlocking' }),
   ],
   providers: [],
