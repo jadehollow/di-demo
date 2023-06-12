@@ -72,3 +72,11 @@
     switchedOnText=""
   ></di-toggle>
 </div>
+
+<div class="ms-3 mb-2">
+  <di-tree-view
+    [items]="testTree"
+    (onItemClick)="log($event)"
+    [width]="200"
+  ></di-tree-view>
+</div>

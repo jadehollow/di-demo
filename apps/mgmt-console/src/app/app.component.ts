@@ -2,6 +2,7 @@ import { Component, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import notify from 'devextreme/ui/notify';
 import { iconNames } from '@mgmt-icon-lib';
+import { testTree } from './test-tree';
 
 @Component({
   selector: 'di-saas-fe-root',
@@ -50,6 +51,9 @@ export class AppComponent {
   isDisabled = false;
   isReadOnly = false;
 
+  // Tree view
+  testTree = testTree;
+
   constructor(@Inject(DOCUMENT) private document: Document) {
     this.document.body.classList.add('light-mode');
   }
@@ -81,4 +85,8 @@ export class AppComponent {
     const chkboxName = e.component.option('name');
     notify(`The ${this.capitalize(chkboxName)} checkbox was clicked`);
   };
+
+  log = (e: any) => {
+    console.log(e);
+  }
 }

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TreeViewComponent } from './misc/tree-view/tree-view/tree-view.component';
 //
 // import { CheckboxComponent } from './form/checkbox/checkbox.component';
 // import { ToggleComponent } from './form/toggle/toggle.component';
@@ -18,6 +19,7 @@ import { CommonModule } from '@angular/common';
     // TagComponent,
     // InputtextComponent,
     // ButtonComponent,
+    TreeViewComponent,
   ],
 })
 export class MgmtUiComponentsModule {}
