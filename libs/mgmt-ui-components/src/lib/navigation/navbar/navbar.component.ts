@@ -7,6 +7,7 @@ import notify from 'devextreme/ui/notify';
 import { MgmtIconLibModule } from '@mgmt-icon-lib';
 import { iconNames } from '@mgmt-icon-lib';
 import { Router } from '@angular/router';
+import { NavMenuComponentModule } from '../nav-menu/nav-menu.component';
 
 @Component({
   selector: 'di-navbar',
@@ -16,6 +17,11 @@ import { Router } from '@angular/router';
 export class NavBarComponent {
   toolbarItems: any;
   userName: string = 'User Name';
+  display = false;
+
+  openNavMenu() {
+    this.display = true;
+  }
 
   constructor(private router: Router) {
     this.toolbarItems = [
@@ -24,7 +30,7 @@ export class NavBarComponent {
         cssClass: 'drawer-btn',
         options: {
           icon: iconNames['nav-menu'],
-          elementAttr: {'aria-label': 'Open menu to switch between services'},
+          elementAttr: { 'aria-label': 'Open menu to switch between services' },
           hint: 'Open navigation drawer',
           stylingMode: 'text',
           hoverStateEnabled: false,
@@ -47,7 +53,7 @@ export class NavBarComponent {
         cssClass: 'dashboard-btn',
         options: {
           icon: iconNames['dashboard'],
-          elementAttr: {'aria-label': 'Go to dashboard'},
+          elementAttr: { 'aria-label': 'Go to dashboard' },
           hint: 'Go to dashboard',
           text: 'Dashboard',
           stylingMode: 'text',
@@ -70,7 +76,7 @@ export class NavBarComponent {
         cssClass: 'alerts-btn',
         options: {
           icon: iconNames['error'],
-          elementAttr: {'aria-label': 'Go to alerts page'},
+          elementAttr: { 'aria-label': 'Go to alerts page' },
           hint: 'Go to alerts',
           text: 'Alerts',
           stylingMode: 'text',
@@ -93,7 +99,7 @@ export class NavBarComponent {
         cssClass: 'policies-btn',
         options: {
           icon: iconNames['protected-entity'],
-          elementAttr: {'aria-label': 'Go to policies page'},
+          elementAttr: { 'aria-label': 'Go to policies page' },
           hint: 'Go to policies',
           text: 'Policies',
           stylingMode: 'text',
@@ -116,7 +122,7 @@ export class NavBarComponent {
         cssClass: 'assets-btn',
         options: {
           icon: iconNames['monitor'],
-          elementAttr: {'aria-label': 'Go to assets page'},
+          elementAttr: { 'aria-label': 'Go to assets page' },
           hint: 'Go to assets',
           text: 'Assets',
           stylingMode: 'text',
@@ -139,7 +145,7 @@ export class NavBarComponent {
         cssClass: 'reports-btn',
         options: {
           icon: iconNames['log'],
-          elementAttr: {'aria-label': 'Go to reports page'},
+          elementAttr: { 'aria-label': 'Go to reports page' },
           hint: 'Go to reports',
           text: 'Reports',
           stylingMode: 'text',
@@ -162,7 +168,7 @@ export class NavBarComponent {
         cssClass: 'logs-btn',
         options: {
           icon: iconNames['book'],
-          elementAttr: {'aria-label': 'Go to logs page'},
+          elementAttr: { 'aria-label': 'Go to logs page' },
           hint: 'Go to logs',
           text: 'Logs',
           stylingMode: 'text',
@@ -185,7 +191,7 @@ export class NavBarComponent {
         cssClass: 'settings-btn',
         options: {
           icon: iconNames['settings'],
-          elementAttr: {'aria-label': 'Go to settings page'},
+          elementAttr: { 'aria-label': 'Go to settings page' },
           hint: 'Go to settings',
           text: 'Settings',
           stylingMode: 'text',
@@ -208,7 +214,7 @@ export class NavBarComponent {
         cssClass: 'help-btn',
         options: {
           icon: iconNames['help'],
-          elementAttr: {'aria-label': 'Go to help page'},
+          elementAttr: { 'aria-label': 'Go to help page' },
           hint: 'Go to help',
           stylingMode: 'text',
           hoverStateEnabled: true,
@@ -229,7 +235,7 @@ export class NavBarComponent {
         cssClass: 'notification-btn',
         options: {
           icon: iconNames['new-notification'],
-          elementAttr: {'aria-label': 'Go to notifications'},
+          elementAttr: { 'aria-label': 'Go to notifications' },
           hint: 'Go to notifications',
           stylingMode: 'text',
           hoverStateEnabled: true,
@@ -250,7 +256,7 @@ export class NavBarComponent {
         cssClass: 'user-btn',
         options: {
           icon: iconNames['user'],
-          elementAttr: {'aria-label': 'Go to user account'},
+          elementAttr: { 'aria-label': 'Go to user account' },
           hint: 'Go to user account',
           stylingMode: 'text',
           hoverStateEnabled: true,
@@ -263,12 +269,12 @@ export class NavBarComponent {
         name: 'userBtn',
         locateInMenu: 'never',
         onClick: () => {
-          notify('User button has been clicked!');
+          this.openNavMenu();
         },
       },
       {
         cssClass: 'user-name',
-        elementAttr: {'aria-label': 'User name display'},
+        elementAttr: { 'aria-label': 'User name display' },
         location: 'after',
         name: 'userName',
         locateInMenu: 'never',
@@ -286,6 +292,7 @@ export class NavBarComponent {
     DxToolbarModule,
     MgmtIconLibModule,
     ToolbarComponentModule,
+    NavMenuComponentModule,
   ],
   exports: [NavBarComponent],
   declarations: [NavBarComponent],
