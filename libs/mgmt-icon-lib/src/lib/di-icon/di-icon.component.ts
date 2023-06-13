@@ -20,6 +20,9 @@ export class DiIconComponent {
     if(['x-sm', 'sm', 'md','lg'].includes(size) && this.element && this.element.nativeElement) {
       this.element.nativeElement.firstChild.classList.remove('x-sm', 'sm', 'md','lg');
       this.element.nativeElement.firstChild.classList.add(size);
+    } else if (this.element && this.element.nativeElement) {
+      this.element.nativeElement.firstChild.style.width = size + 'px';
+      this.element.nativeElement.firstChild.style.height = size + 'px';
     }
   }
 
@@ -210,5 +213,11 @@ export const iconNames: any = {
   'severity-dark-high-filled': '<svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 22C12 22 20 18.2 20 12.5V5.85L12 3L4 5.85V12.5C4 18.2 12 22 12 22Z" fill="#FF9900"/><path d="M12 16V11M12 8H12.01M12 22C12 22 20 18.2 20 12.5V5.85L12 3L4 5.85V12.5C4 18.2 12 22 12 22Z" stroke="#E1E1E3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
   'severity-dark-high-line': '<svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 16V11M12 8H12.01M12 22C12 22 20 18.2 20 12.5V5.85L12 3L4 5.85V12.5C4 18.2 12 22 12 22Z" stroke="#FF9900" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
   'severity-dark-critical-filled': '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 22C12 22 20 18.2 20 12.5V5.85L12 3L4 5.85V12.5C4 18.2 12 22 12 22Z" fill="#FF4646"/><path d="M12 16V11M12 8H12.01M12 22C12 22 20 18.2 20 12.5V5.85L12 3L4 5.85V12.5C4 18.2 12 22 12 22Z" stroke="#E1E1E3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  'severity-dark-critical-line': '<svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 16V11M12 8H12.01M12 22C12 22 20 18.2 20 12.5V5.85L12 3L4 5.85V12.5C4 18.2 12 22 12 22Z" stroke="#FF4646" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  'risk-low': '<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="3" width="2" height="6" rx="1" fill="var(--rag-moderate)"/><rect x="3" y="3" width="2" height="6" rx="1" fill="var(--base-02)"/><rect x="6" y="3" width="2" height="6" rx="1" fill="var(--base-02)"/><rect x="9" y="3" width="2" height="6" rx="1" fill="var(--base-02)"/></svg>',
+  'risk-moderate': '<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="3" width="2" height="6" rx="1" fill="var(--rag-moderate-risk)"/><rect x="3" y="3" width="2" height="6" rx="1" fill="var(--rag-moderate-risk)"/><rect x="6" y="3" width="2" height="6" rx="1" fill="var(--base-02)"/><rect x="9" y="3" width="2" height="6" rx="1" fill="var(--base-02)"/></svg>',
+  'risk-high': '<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="3" width="2" height="6" rx="1" fill="var(--rag-high-risk)"/><rect x="3" y="3" width="2" height="6" rx="1" fill="var(--rag-high-risk)"/><rect x="6" y="3" width="2" height="6" rx="1" fill="var(--rag-high-risk)"/><rect x="9" y="3" width="2" height="6" rx="1" fill="var(--base-02)"/></svg>',
+  'risk-critical': '<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="3" width="2" height="6" rx="1" fill="var(--rag-very-high-risk)"/><rect x="3" y="3" width="2" height="6" rx="1" fill="var(--rag-very-high-risk)"/><rect x="6" y="3" width="2" height="6" rx="1" fill="var(--rag-very-high-risk)"/><rect x="9" y="3" width="2" height="6" rx="1" fill="var(--rag-very-high-risk)"/></svg>',
+  'dot': '<svg width="6" height="6" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="3.00001" cy="3" r="3" fill="currentColor"/></svg>',
   'severity-dark-critical-line': '<svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 16V11M12 8H12.01M12 22C12 22 20 18.2 20 12.5V5.85L12 3L4 5.85V12.5C4 18.2 12 22 12 22Z" stroke="#FF4646" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>'
 }
