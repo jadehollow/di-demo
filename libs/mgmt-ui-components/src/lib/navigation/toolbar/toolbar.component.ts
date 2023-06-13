@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, NgModule } from '@angular/core';
+import {Component, EventEmitter, Input, NgModule, Output} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { DxToolbarModule } from 'devextreme-angular';
 
@@ -11,7 +11,6 @@ import { DxToolbarModule } from 'devextreme-angular';
 export class ToolbarComponent {
   // Toolbar documentation: https://js.devexpress.com/Documentation/ApiReference/UI_Components/dxToolbar/
   @Input() toolbarItems: any;
-
 }
 
 @NgModule({

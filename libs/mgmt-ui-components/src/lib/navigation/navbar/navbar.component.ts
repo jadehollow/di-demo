@@ -7,7 +7,6 @@ import notify from 'devextreme/ui/notify';
 import { MgmtIconLibModule } from '@mgmt-icon-lib';
 import { iconNames } from '@mgmt-icon-lib';
 import { Router } from '@angular/router';
-import { NavMenuComponentModule } from '../nav-menu/nav-menu.component';
 
 @Component({
   selector: 'di-navbar',
@@ -17,11 +16,6 @@ import { NavMenuComponentModule } from '../nav-menu/nav-menu.component';
 export class NavBarComponent {
   toolbarItems: any;
   userName: string = 'User Name';
-  display = false;
-
-  openNavMenu() {
-    this.display = true;
-  }
 
   constructor(private router: Router) {
     this.toolbarItems = [
@@ -253,23 +247,62 @@ export class NavBarComponent {
       },
       {
         widget: 'dxButton',
-        cssClass: 'user-btn',
+        cssClass: 'theme-btn',
         options: {
-          icon: iconNames['user'],
-          elementAttr: { 'aria-label': 'Go to user account' },
-          hint: 'Go to user account',
+          elementAttr: { 'aria-label': 'Switch between light and dark mode' },
           stylingMode: 'text',
+          text: 'Light Mode',
           hoverStateEnabled: true,
           focusStateEnabled: true,
           activeStateEnabled: true,
-          width: '40px',
+          width: '320px',
           tabIndex: 11,
         },
         location: 'after',
-        name: 'userBtn',
-        locateInMenu: 'never',
+        name: 'themeBtn',
+        locateInMenu: 'always',
         onClick: () => {
-          this.openNavMenu();
+          notify('Theme button has been clicked!');
+        },
+      },
+      {
+        widget: 'dxButton',
+        cssClass: 'profile-btn',
+        options: {
+          elementAttr: { 'aria-label': 'Go to user profile' },
+          stylingMode: 'text',
+          text: 'My Profile',
+          hoverStateEnabled: true,
+          focusStateEnabled: true,
+          activeStateEnabled: true,
+          width: '320px',
+          tabIndex: 12,
+        },
+        location: 'after',
+        name: 'profileBtn',
+        locateInMenu: 'always',
+        onClick: () => {
+          notify('Profile button has been clicked!');
+        },
+      },
+      {
+        widget: 'dxButton',
+        cssClass: 'sign-out-btn',
+        options: {
+          elementAttr: { 'aria-label': 'Sign out' },
+          stylingMode: 'text',
+          text: 'Sign Out',
+          hoverStateEnabled: true,
+          focusStateEnabled: true,
+          activeStateEnabled: true,
+          width: '320px',
+          tabIndex: 13,
+        },
+        location: 'after',
+        name: 'signOutBtn',
+        locateInMenu: 'always',
+        onClick: () => {
+          notify('Sign out button has been clicked!');
         },
       },
       {
@@ -278,7 +311,7 @@ export class NavBarComponent {
         location: 'after',
         name: 'userName',
         locateInMenu: 'never',
-        tabIndex: 12,
+        tabIndex: 14,
         text: `${this.userName}`,
       },
     ];
@@ -292,7 +325,6 @@ export class NavBarComponent {
     DxToolbarModule,
     MgmtIconLibModule,
     ToolbarComponentModule,
-    NavMenuComponentModule,
   ],
   exports: [NavBarComponent],
   declarations: [NavBarComponent],
