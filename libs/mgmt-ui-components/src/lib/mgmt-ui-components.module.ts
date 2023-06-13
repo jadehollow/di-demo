@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-//
+// import { ToolbarComponent } from './navigation/toolbar/toolbar.component';
+// import { NavBarComponent } from './navigation/nav-bar/nav-bar.component';
 // import { CheckboxComponent } from './form/checkbox/checkbox.component';
 // import { ToggleComponent } from './form/toggle/toggle.component';
 // import { BadgeComponent } from './misc/badge/badge.component';
@@ -18,6 +19,8 @@ import { CommonModule } from '@angular/common';
     // TagComponent,
     // InputtextComponent,
     // ButtonComponent,
+    // NavBarComponent
+    // ToolbarComponent
   ],
 })
 export class MgmtUiComponentsModule {}
