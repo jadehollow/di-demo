@@ -3,7 +3,7 @@ import { Component, Input, NgModule } from '@angular/core';
 import { DiIconComponent } from 'libs/mgmt-icon-lib/src/lib/di-icon/di-icon.component';
 
 @Component({
-  selector: 'di-saas-fe-badge',
+  selector: 'di-badge',
   templateUrl: './badge.component.html',
   styleUrls: ['./badge.component.scss'],
 })
