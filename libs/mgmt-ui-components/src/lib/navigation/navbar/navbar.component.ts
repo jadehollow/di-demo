@@ -7,6 +7,8 @@ import notify from 'devextreme/ui/notify';
 import { MgmtIconLibModule } from '@mgmt-icon-lib';
 import { iconNames } from '@mgmt-icon-lib';
 import { Router } from '@angular/router';
+import { ToggleComponentModule } from "../../form";
+import { DxSwitchModule } from 'devextreme-angular';
 
 @Component({
   selector: 'di-navbar',
@@ -16,6 +18,10 @@ import { Router } from '@angular/router';
 export class NavBarComponent {
   toolbarItems: any;
   userName: string = 'User Name';
+  toggleId = 'toggleId';
+  toggleValue = false;
+  isDisabled = false;
+  isReadOnly = false;
 
   constructor(private router: Router) {
     this.toolbarItems = [
@@ -261,6 +267,7 @@ export class NavBarComponent {
         location: 'after',
         name: 'themeBtn',
         locateInMenu: 'always',
+        html: '<di-toggle [value]="false"></di-toggle>',
         onClick: () => {
           notify('Theme button has been clicked!');
         },
@@ -314,7 +321,14 @@ export class NavBarComponent {
         tabIndex: 14,
         text: `${this.userName}`,
       },
+      { template: this.customMarkup },
     ];
+  }
+
+  customMarkup = () => {
+    const d = document.createElement('div');
+    d.innerHTML = '<di-toggle [value]="false"></di-toggle>';
+    return d;
   }
 }
 
@@ -324,6 +338,7 @@ export class NavBarComponent {
     CommonModule,
     DxToolbarModule,
     MgmtIconLibModule,
+    ToggleComponentModule,
     ToolbarComponentModule,
   ],
   exports: [NavBarComponent],
