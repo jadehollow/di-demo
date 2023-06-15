@@ -1,14 +1,13 @@
-import { CommonModule } from '@angular/common';
-import { Component, NgModule } from '@angular/core';
+import { CommonModule, DOCUMENT } from '@angular/common';
+import { Component, Inject, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ToolbarComponentModule } from '../toolbar/toolbar.component';
-import { DxToolbarModule } from 'devextreme-angular';
+import {DxButtonModule, DxToolbarModule} from 'devextreme-angular';
 import notify from 'devextreme/ui/notify';
 import { MgmtIconLibModule } from '@mgmt-icon-lib';
 import { iconNames } from '@mgmt-icon-lib';
 import { Router } from '@angular/router';
-import { ToggleComponentModule } from "../../form";
-import { DxSwitchModule } from 'devextreme-angular';
+import { DxTemplateModule } from 'devextreme-angular';
 
 @Component({
   selector: 'di-navbar',
@@ -18,13 +17,12 @@ import { DxSwitchModule } from 'devextreme-angular';
 export class NavBarComponent {
   toolbarItems: any;
   userName: string = 'User Name';
-  toggleId = 'toggleId';
-  toggleValue = false;
-  isDisabled = false;
-  isReadOnly = false;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, @Inject(DOCUMENT) private document: Document) {
+    this.document.body.classList.add('light-mode');
+
     this.toolbarItems = [
+      // Drawer Button
       {
         widget: 'dxButton',
         cssClass: 'drawer-btn',
@@ -48,6 +46,7 @@ export class NavBarComponent {
           notify('Drawer button has been clicked!');
         },
       },
+      // Dashboard Button
       {
         widget: 'dxButton',
         cssClass: 'dashboard-btn',
@@ -71,6 +70,7 @@ export class NavBarComponent {
           this.router.navigateByUrl('/mgmt-dashboard');
         },
       },
+      // Alerts Button
       {
         widget: 'dxButton',
         cssClass: 'alerts-btn',
@@ -94,6 +94,7 @@ export class NavBarComponent {
           this.router.navigateByUrl('/');
         },
       },
+      // Policies Button
       {
         widget: 'dxButton',
         cssClass: 'policies-btn',
@@ -117,6 +118,7 @@ export class NavBarComponent {
           notify('Policies button has been clicked!');
         },
       },
+      // Assets Button
       {
         widget: 'dxButton',
         cssClass: 'assets-btn',
@@ -140,6 +142,7 @@ export class NavBarComponent {
           notify('Assets button has been clicked!');
         },
       },
+      // Reports Button
       {
         widget: 'dxButton',
         cssClass: 'reports-btn',
@@ -163,6 +166,7 @@ export class NavBarComponent {
           notify('Reports button has been clicked!');
         },
       },
+      // Logs Button
       {
         widget: 'dxButton',
         cssClass: 'logs-btn',
@@ -186,6 +190,7 @@ export class NavBarComponent {
           notify('Logs button has been clicked!');
         },
       },
+      // Settings Button
       {
         widget: 'dxButton',
         cssClass: 'settings-btn',
@@ -209,6 +214,7 @@ export class NavBarComponent {
           notify('Settings button has been clicked!');
         },
       },
+      // Help Button
       {
         widget: 'dxButton',
         cssClass: 'help-btn',
@@ -230,6 +236,7 @@ export class NavBarComponent {
           notify('Help button has been clicked!');
         },
       },
+      // Notifications Button
       {
         widget: 'dxButton',
         cssClass: 'notification-btn',
@@ -251,6 +258,7 @@ export class NavBarComponent {
           notify('Notifications button has been clicked!');
         },
       },
+      // Theme Button
       {
         widget: 'dxButton',
         cssClass: 'theme-btn',
@@ -267,11 +275,38 @@ export class NavBarComponent {
         location: 'after',
         name: 'themeBtn',
         locateInMenu: 'always',
-        html: '<di-toggle [value]="false"></di-toggle>',
+        // html: '<di-toggle [value]="false"></di-toggle>',
         onClick: () => {
           notify('Theme button has been clicked!');
         },
       },
+      // Theme Toggle
+      {
+        widget: 'dxSwitch',
+        cssClass: 'theme-switch',
+        options: {
+          elementAttr: { 'aria-label': 'Theme toggle' },
+          stylingMode: 'text',
+          width: '46px',
+          tabIndex: 12,
+          value: true,
+          switchedOffText: '',
+          switchedOnText: '',
+          onValueChanged: (e: any) => {
+            if (e.value) {
+              this.document.body.classList.add('light-mode');
+              this.document.body.classList.remove('dark-mode');
+            } else {
+              this.document.body.classList.add('dark-mode');
+              this.document.body.classList.remove('light-mode');
+            }
+          }
+        },
+        location: 'after',
+        name: 'themeSwitch',
+        locateInMenu: 'always',
+      },
+      // Profile Button
       {
         widget: 'dxButton',
         cssClass: 'profile-btn',
@@ -283,7 +318,7 @@ export class NavBarComponent {
           focusStateEnabled: true,
           activeStateEnabled: true,
           width: '320px',
-          tabIndex: 12,
+          tabIndex: 13,
         },
         location: 'after',
         name: 'profileBtn',
@@ -292,6 +327,7 @@ export class NavBarComponent {
           notify('Profile button has been clicked!');
         },
       },
+      // Sign Out Button
       {
         widget: 'dxButton',
         cssClass: 'sign-out-btn',
@@ -303,7 +339,7 @@ export class NavBarComponent {
           focusStateEnabled: true,
           activeStateEnabled: true,
           width: '320px',
-          tabIndex: 13,
+          tabIndex: 14,
         },
         location: 'after',
         name: 'signOutBtn',
@@ -312,34 +348,30 @@ export class NavBarComponent {
           notify('Sign out button has been clicked!');
         },
       },
+      // User Name
       {
         cssClass: 'user-name',
         elementAttr: { 'aria-label': 'User name display' },
         location: 'after',
         name: 'userName',
         locateInMenu: 'never',
-        tabIndex: 14,
+        tabIndex: 15,
         text: `${this.userName}`,
       },
-      { template: this.customMarkup },
     ];
   }
 
-  customMarkup = () => {
-    const d = document.createElement('div');
-    d.innerHTML = '<di-toggle [value]="false"></di-toggle>';
-    return d;
-  }
 }
 
 @NgModule({
   imports: [
     BrowserModule,
     CommonModule,
+    DxTemplateModule,
     DxToolbarModule,
     MgmtIconLibModule,
-    ToggleComponentModule,
     ToolbarComponentModule,
+    DxButtonModule,
   ],
   exports: [NavBarComponent],
   declarations: [NavBarComponent],

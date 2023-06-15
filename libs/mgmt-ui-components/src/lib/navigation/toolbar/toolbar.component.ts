@@ -1,5 +1,9 @@
 import { CommonModule } from '@angular/common';
-import {Component, EventEmitter, Input, NgModule, Output} from '@angular/core';
+import {
+  Component,
+  Input,
+  NgModule,
+} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { DxToolbarModule } from 'devextreme-angular';
 
