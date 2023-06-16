@@ -11,6 +11,7 @@ import { HelpComponentModule } from "@mgmt-ui-components/misc";
 import { TabsComponentModule } from "@mgmt-ui-components/misc";
 import { FormsModule } from '@angular/forms';
 import { NavBarComponentModule } from "@mgmt-ui-components/navigation";
+import { ToolbarComponentModule } from "@mgmt-ui-components/navigation";
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,6 +20,7 @@ import { NavBarComponentModule } from "@mgmt-ui-components/navigation";
     CheckboxComponentModule,
     TagComponentModule,
     ToggleComponentModule,
+    ToolbarComponentModule,
     TooltipComponentModule,
     HelpComponentModule,
     TabsComponentModule,
