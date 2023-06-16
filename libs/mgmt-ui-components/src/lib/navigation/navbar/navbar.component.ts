@@ -1,8 +1,13 @@
 import { CommonModule, DOCUMENT } from '@angular/common';
-import { Component, Inject, NgModule } from '@angular/core';
+import {Component, EventEmitter, Inject, NgModule, Output, ViewChild} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ToolbarComponentModule } from '../toolbar/toolbar.component';
-import {DxButtonModule, DxToolbarModule} from 'devextreme-angular';
+import {
+  DxButtonModule,
+  DxDrawerComponent,
+  DxDrawerModule,
+  DxListModule,
+} from 'devextreme-angular';
 import notify from 'devextreme/ui/notify';
 import { iconNames } from '@mgmt-icon-lib';
 import { Router } from '@angular/router';
@@ -13,11 +18,31 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavBarComponent {
+  // @ViewChild(DxDrawerComponent, { static: false }) drawer!: DxDrawerComponent;
+
   toolbarItems: any;
   userName: string = 'User Name';
+  @Output() onClick: EventEmitter<string> = new EventEmitter();
 
-  constructor(private router: Router, @Inject(DOCUMENT) private document: Document) {
+  // selectedOpenMode: string = 'overlap';
+  // selectedPosition: string = 'left';
+  // selectedRevealMode: string = 'slide';
+  // isDrawerOpen: boolean = false;
+  // navDrawer: any;
+
+  constructor(
+    private router: Router,
+    @Inject(DOCUMENT) private document: Document
+  ) {
     this.document.body.classList.add('light-mode');
+
+    // this.navDrawer = [
+    //   { id: 1, text: 'Products', icon: 'product' },
+    //   { id: 2, text: 'Sales', icon: 'money' },
+    //   { id: 3, text: 'Customers', icon: 'group' },
+    //   { id: 4, text: 'Employees', icon: 'card' },
+    //   { id: 5, text: 'Reports', icon: 'chart' },
+    // ];
 
     this.toolbarItems = [
       // Drawer Button
@@ -40,9 +65,8 @@ export class NavBarComponent {
         name: 'drawerBtn',
         locateInMenu: 'never',
         html: '<i class="dx-icon-logo"></i>',
-        onClick: () => {
-          notify('Drawer button has been clicked!');
-        },
+        // onClick: () => this.isDrawerOpen = !this.isDrawerOpen,
+        onClick: (e: any) => { this.onClick.emit(e) }
       },
       // Dashboard Button
       {
@@ -64,9 +88,8 @@ export class NavBarComponent {
         location: 'before',
         name: 'dashboardBtn',
         locateInMenu: 'never',
-        onClick: () => {
-          this.router.navigateByUrl('/mgmt-dashboard');
-        },
+        // onClick: () => this.isDrawerOpen = !this.isDrawerOpen,
+        onClick: (e: any) => { this.onClick.emit(e) }
       },
       // Alerts Button
       {
@@ -298,7 +321,7 @@ export class NavBarComponent {
               this.document.body.classList.add('dark-mode');
               this.document.body.classList.remove('light-mode');
             }
-          }
+          },
         },
         location: 'after',
         name: 'themeSwitch',
@@ -358,16 +381,16 @@ export class NavBarComponent {
       },
     ];
   }
-
 }
 
 @NgModule({
   imports: [
     BrowserModule,
     CommonModule,
-    DxToolbarModule,
     ToolbarComponentModule,
     DxButtonModule,
+    DxDrawerModule,
+    DxListModule,
   ],
   exports: [NavBarComponent],
   declarations: [NavBarComponent],
