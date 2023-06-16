@@ -4,10 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ToolbarComponentModule } from '../toolbar/toolbar.component';
 import {DxButtonModule, DxToolbarModule} from 'devextreme-angular';
 import notify from 'devextreme/ui/notify';
-import { MgmtIconLibModule } from '@mgmt-icon-lib';
 import { iconNames } from '@mgmt-icon-lib';
 import { Router } from '@angular/router';
-import { DxTemplateModule } from 'devextreme-angular';
 
 @Component({
   selector: 'di-navbar',
@@ -367,9 +365,7 @@ export class NavBarComponent {
   imports: [
     BrowserModule,
     CommonModule,
-    DxTemplateModule,
     DxToolbarModule,
-    MgmtIconLibModule,
     ToolbarComponentModule,
     DxButtonModule,
   ],
