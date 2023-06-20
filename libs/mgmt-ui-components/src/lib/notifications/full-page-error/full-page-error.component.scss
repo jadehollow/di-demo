@@ -1,0 +1,43 @@
+.di-page-error-wrapper { 
+  .error-wrapper {
+    max-width: 100%;
+    width: 701px;
+    background: var(--notify-error);
+    border-radius: 4px;
+    padding: 8px;
+    display: flex;
+    gap: 12px;
+  }
+  
+  .dx-toast-content {
+    pointer-events: none;
+    border-radius: 0px;
+  }
+  
+  .error-text {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-size: 12px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: var(--typography-primary);
+  }
+
+  .optional-action {
+    margin-top: 16px;
+  }
+  
+  .icon-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+  }
+  
+  .icon {
+    display: flex;
+    color: var(--typography-primary);
+  }
+}
