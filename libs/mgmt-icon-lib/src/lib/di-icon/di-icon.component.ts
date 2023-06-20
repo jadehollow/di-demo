@@ -16,8 +16,8 @@ export class DiIconComponent {
   }
 
   @Input()
-  set size(size: 'x-sm' | 'sm' | 'md' | 'lg') {
-    if(['x-sm', 'sm', 'md','lg'].includes(size) && this.element && this.element.nativeElement) {
+  set size(size: 'x-sm' | 'sm' | 'md' | 'lg' | number) {
+    if(['x-sm', 'sm', 'md','lg'].includes(size.toString()) && this.element && this.element.nativeElement) {
       this.element.nativeElement.firstChild.classList.remove('x-sm', 'sm', 'md','lg');
       this.element.nativeElement.firstChild.classList.add(size);
     } else if (this.element && this.element.nativeElement) {
