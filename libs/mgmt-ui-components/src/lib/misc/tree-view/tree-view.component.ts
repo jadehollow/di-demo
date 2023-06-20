@@ -4,6 +4,7 @@ import { MgmtIconLibModule } from '@mgmt-icon-lib';
 import { DxTreeViewComponent, DxTreeViewModule } from 'devextreme-angular';
 import { ButtonComponentModule } from '../../button/button/button.component';
 import { Pipe, PipeTransform } from '@angular/core';
+import { BadgeComponentModule } from '../badge/badge.component';
 
 enum ControlMode {
   ACCESS = 'access',
@@ -78,7 +79,7 @@ export class TreeViewComponent {
 }
 
 @NgModule({
-  imports: [CommonModule, DxTreeViewModule, MgmtIconLibModule, ButtonComponentModule],
+  imports: [CommonModule, DxTreeViewModule, MgmtIconLibModule, ButtonComponentModule, BadgeComponentModule],
   exports: [TreeViewComponent],
   declarations: [TreeViewComponent, TreeViewItemSumPipe],
 })
