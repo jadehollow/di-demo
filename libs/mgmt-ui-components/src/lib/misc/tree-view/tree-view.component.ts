@@ -1,12 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, NgModule, Output, ViewChild } from '@angular/core';
 import { MgmtIconLibModule } from '@mgmt-icon-lib';
-import { DxTreeViewComponent, DxTreeViewModule } from 'devextreme-angular';
+import { DxTreeListModule, DxTreeViewComponent, DxTreeViewModule } from 'devextreme-angular';
 import { ButtonComponentModule } from '../../button/button/button.component';
 import { Pipe, PipeTransform } from '@angular/core';
 import { BadgeComponentModule } from '../badge/badge.component';
 
-enum ControlMode {
+export enum ControlMode {
   ACCESS = 'access',
   DROPDOWN = 'dropdown',
   MINIMAL = 'minimal'
@@ -79,7 +79,7 @@ export class TreeViewComponent {
 }
 
 @NgModule({
-  imports: [CommonModule, DxTreeViewModule, MgmtIconLibModule, ButtonComponentModule, BadgeComponentModule],
+  imports: [CommonModule, DxTreeViewModule, MgmtIconLibModule, BadgeComponentModule, DxTreeListModule],
   exports: [TreeViewComponent],
   declarations: [TreeViewComponent, TreeViewItemSumPipe],
 })
