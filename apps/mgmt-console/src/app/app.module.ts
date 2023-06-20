@@ -12,6 +12,8 @@ import { ToastNotificationComponentModule } from "@mgmt-ui-components/notificati
 import { FullPageErrorComponentModule } from "@mgmt-ui-components/notifications";
 import { TabsComponentModule } from "@mgmt-ui-components/misc";
 import { FormsModule } from '@angular/forms';
+import { NavBarComponentModule } from "@mgmt-ui-components/navigation";
+import { ToolbarComponentModule } from "@mgmt-ui-components/navigation";
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,12 +22,14 @@ import { FormsModule } from '@angular/forms';
     CheckboxComponentModule,
     TagComponentModule,
     ToggleComponentModule,
+    ToolbarComponentModule,
     TooltipComponentModule,
     HelpComponentModule,
     ToastNotificationComponentModule,
     FullPageErrorComponentModule,
     TabsComponentModule,
     FormsModule,
+    NavBarComponentModule,
     RouterModule.forRoot(appRoutes, { initialNavigation: 'enabledBlocking' }),
   ],
   providers: [],

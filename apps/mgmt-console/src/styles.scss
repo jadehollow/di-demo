@@ -1,167 +1,167 @@
 /* You can add global styles to this file, and also import other style files */
-@use "light-colors" as light;
-@use "dark-colors" as dark;
+@use 'light-colors' as light;
+@use 'dark-colors' as dark;
 
-.light-mode, .dark-mode .reverse-style-mode {
-    --background: #{light.$base-01};
-    --text-color: #{light.$base-01};
+.light-mode,
+.dark-mode .reverse-style-mode {
+  --background: #{light.$base-01};
+  --text-color: #{light.$base-01};
 
-    --base-01: #{light.$base-01};
-    --base-02: #{light.$base-02};
+  --base-01: #{light.$base-01};
+  --base-02: #{light.$base-02};
 
-    /*Typography*/
-    --typography-primary: #{light.$typography-primary};
-    --typography-secondary: #{light.$typography-secondary};
-    --typography-tertiary: #{light.$typography-tertiary};
+  /*Typography*/
+  --typography-primary: #{light.$typography-primary};
+  --typography-secondary: #{light.$typography-secondary};
+  --typography-tertiary: #{light.$typography-tertiary};
 
-    /*CTA*/
-    --cta-primary-base: #{light.$cta-primary-base};
-    --cta-primary-hover: #{light.$cta-primary-hover};
-    --cta-primary-disabled: #{light.$cta-primary-disabled};
+  /*CTA*/
+  --cta-primary-base: #{light.$cta-primary-base};
+  --cta-primary-hover: #{light.$cta-primary-hover};
+  --cta-primary-disabled: #{light.$cta-primary-disabled};
 
-    --cta-secondary-base: #{light.$cta-secondary-base};
-    --cta-secondary-hover: #{light.$cta-secondary-hover};
+  --cta-secondary-base: #{light.$cta-secondary-base};
+  --cta-secondary-hover: #{light.$cta-secondary-hover};
+  --cta-dark-secondary-hover: #{light.$cta-dark-secondary-hover};
 
-    --cta-tertiary-base: #{light.$cta-tertiary-base};
-    --cta-tertiary-hover: #{light.$cta-tertiary-hover};
+  --cta-tertiary-base: #{light.$cta-tertiary-base};
+  --cta-tertiary-hover: #{light.$cta-tertiary-hover};
 
-    --cta-links: #{light.$cta-links};
+  --cta-links: #{light.$cta-links};
 
-    /*RAG System*/
-    --rag-very-high-risk: #{light.$rag-very-high-risk};
-    --rag-high-risk: #{light.$rag-high-risk};
-    --rag-moderate-risk: #{light.$rag-moderate-risk};
-    --rag-moderate: #{light.$rag-moderate};
-    --rag-good: #{light.$rag-good};
+  /*RAG System*/
+  --rag-very-high-risk: #{light.$rag-very-high-risk};
+  --rag-high-risk: #{light.$rag-high-risk};
+  --rag-moderate-risk: #{light.$rag-moderate-risk};
+  --rag-moderate: #{light.$rag-moderate};
+  --rag-good: #{light.$rag-good};
 
-    /*Notifications and labels*/
-    --notify-error: #{light.$notify-error};
-    --notify-error-02: #{light.$notify-error-02};
-    --notify-warning: #{light.$notify-warning};
-    --notify-warning-02: #{light.$notify-warning-02};
-    --notify-success: #{light.$notify-success};
-    --notify-success-02: #{light.$notify-success-02};
-    --notify-general: #{light.$notify-general};
-    --notify-general-02: #{light.$notify-general-02};
-    --notify-label-base: #{light.$notify-label-base};
-    --notify-label-base-02: #{light.$notify-label-base-02};
+  /*Notifications and labels*/
+  --notify-error: #{light.$notify-error};
+  --notify-error-02: #{light.$notify-error-02};
+  --notify-warning: #{light.$notify-warning};
+  --notify-warning-02: #{light.$notify-warning-02};
+  --notify-success: #{light.$notify-success};
+  --notify-success-02: #{light.$notify-success-02};
+  --notify-general: #{light.$notify-general};
+  --notify-general-02: #{light.$notify-general-02};
+  --notify-label-base: #{light.$notify-label-base};
+  --notify-label-base-02: #{light.$notify-label-base-02};
 
-    /*Key Lines*/
-    --keylines-01: #{light.$keylines-01};
-    --keylines-02: #{light.$keylines-02};
+  /*Key Lines*/
+  --keylines-01: #{light.$keylines-01};
+  --keylines-02: #{light.$keylines-02};
 
-    /*Form and input field states*/
-    --states-error-01: #{light.$states-error-01};
-    --states-error-02: #{light.$states-error-02};
-    --states-error-03: #{light.$states-error-03};
-    --states-error-04: #{light.$states-error-04};
-    --states-focus-01: #{light.$states-focus-01};
-    --states-focus-02: #{light.$states-focus-02};
-    --states-disabled: #{light.$states-disabled};
-    --states-disabled-02: #{light.$states-disabled-02};
-    --states-selected: #{light.$states-selected};
-    --states-hover-bg-01: #{light.$states-hover-bg-01};
-    --states-hover-primary: #{light.$states-hover-primary};
+  /*Form and input field states*/
+  --states-error-01: #{light.$states-error-01};
+  --states-error-02: #{light.$states-error-02};
+  --states-error-03: #{light.$states-error-03};
+  --states-error-04: #{light.$states-error-04};
+  --states-focus-01: #{light.$states-focus-01};
+  --states-focus-02: #{light.$states-focus-02};
+  --states-disabled: #{light.$states-disabled};
+  --states-disabled-02: #{light.$states-disabled-02};
+  --states-selected: #{light.$states-selected};
+  --states-hover-bg-01: #{light.$states-hover-bg-01};
+  --states-hover-primary: #{light.$states-hover-primary};
 
-    /*Data Viz Pallette*/
-    --data-point-01: #{light.$data-point-01};
-    --data-point-02: #{light.$data-point-02};
-    --data-point-03: #{light.$data-point-03};
-    --data-point-04: #{light.$data-point-04};
-    --data-point-05: #{light.$data-point-05};
-    --data-point-06: #{light.$data-point-06};
-    --data-point-07: #{light.$data-point-07};
-    --data-point-08: #{light.$data-point-08};
-    --data-point-09: #{light.$data-point-09};
-    --data-point-10: #{light.$data-point-10};
+  /*Data Viz Palette*/
+  --data-point-01: #{light.$data-point-01};
+  --data-point-02: #{light.$data-point-02};
+  --data-point-03: #{light.$data-point-03};
+  --data-point-04: #{light.$data-point-04};
+  --data-point-05: #{light.$data-point-05};
+  --data-point-06: #{light.$data-point-06};
+  --data-point-07: #{light.$data-point-07};
+  --data-point-08: #{light.$data-point-08};
+  --data-point-09: #{light.$data-point-09};
+  --data-point-10: #{light.$data-point-10};
 
-    /*Modal Icons*/
-    --modal-icon-info: #{light.$modal-icon-info};
-    --modal-icon-success: #{light.$modal-icon-success};
-    --modal-icon-warning: #{light.$modal-icon-warning};
-    --modal-icon-error: #{light.$modal-icon-error};
+  /*Modal Icons*/
+  --modal-icon-info: #{light.$modal-icon-info};
+  --modal-icon-success: #{light.$modal-icon-success};
+  --modal-icon-warning: #{light.$modal-icon-warning};
+  --modal-icon-error: #{light.$modal-icon-error};
 }
 
-.dark-mode, .light-mode .reverse-style-mode {
-    --background: #{dark.$base-01};
-    --text-color: #{dark.$base-01};
+.dark-mode,
+.light-mode .reverse-style-mode {
+  --background: #{dark.$base-01};
+  --text-color: #{dark.$base-01};
 
-    --base-01: #{dark.$base-01};
-    --base-02: #{dark.$base-02};
+  --base-01: #{dark.$base-01};
+  --base-02: #{dark.$base-02};
 
-    /*Typography*/
-    --typography-primary: #{dark.$typography-primary};
-    --typography-secondary: #{dark.$typography-secondary};
-    --typography-tertiary: #{dark.$typography-tertiary};
+  /*Typography*/
+  --typography-primary: #{dark.$typography-primary};
+  --typography-secondary: #{dark.$typography-secondary};
+  --typography-tertiary: #{dark.$typography-tertiary};
 
-    /*CTA*/
-    --cta-primary-base: #{dark.$cta-primary-base};
-    --cta-primary-hover: #{dark.$cta-primary-hover};
-    --cta-primary-disabled: #{dark.$cta-primary-disabled};
+  /*CTA*/
+  --cta-primary-base: #{dark.$cta-primary-base};
+  --cta-primary-hover: #{dark.$cta-primary-hover};
+  --cta-primary-disabled: #{dark.$cta-primary-disabled};
 
-    --cta-secondary-base: #{dark.$cta-secondary-base};
-    --cta-secondary-hover: #{dark.$cta-secondary-hover};
+  --cta-secondary-base: #{dark.$cta-secondary-base};
+  --cta-secondary-hover: #{dark.$cta-secondary-hover};
+  --cta-dark-secondary-hover: #{dark.$states-focus-01};
 
-    --cta-tertiary-base: #{dark.$cta-tertiary-base};
-    --cta-tertiary-hover: #{dark.$cta-tertiary-hover};
+  --cta-tertiary-base: #{dark.$cta-tertiary-base};
+  --cta-tertiary-hover: #{dark.$cta-tertiary-hover};
 
-    --cta-links: #{dark.$cta-links};
+  --cta-links: #{dark.$cta-links};
 
-    /*RAG System*/
-    --rag-very-high-risk: #{dark.$rag-very-high-risk};
-    --rag-high-risk: #{dark.$rag-high-risk};
-    --rag-moderate-risk: #{dark.$rag-moderate-risk};
-    --rag-moderate: #{dark.$rag-moderate};
-    --rag-good: #{dark.$rag-good};
+  /*RAG System*/
+  --rag-very-high-risk: #{dark.$rag-very-high-risk};
+  --rag-high-risk: #{dark.$rag-high-risk};
+  --rag-moderate-risk: #{dark.$rag-moderate-risk};
+  --rag-moderate: #{dark.$rag-moderate};
+  --rag-good: #{dark.$rag-good};
 
-    /*Notifications and labels*/
-    --notify-error: #{dark.$notify-error};
-    --notify-error-02: #{dark.$notify-error-02};
-    --notify-warning: #{dark.$notify-warning};
-    --notify-warning-02: #{dark.$notify-warning-02};
-    --notify-success: #{dark.$notify-success};
-    --notify-success-02: #{dark.$notify-success-02};
-    --notify-general: #{dark.$notify-general};
-    --notify-general-02: #{dark.$notify-general-02};
-    --notify-label-base: #{dark.$notify-label-base};
-    --notify-label-base-02: #{dark.$notify-label-base-02};
+  /*Notifications and labels*/
+  --notify-error: #{dark.$notify-error};
+  --notify-error-02: #{dark.$notify-error-02};
+  --notify-warning: #{dark.$notify-warning};
+  --notify-warning-02: #{dark.$notify-warning-02};
+  --notify-success: #{dark.$notify-success};
+  --notify-success-02: #{dark.$notify-success-02};
+  --notify-general: #{dark.$notify-general};
+  --notify-general-02: #{dark.$notify-general-02};
+  --notify-label-base: #{dark.$notify-label-base};
+  --notify-label-base-02: #{dark.$notify-label-base-02};
 
-    /*Key Lines*/
-    --keylines-01: #{dark.$keylines-01};
-    --keylines-02: #{dark.$keylines-02};
+  /*Key Lines*/
+  --keylines-01: #{dark.$keylines-01};
+  --keylines-02: #{dark.$keylines-02};
 
-    /*Form and input field states*/
-    --states-error-01: #{dark.$states-error-01};
-    --states-error-02: #{dark.$states-error-02};
-    --states-error-03: #{dark.$states-error-03};
-    --states-error-04: #{dark.$states-error-04};
-    --states-focus-01: #{dark.$states-focus-01};
-    --states-focus-02: #{dark.$states-focus-02};
-    --states-disabled: #{dark.$states-disabled};
-    --states-disabled-02: #{dark.$states-disabled-02};
-    --states-selected: #{dark.$states-selected};
-    --states-hover-bg-01: #{dark.$states-hover-bg-01};
-    --states-hover-primary: #{dark.$states-hover-primary};
+  /*Form and input field states*/
+  --states-error-01: #{dark.$states-error-01};
+  --states-error-02: #{dark.$states-error-02};
+  --states-error-03: #{dark.$states-error-03};
+  --states-error-04: #{dark.$states-error-04};
+  --states-focus-01: #{dark.$states-focus-01};
+  --states-focus-02: #{dark.$states-focus-02};
+  --states-disabled: #{dark.$states-disabled};
+  --states-disabled-02: #{dark.$states-disabled-02};
+  --states-selected: #{dark.$states-selected};
+  --states-hover-bg-01: #{dark.$states-hover-bg-01};
+  --states-hover-primary: #{dark.$states-hover-primary};
 
-    /*Data Viz Pallette*/
-    --data-point-01: #{dark.$data-point-01};
-    --data-point-02: #{dark.$data-point-02};
-    --data-point-03: #{dark.$data-point-03};
-    --data-point-04: #{dark.$data-point-04};
-    --data-point-05: #{dark.$data-point-05};
-    --data-point-06: #{dark.$data-point-06};
-    --data-point-07: #{dark.$data-point-07};
-    --data-point-08: #{dark.$data-point-08};
-    --data-point-09: #{dark.$data-point-09};
-    --data-point-10: #{dark.$data-point-10};
+  /*Data Viz Palette*/
+  --data-point-01: #{dark.$data-point-01};
+  --data-point-02: #{dark.$data-point-02};
+  --data-point-03: #{dark.$data-point-03};
+  --data-point-04: #{dark.$data-point-04};
+  --data-point-05: #{dark.$data-point-05};
+  --data-point-06: #{dark.$data-point-06};
+  --data-point-07: #{dark.$data-point-07};
+  --data-point-08: #{dark.$data-point-08};
+  --data-point-09: #{dark.$data-point-09};
+  --data-point-10: #{dark.$data-point-10};
 
-    /*Modal Icons*/
-    --modal-icon-info: #{dark.$modal-icon-info};
-    --modal-icon-success: #{dark.$modal-icon-success};
-    --modal-icon-warning: #{dark.$modal-icon-warning};
-    --modal-icon-error: #{dark.$modal-icon-error};
-}
-
-body {
-    background: var(--base-01);
+  /*Modal Icons*/
+  --modal-icon-info: #{dark.$modal-icon-info};
+  --modal-icon-success: #{dark.$modal-icon-success};
+  --modal-icon-warning: #{dark.$modal-icon-warning};
+  --modal-icon-error: #{dark.$modal-icon-error};
 }
