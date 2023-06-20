@@ -20,6 +20,7 @@ export const testTree = [{
         text: 'SuperHD Video Player',
         image: 'images/products/2.png',
         badge: 270,
+        icon: 'add',
       }],
     }, {
       id: '1_1_2',
