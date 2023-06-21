@@ -1,12 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, NgModule, Output, ViewEncapsulation } from '@angular/core';
+import { Component, EventEmitter, Input, NgModule, Output } from '@angular/core';
 import { MgmtIconLibModule } from '@mgmt-icon-lib'
 
 @Component({
   selector: 'di-tag',
   templateUrl: './tag.component.html',
   styleUrls: ['./tag.component.scss'],
-  encapsulation: ViewEncapsulation.None
 })
 export class TagComponent {
   @Input() size = 'sm'

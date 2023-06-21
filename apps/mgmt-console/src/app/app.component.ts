@@ -1,6 +1,7 @@
 import {Component, Inject} from '@angular/core';
 import {DOCUMENT} from '@angular/common';
 import notify from 'devextreme/ui/notify';
+import { NotificationType } from '@mgmt-ui-components/notifications';
 import { iconNames } from '@mgmt-icon-lib';
 
 @Component({
@@ -50,6 +51,13 @@ export class AppComponent {
   isDisabled = false;
   isReadOnly = false;
 
+  // Toast Notification
+  showNotification = false;
+  notificationType: NotificationType = NotificationType.INFO;
+  NotificationType = NotificationType;
+  showToastAction = false;
+  showFullPageError = false;
+
   constructor(@Inject(DOCUMENT) private document: Document) {
     this.document.body.classList.add('light-mode');
   }
@@ -79,4 +87,16 @@ export class AppComponent {
     const chkboxName = e.component.option('name');
     notify(`The ${this.capitalize(chkboxName)} checkbox was clicked`);
   };
+
+  toastAddNotification = (notificationType: NotificationType) => {
+    this.showToastAction = !this.showToastAction;
+    if (notificationType === this.notificationType || !this.showNotification) {
+      this.showNotification = !this.showNotification;
+    }
+    this.notificationType = notificationType;
+  }
+
+  errorAddNotification = () => {
+    this.showFullPageError = !this.showFullPageError;
+  }
 }
