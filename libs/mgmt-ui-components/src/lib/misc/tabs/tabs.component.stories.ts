@@ -30,16 +30,6 @@ const tabs = [
   { text: 'g' },
 ]
 
-const iconTabs = [
-  { text: 'Dashboard', icon: 'add' },
-  { text: 'Alerts', icon: 'airplane' },
-  { text: 'Policies', icon: 'bookmark' },
-  { text: 'Assets', icon: 'box' },
-  { text: 'Reports', icon: 'car' },
-  { text: 'Logs', icon: 'card' },
-  { text: 'Settings', icon: 'cart' },
-]
-
 export const Normal = {
   args: {
     dataSource: tabs
@@ -58,13 +48,5 @@ export const Rounded = {
 
     dataSource: tabs,
     styleMode: 'round'
-  },
-};
-
-export const Icons = {
-  args: {
-    dataSource: iconTabs,
-    styleMode: 'icons',
-    iconSize: 'lg'
   },
 };

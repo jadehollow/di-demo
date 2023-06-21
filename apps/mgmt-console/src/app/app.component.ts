@@ -36,15 +36,6 @@ export class AppComponent {
     { text: 'h' },
     { text: 'i' },
   ]
-  iconTabs = [
-    { text: 'Dashboard', icon: iconNames.action },
-    { text: 'Alerts', icon: iconNames.add },
-    { text: 'Policies', icon: iconNames['add-new'] },
-    { text: 'Assets', icon: iconNames['add-circle'] },
-    { text: 'Reports', icon: iconNames['add-file'] },
-    { text: 'Logs', icon: iconNames.analysys },
-    { text: 'Settings', icon: iconNames['add-application'] },
-  ]
 
   // Toggle
   toggleId = 'toggleId';

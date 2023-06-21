@@ -41,17 +41,27 @@
 ::ng-deep.normal {
   &.dx-tabs {
     border: none;
-    border-bottom: 1px solid var(--keylines-02)
   }
 
   .dx-tab {
     background: none;
-    padding: 1px 12px 11px;
+    padding: 1px 12px 10px;
+    border-bottom: 1px solid var(--keylines-02);
+  }
+
+  .dx-state-hover {
+    border-bottom: 4px solid var(--states-hover-primary);
+    padding-bottom: 7px;
+  }
+
+  .dx-tab-selected {
+    border: none;
+    padding-bottom: 7px;
+    border-bottom: 4px solid var(--states-focus-01);
   }
 
   .dx-tab-selected::after {
     border: none;
-    border-bottom: 4px solid var(--states-focus-01)
   }
 
   .dx-tabs-wrapper {
@@ -78,18 +88,29 @@
 
 ::ng-deep.low {
   &.dx-tabs {
-    border: none;
-    border-bottom: 1px solid var(--keylines-02)
+    border: none; 
   }
 
   .dx-tab {
     background: none;
-    padding: 0px 12px 4px;
+    padding: 0px 12px 3px;
+    border-bottom: 1px solid var(--keylines-02)
+  }
+
+  .dx-state-hover {
+    border: none;
+    border-bottom: 4px solid var(--states-hover-primary);
+    padding-bottom: 0px;
+  }
+
+  .dx-tab-selected {
+    border: none;
+    border-bottom: 4px solid var(--states-focus-01);
+    padding-bottom: 0px;
   }
 
   .dx-tab-selected::after {
     border: none;
-    border-bottom: 4px solid var(--states-focus-01)
   }
 
   .dx-tabs-wrapper {
@@ -125,15 +146,21 @@
     padding: 8px 12px;
   }
 
+  .dx-state-hover {
+    background: var(--states-hover-bg-01);
+    border-radius: 8px;
+    box-sizing: border-box;
+    outline: 1px solid var(--states-hover-primary);
+  }
+
   .dx-tab-selected {
     background: var(--states-selected);
     border-radius: 8px;
     box-sizing: border-box;
+    outline: 1px solid var(--states-focus-01);
 
     &::after {
-      border: 1px solid var(--states-focus-01);
-      border-radius: 8px;
-      box-sizing: border-box;
+      border: none;
     }
   }
 
@@ -160,48 +187,5 @@
 
   .dx-icon {
     color: var(--cta-links)
-  }
-}
-
-::ng-deep.icons {
-  &.dx-tabs {
-    border: none;
-    border-bottom: 1px solid var(--keylines-02)
-  }
-
-  .dx-tab {
-    background: none;
-    padding: 12px 8px;
-  }
-
-  .dx-tab-selected {
-    background: var(--states-selected);
-
-    &::after {
-      border: none;
-      border-bottom: 4px solid var(--states-focus-01)
-    }
-  }
-
-  .dx-tabs-wrapper {
-    border: none;
-  }
-  
-  .dx-tab-text {
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 10px;
-    line-height: 16px;
-    display: flex;
-    align-items: center;
-    font-feature-settings: 'pnum' on, 'lnum' on;
-
-    color: var(--typography-secondary);
-  }
-
-  .dx-icon {
-    color: var(--typography-secondary);
-    margin-bottom: 8px;
   }
 }
