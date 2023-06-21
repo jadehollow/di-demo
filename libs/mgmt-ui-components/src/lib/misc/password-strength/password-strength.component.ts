@@ -24,7 +24,7 @@ export class PasswordStrengthComponent implements OnChanges {
   checkValid(password: string) {
     const testUpperAndLower = new RegExp("^(?=.*[a-z])(?=.*[A-Z]).+$");
     const testNumeric = new RegExp("^(?=.*[0-9]).+$");
-    const testSpecial = new RegExp("^(=.*(-+_!@#$%^&*.,?).+$");
+    const testSpecial = new RegExp("^(?=.*[\-\+\_\!\@\#\$\%\^\&\*\.\,\?]).+$");
 
     this.isCorrectLength = password.length >= 8 && password.length <= 35;
     this.isUpperAndLower = testUpperAndLower.test(password);
