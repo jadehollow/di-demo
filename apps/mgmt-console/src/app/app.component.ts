@@ -2,9 +2,7 @@ import { Component, Inject, ViewChild } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import notify from 'devextreme/ui/notify';
 import { iconNames } from '@mgmt-icon-lib';
-import {
-  DxDrawerComponent,
-} from 'devextreme-angular';
+import { DxDrawerComponent } from 'devextreme-angular';
 
 @Component({
   selector: 'di-saas-fe-root',
@@ -13,6 +11,7 @@ import {
 })
 export class AppComponent {
   @ViewChild(DxDrawerComponent, { static: false }) drawer!: DxDrawerComponent;
+
   title = 'mgmt-console';
 
   // Checkbox
@@ -64,11 +63,27 @@ export class AppComponent {
   constructor(@Inject(DOCUMENT) private document: Document) {
     this.document.body.classList.add('light-mode');
     this.navDrawer = [
-      { id: 1, text: 'Products', icon: 'product' },
-      { id: 2, text: 'Sales', icon: 'money' },
-      { id: 3, text: 'Customers', icon: 'group' },
-      { id: 4, text: 'Employees', icon: 'card' },
-      { id: 5, text: 'Reports', icon: 'chart' },
+      { id: 1, text: 'YOUR PRODUCTS' },
+      {
+        id: 2,
+        text: 'Endpoint Security',
+        icon: iconNames['shield-endpoint'],
+      },
+      {
+        id: 3,
+        text: 'Application Security',
+        icon: iconNames['shield-application'],
+      },
+      {
+        id: 4,
+        text: 'Storage Security',
+        icon: iconNames['shield-storage'],
+      },
+      {
+        id: 5,
+        text: 'www.DeepInstinct.com',
+        icon: iconNames['open-in-new'],
+      },
     ];
   }
 

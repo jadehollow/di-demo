@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ToolbarComponentModule } from '../toolbar/toolbar.component';
 import {
   DxButtonModule,
-  DxDrawerComponent,
   DxDrawerModule,
   DxListModule,
 } from 'devextreme-angular';
@@ -18,31 +17,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavBarComponent {
-  // @ViewChild(DxDrawerComponent, { static: false }) drawer!: DxDrawerComponent;
-
   toolbarItems: any;
   userName: string = 'User Name';
   @Output() onClick: EventEmitter<string> = new EventEmitter();
-
-  // selectedOpenMode: string = 'overlap';
-  // selectedPosition: string = 'left';
-  // selectedRevealMode: string = 'slide';
-  // isDrawerOpen: boolean = false;
-  // navDrawer: any;
 
   constructor(
     private router: Router,
     @Inject(DOCUMENT) private document: Document
   ) {
     this.document.body.classList.add('light-mode');
-
-    // this.navDrawer = [
-    //   { id: 1, text: 'Products', icon: 'product' },
-    //   { id: 2, text: 'Sales', icon: 'money' },
-    //   { id: 3, text: 'Customers', icon: 'group' },
-    //   { id: 4, text: 'Employees', icon: 'card' },
-    //   { id: 5, text: 'Reports', icon: 'chart' },
-    // ];
 
     this.toolbarItems = [
       // Drawer Button
@@ -65,7 +48,6 @@ export class NavBarComponent {
         name: 'drawerBtn',
         locateInMenu: 'never',
         html: '<i class="dx-icon-logo"></i>',
-        // onClick: () => this.isDrawerOpen = !this.isDrawerOpen,
         onClick: (e: any) => { this.onClick.emit(e) }
       },
       // Dashboard Button
@@ -88,8 +70,9 @@ export class NavBarComponent {
         location: 'before',
         name: 'dashboardBtn',
         locateInMenu: 'never',
-        // onClick: () => this.isDrawerOpen = !this.isDrawerOpen,
-        onClick: (e: any) => { this.onClick.emit(e) }
+        onClick: () => {
+          this.router.navigateByUrl('/');
+        },
       },
       // Alerts Button
       {
