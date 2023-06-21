@@ -90,3 +90,27 @@
     title="Tree Control"
   ></di-tree-view>
 </div>
+
+<div class="ms-3 mb-2">
+  <button class="mx-2" (click)="toastAddNotification(NotificationType.INFO)">Click for info</button>
+  <button class="mx-2" (click)="toastAddNotification(NotificationType.WARNING)">Click for warning</button>
+  <button class="mx-2" (click)="toastAddNotification(NotificationType.ERROR)">Click for error</button>
+  <button class="mx-2" (click)="toastAddNotification(NotificationType.SUCCESS)">Click for success</button>
+  <button class="mx-2" (click)="errorAddNotification()">Click for full page error</button>
+  
+  <di-toast-notification
+    of="body"
+    notificationTitle="test"
+    notificationDescription="this is a description!"
+    actionText="optional action"
+    [(visible)]="showNotification"
+    [notificationType]="notificationType"
+    [showAction]="showToastAction"
+  ></di-toast-notification>
+
+  <di-full-page-error
+    of="body"
+    errorText="This is a full page error"
+    [(visible)]="showFullPageError"
+  ></di-full-page-error>
+</div>

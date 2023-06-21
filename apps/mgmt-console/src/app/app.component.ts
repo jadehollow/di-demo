@@ -1,6 +1,7 @@
 import {Component, Inject} from '@angular/core';
 import {DOCUMENT} from '@angular/common';
 import notify from 'devextreme/ui/notify';
+import { NotificationType } from '@mgmt-ui-components/notifications';
 import { iconNames } from '@mgmt-icon-lib';
 import { testTree } from './test-tree';
 
@@ -54,6 +55,13 @@ export class AppComponent {
   // Tree view
   testTree = testTree;
 
+  // Toast Notification
+  showNotification = false;
+  notificationType: NotificationType = NotificationType.INFO;
+  NotificationType = NotificationType;
+  showToastAction = false;
+  showFullPageError = false;
+
   constructor(@Inject(DOCUMENT) private document: Document) {
     this.document.body.classList.add('light-mode');
   }
@@ -86,5 +94,17 @@ export class AppComponent {
 
   log = (e: any) => {
     console.log(e);
+  }
+
+  toastAddNotification = (notificationType: NotificationType) => {
+    this.showToastAction = !this.showToastAction;
+    if (notificationType === this.notificationType || !this.showNotification) {
+      this.showNotification = !this.showNotification;
+    }
+    this.notificationType = notificationType;
+  }
+
+  errorAddNotification = () => {
+    this.showFullPageError = !this.showFullPageError;
   }
 }

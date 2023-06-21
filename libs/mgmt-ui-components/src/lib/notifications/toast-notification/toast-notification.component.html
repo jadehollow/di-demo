@@ -1,0 +1,33 @@
+<dx-toast
+  [visible]="visible"
+  (visibleChange)="visibleChange.emit($event)"
+  width="fit-content"
+  type="custom"
+  [displayTime]="displayTime"
+  [copyRootClassesToWrapper]="true"
+  class="di-toast-wrapper"
+>
+  <dxo-position
+    [my]="my"
+    [at]="at"
+    [of]="of"
+  >
+  </dxo-position>
+  <div *dxTemplate="let data of 'content'">
+    <div class="dark-mode toast-wrapper" [ngClass]="notificationType">
+      <div class="left-content-wrapper">
+        <div class="icon-wrapper">
+          <di-icon class="icon" [name]="toastIcon[notificationType]" size="md"></di-icon>
+        </div>
+        <div class="content-wrapper">
+          <span class="title">{{ notificationTitle }}</span>
+          <span class="desc">{{ notificationDescription }}</span>
+          <button *ngIf="showAction" class="optional-action" (click)="takeAction.emit()">{{ actionText }}</button>
+        </div>
+      </div>
+      <button class="close" (click)="close()">
+        <di-icon class="close-icon" name="x" size="md"></di-icon>
+      </button>
+    </div>
+  </div>
+</dx-toast>

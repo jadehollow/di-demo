@@ -8,6 +8,8 @@ import { TagComponentModule, TreeViewComponentModule } from "@mgmt-ui-components
 import { ToggleComponentModule } from "@mgmt-ui-components/form";
 import { TooltipComponentModule } from "@mgmt-ui-components/misc";
 import { HelpComponentModule } from "@mgmt-ui-components/misc";
+import { ToastNotificationComponentModule } from "@mgmt-ui-components/notifications";
+import { FullPageErrorComponentModule } from "@mgmt-ui-components/notifications";
 import { TabsComponentModule } from "@mgmt-ui-components/misc";
 import { FormsModule } from '@angular/forms';
 import { NavBarComponentModule } from "@mgmt-ui-components/navigation";
@@ -23,6 +25,8 @@ import { ToolbarComponentModule } from "@mgmt-ui-components/navigation";
     ToolbarComponentModule,
     TooltipComponentModule,
     HelpComponentModule,
+    ToastNotificationComponentModule,
+    FullPageErrorComponentModule,
     TabsComponentModule,
     TreeViewComponentModule,
     FormsModule,
