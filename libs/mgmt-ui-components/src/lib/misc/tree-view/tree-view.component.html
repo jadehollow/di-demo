@@ -1,0 +1,59 @@
+<div *ngIf="!collapsed" [ngStyle]="{ 'height': height }" class="tree-wrapper">
+  <div class="tree-header" [ngStyle]="{ 'width': width }">
+    <div class="title">
+      <span class="title-text">{{ title }}</span>
+      <button (click)="toggleTreeControl()">
+        <di-icon name="arrow-chevrons-left"></di-icon>
+      </button>
+    </div>
+    <div class="access-buttons" *ngIf="controlMode == ControlMode.ACCESS">
+      <button (click)="expandAll()">
+        <di-icon name="node-expand"></di-icon>
+      </button>
+      <button (click)="collapseAll()">
+        <di-icon name="node-collapse"></di-icon>
+      </button>
+    </div>
+    <div *ngIf="controlMode == ControlMode.DROPDOWN">
+      <!-- add dropdown here once its ready! -->
+    </div>
+  </div>
+  
+  <dx-tree-view
+    [items]="items"
+    [width]="width"
+    (onItemClick)="onItemClick.emit($event)"
+    itemTemplate="productTemplate"
+    class="tree-view"
+  >
+    <dxo-scrolling
+      [useNative]="true"
+    >
+    </dxo-scrolling>
+    <div *dxTemplate="let item of 'productTemplate'">
+      <div class="content-wrapper">
+        <div class="tree-left-content">
+          <di-icon class="tree-icon" *ngIf="item.icon" [name]="item.icon"></di-icon>
+          <span class="tree-view-text">{{ item.text }}</span>       
+        </div>
+        <div class="tree-right-content">
+          <di-badge
+            *ngIf="item.items || item.tableItems"
+            [label]="(item | treeViewItemSum) || item.tableItems?.length || ''"
+          >
+          </di-badge>
+          <button *ngIf="item.items" (click)="toggleNode(item)" class="expand-button">
+            <di-icon *ngIf="item.expanded" name="chevron-up"></di-icon>
+            <di-icon *ngIf="!item.expanded" name="chevron-down"></di-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </dx-tree-view>
+</div>
+<div *ngIf="collapsed" [ngStyle]="{ 'height': height }" class="collapsed-tree">
+  <button (click)="toggleTreeControl()">
+    <di-icon name="arrow-chevrons-right"></di-icon>
+  </button>
+  <span class="collapsed-title">{{ title }}</span>
+</div>

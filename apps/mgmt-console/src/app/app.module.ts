@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { appRoutes } from './app.routes';
 import { CheckboxComponentModule } from "@mgmt-ui-components/form";
-import { TagComponentModule } from "@mgmt-ui-components/misc";
+import { TagComponentModule, TreeViewComponentModule } from "@mgmt-ui-components/misc";
 import { ToggleComponentModule } from "@mgmt-ui-components/form";
 import { TooltipComponentModule } from "@mgmt-ui-components/misc";
 import { HelpComponentModule } from "@mgmt-ui-components/misc";
@@ -29,6 +29,7 @@ import { ToolbarComponentModule } from "@mgmt-ui-components/navigation";
     ToastNotificationComponentModule,
     FullPageErrorComponentModule,
     TabsComponentModule,
+    TreeViewComponentModule,
     FormsModule,
     NavBarComponentModule,
     PasswordStrengthComponentModule,

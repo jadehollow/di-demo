@@ -3,6 +3,7 @@ import {DOCUMENT} from '@angular/common';
 import notify from 'devextreme/ui/notify';
 import { NotificationType } from '@mgmt-ui-components/notifications';
 import { iconNames } from '@mgmt-icon-lib';
+import { testTree } from './test-tree';
 
 @Component({
   selector: 'di-saas-fe-root',
@@ -51,6 +52,9 @@ export class AppComponent {
   isDisabled = false;
   isReadOnly = false;
 
+  // Tree view
+  testTree = testTree;
+
   // Toast Notification
   showNotification = false;
   notificationType: NotificationType = NotificationType.INFO;
@@ -87,6 +91,10 @@ export class AppComponent {
     const chkboxName = e.component.option('name');
     notify(`The ${this.capitalize(chkboxName)} checkbox was clicked`);
   };
+
+  log = (e: any) => {
+    console.log(e);
+  }
 
   toastAddNotification = (notificationType: NotificationType) => {
     this.showToastAction = !this.showToastAction;

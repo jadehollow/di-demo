@@ -82,6 +82,16 @@
 </div>
 
 <div class="ms-3 mb-2">
+  <di-tree-view
+    [items]="testTree"
+    (onItemClick)="log($event)"
+    width='200px'
+    height='500px'
+    title="Tree Control"
+  ></di-tree-view>
+</div>
+
+<div class="ms-3 mb-2">
   <button class="mx-2" (click)="toastAddNotification(NotificationType.INFO)">Click for info</button>
   <button class="mx-2" (click)="toastAddNotification(NotificationType.WARNING)">Click for warning</button>
   <button class="mx-2" (click)="toastAddNotification(NotificationType.ERROR)">Click for error</button>
