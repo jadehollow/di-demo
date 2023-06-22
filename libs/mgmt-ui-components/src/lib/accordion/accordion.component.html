@@ -1,0 +1,31 @@
+<div class="accordion">
+    <dx-accordion
+      #accordion
+      [items]="accordionItems"
+      [collapsible]="collapsible"
+      [multiple]="multiple"
+      [animationDuration]="300"
+    >
+      <div class="accordion-title" *dxTemplate="let item of 'title'">
+        <div class="inner-title">
+            <div class="left">
+                <di-icon *ngIf="item.icon" [name]="item.icon" [size]="'md'"></di-icon>
+                <h1>{{ item.title }}</h1>
+            </div>
+            <div class="right">
+                <div class="accordion-badges" *ngIf="item.badges">
+                    <di-badge *ngFor="let badge of item.badges" 
+                    [label]="badge" 
+                    [size]="'md'"
+                    ></di-badge>
+                </div>
+                <di-icon *ngIf="item.hasOpenInNew" name="open-in-new" [size]="'md'" (onclick)="openInNewClicked($event)"></di-icon>
+            </div>  
+        </div>
+      </div>
+      <div class="accordion-content" *dxTemplate="let html of 'html'">
+        {{html}}
+      </div>
+    </dx-accordion>
+  
+  </div>
