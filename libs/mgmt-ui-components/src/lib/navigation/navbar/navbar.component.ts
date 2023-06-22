@@ -103,7 +103,7 @@ export class NavBarComponent {
         widget: 'dxButton',
         cssClass: 'policies-btn',
         options: {
-          icon: iconNames['protected-entity'],
+          icon: iconNames['policy'],
           elementAttr: { 'aria-label': 'Go to policies page' },
           hint: 'Go to policies',
           text: 'Policies',
@@ -127,7 +127,7 @@ export class NavBarComponent {
         widget: 'dxButton',
         cssClass: 'assets-btn',
         options: {
-          icon: iconNames['monitor'],
+          icon: iconNames['threat-type-monitoring'],
           elementAttr: { 'aria-label': 'Go to assets page' },
           hint: 'Go to assets',
           text: 'Assets',
@@ -151,7 +151,7 @@ export class NavBarComponent {
         widget: 'dxButton',
         cssClass: 'reports-btn',
         options: {
-          icon: iconNames['log'],
+          icon: iconNames['report'],
           elementAttr: { 'aria-label': 'Go to reports page' },
           hint: 'Go to reports',
           text: 'Reports',
@@ -175,7 +175,7 @@ export class NavBarComponent {
         widget: 'dxButton',
         cssClass: 'logs-btn',
         options: {
-          icon: iconNames['book'],
+          icon: iconNames['log'],
           elementAttr: { 'aria-label': 'Go to logs page' },
           hint: 'Go to logs',
           text: 'Logs',

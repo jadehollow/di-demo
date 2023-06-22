@@ -3,6 +3,7 @@ import { DOCUMENT } from '@angular/common';
 import notify from 'devextreme/ui/notify';
 import { iconNames } from '@mgmt-icon-lib';
 import { DxDrawerComponent } from 'devextreme-angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'di-saas-fe-root',
@@ -60,29 +61,48 @@ export class AppComponent {
   isDisabled = false;
   isReadOnly = false;
 
-  constructor(@Inject(DOCUMENT) private document: Document) {
+  constructor(
+    private router: Router,
+    @Inject(DOCUMENT) private document: Document
+  ) {
     this.document.body.classList.add('light-mode');
     this.navDrawer = [
-      { id: 1, text: 'YOUR PRODUCTS' },
+      {
+        id: 1,
+        text: 'YOUR PRODUCTS',
+        tabIndex: 0,
+        elementAttr: { 'aria-label': 'Your products' },
+      },
       {
         id: 2,
         text: 'Endpoint Security',
         icon: iconNames['shield-endpoint'],
+        tabIndex: 1,
+        elementAttr: { 'aria-label': 'Go to endpoint security' },
+        path: '',
       },
       {
         id: 3,
         text: 'Application Security',
         icon: iconNames['shield-application'],
+        tabIndex: 2,
+        elementAttr: { 'aria-label': 'Go to application security' },
+        path: '',
       },
       {
         id: 4,
         text: 'Storage Security',
         icon: iconNames['shield-storage'],
+        tabIndex: 3,
+        elementAttr: { 'aria-label': 'Go to storage security' },
+        path: '',
       },
       {
         id: 5,
-        text: 'www.DeepInstinct.com',
+        html: '<a href="https://www.deepinstinct.com" target="_blank">www.DeepInstinct.com</a>',
         icon: iconNames['open-in-new'],
+        tabIndex: 4,
+        elementAttr: { 'aria-label': 'Go to logs page' },
       },
     ];
   }
@@ -114,4 +134,6 @@ export class AppComponent {
   };
 
   onDrawerClick = (e: any) => (this.isDrawerOpen = !this.isDrawerOpen);
+
+
 }
