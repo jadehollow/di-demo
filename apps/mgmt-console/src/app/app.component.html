@@ -15,23 +15,12 @@
       class="panel-list dx-theme-accent-as-background-color"
       [items]="navDrawer"
       [width]="338"
-      [hoverStateEnabled]="false"
-      [activeStateEnabled]="false"
-      [focusStateEnabled]="false"
+      [hoverStateEnabled]="true"
+      [activeStateEnabled]="true"
+      [focusStateEnabled]="true"
       selectionMode="single"
       (onSelectionChanged)="this.isDrawerOpen = false"
-
     >
-<!--      <div *dxTemplate="let link of 'links'">-->
-<!--        <a [routerLink]="['/' + link.path]">-->
-<!--          <div>-->
-<!--            <div class="dx-list-item-icon-container">-->
-<!--              <i class="dx-icon dx-list-item-icon dx-icon-{{link.icon}}"></i>-->
-<!--            </div>-->
-<!--            <span>{{ link.text }}</span>-->
-<!--          </div>-->
-<!--        </a>-->
-<!--      </div>-->
     </dx-list>
   </div>
   <div id="console-content" class="dx-theme-background-color">

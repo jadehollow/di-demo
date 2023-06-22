@@ -79,7 +79,9 @@ export class AppComponent {
         icon: iconNames['shield-endpoint'],
         tabIndex: 1,
         elementAttr: { 'aria-label': 'Go to endpoint security' },
-        path: '',
+        onClick: () => {
+          this.router.navigateByUrl('/mgmt-dashboard');
+        },
       },
       {
         id: 3,
@@ -87,7 +89,9 @@ export class AppComponent {
         icon: iconNames['shield-application'],
         tabIndex: 2,
         elementAttr: { 'aria-label': 'Go to application security' },
-        path: '',
+        onClick: () => {
+          this.router.navigateByUrl('/');
+        },
       },
       {
         id: 4,
@@ -95,7 +99,9 @@ export class AppComponent {
         icon: iconNames['shield-storage'],
         tabIndex: 3,
         elementAttr: { 'aria-label': 'Go to storage security' },
-        path: '',
+        onClick: () => {
+          this.router.navigateByUrl('/mgmt-dashboard');
+        },
       },
       {
         id: 5,
@@ -134,6 +140,4 @@ export class AppComponent {
   };
 
   onDrawerClick = (e: any) => (this.isDrawerOpen = !this.isDrawerOpen);
-
-
 }

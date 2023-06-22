@@ -71,7 +71,7 @@ export class NavBarComponent {
         name: 'dashboardBtn',
         locateInMenu: 'never',
         onClick: () => {
-          this.router.navigateByUrl('/');
+          this.router.navigateByUrl('/mgmt-dashboard');
         },
       },
       // Alerts Button
@@ -279,7 +279,6 @@ export class NavBarComponent {
         location: 'after',
         name: 'themeBtn',
         locateInMenu: 'always',
-        // html: '<di-toggle [value]="false"></di-toggle>',
         onClick: () => {
           notify('Theme button has been clicked!');
         },
