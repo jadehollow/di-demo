@@ -16,8 +16,7 @@ export class TabsComponent {
   @Input() showNavButtons: boolean = false;
   @Input() selectedIndex: number = 0;
   @Input() scrollingEnabled = false;
-  @Input() styleMode: 'normal' | 'low' | 'round' | 'icons' = 'normal';
-  @Input() iconSize: 'sm' | 'md' | 'lg' = 'md';
+  @Input() styleMode: 'normal' | 'low' | 'round' = 'normal';
   
   @Output() onItemClick = new EventEmitter<any>();
 }

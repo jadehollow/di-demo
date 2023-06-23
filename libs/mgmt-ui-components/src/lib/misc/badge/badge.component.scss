@@ -1,0 +1,86 @@
+div.badge {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 2px 8px 2px 6px;
+    width: fit-content;
+    border-radius: 16px;
+    text-transform: capitalize;
+    gap: 4px;
+
+    span {
+        color: var(--typography-primary);
+    }
+
+    &.size-sm {
+        font-size: 10px;
+        height: 20px;
+        di-icon {
+            svg {
+                height: 7px;
+                width: 7px;
+            }
+        }
+    }
+    &.size-md {
+        font-size: 12px;
+        padding: 2px 10px 2px 8px;
+        gap: 6px;
+        height: 20px;
+        di-icon {
+            svg {
+                height: 7px;
+                width: 7px;
+            }
+        }
+    }
+    &.size-lg {
+        font-size: 12px;
+        padding: 4px 12px 4px 10px;
+        gap: 6px;
+        height: 24px;
+        di-icon {
+            svg.lg {
+                height: 7px;
+                width: 7px;
+            }
+        }
+    }
+
+    &.outline {
+        border: 1px solid var(--typography-primary);
+    }
+
+    &.default-Default {
+        background-color: var(--notify-label-base);
+    }
+    &.default-Selected {
+        background-color: var(--notify-label-base-02)
+    }
+
+    &.risk-Good {
+        di-icon {
+            color: var(--rag-good);
+        }
+    }
+    &.risk-Low {
+        di-icon {
+            color: var(--rag-moderate);
+        }
+    }
+    &.risk-Moderate {
+        di-icon {
+            color: var(--rag-moderate-risk);
+        }
+    }
+    &.risk-High {
+        di-icon {
+            color: var(--rag-very-high-risk);
+        }
+    }
+    &.risk-Critical {
+        di-icon {
+            color: var(--rag-high-risk);
+        }
+    }
+}

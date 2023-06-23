@@ -1,9 +1,11 @@
 import { Component, Inject, ViewChild } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import notify from 'devextreme/ui/notify';
+import { NotificationType } from '@mgmt-ui-components/notifications';
 import { iconNames } from '@mgmt-icon-lib';
 import { DxDrawerComponent } from 'devextreme-angular';
 import { Router } from '@angular/router';
+import { testTree } from './test-tree';
 
 @Component({
   selector: 'di-saas-fe-root',
@@ -45,21 +47,22 @@ export class AppComponent {
     { text: 'h' },
     { text: 'i' },
   ];
-  iconTabs = [
-    { text: 'Dashboard', icon: iconNames.action },
-    { text: 'Alerts', icon: iconNames.add },
-    { text: 'Policies', icon: iconNames['add-new'] },
-    { text: 'Assets', icon: iconNames['add-circle'] },
-    { text: 'Reports', icon: iconNames['add-file'] },
-    { text: 'Logs', icon: iconNames.analysys },
-    { text: 'Settings', icon: iconNames['add-application'] },
-  ];
 
   // Toggle
   toggleId = 'toggleId';
   toggleValue = false;
   isDisabled = false;
   isReadOnly = false;
+
+  // Tree view
+  testTree = testTree;
+
+  // Toast Notification
+  showNotification = false;
+  notificationType: NotificationType = NotificationType.INFO;
+  NotificationType = NotificationType;
+  showToastAction = false;
+  showFullPageError = false;
 
   constructor(
     private router: Router,
@@ -141,4 +144,20 @@ export class AppComponent {
   };
 
   onDrawerClick = (e: any) => (this.isDrawerOpen = !this.isDrawerOpen);
+
+  log = (e: any) => {
+    console.log(e);
+  };
+
+  toastAddNotification = (notificationType: NotificationType) => {
+    this.showToastAction = !this.showToastAction;
+    if (notificationType === this.notificationType || !this.showNotification) {
+      this.showNotification = !this.showNotification;
+    }
+    this.notificationType = notificationType;
+  };
+
+  errorAddNotification = () => {
+    this.showFullPageError = !this.showFullPageError;
+  };
 }

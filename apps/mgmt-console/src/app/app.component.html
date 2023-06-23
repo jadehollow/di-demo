@@ -1,5 +1,5 @@
 <!-- Navbar -->
-<di-navbar (onClick)="onDrawerClick($event)" ></di-navbar>
+<di-navbar (onClick)="onDrawerClick($event)"></di-navbar>
 <dx-drawer
   [openedStateMode]="selectedOpenMode"
   [position]="selectedPosition"
@@ -8,7 +8,6 @@
   [(opened)]="isDrawerOpen"
   [height]="394"
   [closeOnOutsideClick]="true"
-
 >
   <div *dxTemplate="let data of 'template'">
     <dx-list
@@ -44,7 +43,7 @@
         [value]="isTrue"
         (onValueChanged)="chkboxClick1($event)"
       ></di-checkbox>
-      <span [id]="lightModeId" class="ps-2">{{lightModeLabel}}</span>
+      <span [id]="lightModeId" class="ps-2">{{ lightModeLabel }}</span>
     </div>
 
     <div class="ms-3 mb-3">
@@ -56,17 +55,15 @@
         [tabindex]="tabindex"
         [value]="isNull"
       ></di-checkbox>
-      <span [id]="darkModeId" class="ps-2">{{darkModeLabel}}</span>
+      <span [id]="darkModeId" class="ps-2">{{ darkModeLabel }}</span>
     </div>
 
     <div class="ms-3 d-flex">
       <div id="light-tooltip" class="d-inline-block">tooltip</div>
-      <di-tooltip
-        target="#light-tooltip"
+      <di-tooltip target="#light-tooltip"> Tooltip Content </di-tooltip>
+      <di-help ariaLabelledBy="Help Tooltip" class="d-inline-block"
+        >Test</di-help
       >
-        Tooltip Content
-      </di-tooltip>
-      <di-help ariaLabelledBy="Help Tooltip" class="d-inline-block">Test</di-help>
     </div>
 
     <div class="ms-3">
@@ -82,13 +79,9 @@
     </div>
 
     <div class="mx-3 d-flex flex-column">
-      <di-tabs class="py-1" [dataSource]="tabs">
-      </di-tabs>
-      <di-tabs class="py-1" styleMode="low" [dataSource]="tabs">
-      </di-tabs>
+      <di-tabs class="py-1" [dataSource]="tabs"> </di-tabs>
+      <di-tabs class="py-1" styleMode="low" [dataSource]="tabs"> </di-tabs>
       <di-tabs class="py-1" styleMode="round" [dataSource]="tabs" iconSize="lg">
-      </di-tabs>
-      <di-tabs class="py-1" styleMode="icons" [dataSource]="iconTabs" iconSize="lg">
       </di-tabs>
     </div>
 
@@ -103,6 +96,60 @@
       ></di-toggle>
     </div>
 
+    <div class="ms-3 mb-2">
+      <di-tree-view
+        [items]="testTree"
+        (onItemClick)="log($event)"
+        width="200px"
+        height="500px"
+        title="Tree Control"
+      ></di-tree-view>
+    </div>
+
+    <div class="ms-3 mb-2">
+      <button
+        class="mx-2"
+        (click)="toastAddNotification(NotificationType.INFO)"
+      >
+        Click for info
+      </button>
+      <button
+        class="mx-2"
+        (click)="toastAddNotification(NotificationType.WARNING)"
+      >
+        Click for warning
+      </button>
+      <button
+        class="mx-2"
+        (click)="toastAddNotification(NotificationType.ERROR)"
+      >
+        Click for error
+      </button>
+      <button
+        class="mx-2"
+        (click)="toastAddNotification(NotificationType.SUCCESS)"
+      >
+        Click for success
+      </button>
+      <button class="mx-2" (click)="errorAddNotification()">
+        Click for full page error
+      </button>
+
+      <di-toast-notification
+        of="body"
+        notificationTitle="test"
+        notificationDescription="this is a description!"
+        actionText="optional action"
+        [(visible)]="showNotification"
+        [notificationType]="notificationType"
+        [showAction]="showToastAction"
+      ></di-toast-notification>
+
+      <di-full-page-error
+        of="body"
+        errorText="This is a full page error"
+        [(visible)]="showFullPageError"
+      ></di-full-page-error>
+    </div>
   </div>
 </dx-drawer>
-

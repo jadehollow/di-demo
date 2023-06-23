@@ -1,0 +1,27 @@
+<dx-toast
+  [visible]="visible"
+  (visibleChange)="visibleChange.emit($event)"
+  width="fit-content"
+  type="custom"
+  [displayTime]="displayTime"
+  [copyRootClassesToWrapper]="true"
+  [closeOnOutsideClick]="true"
+  class="di-page-error-wrapper"
+>
+  <dxo-position
+    [my]="my"
+    [at]="at"
+    [of]="of"
+  >
+  </dxo-position>
+  <div *dxTemplate="let data of 'content'">
+    <div class="dark-mode error-wrapper">
+      <div class="icon-wrapper">
+        <di-icon class="icon" name="alert-circle" size="md"></di-icon>
+      </div>
+      <div class="content-wrapper">
+        <span class="error-text">{{ errorText }}</span>
+      </div>
+    </div>
+  </div>
+</dx-toast>

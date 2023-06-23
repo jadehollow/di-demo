@@ -1,0 +1,180 @@
+.tree-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+dx-tree-view {
+  ::ng-deep.dx-item {
+
+    background: var(--base-02);
+    
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--typography-primary);
+  
+    display: flex;
+    align-items: center;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+
+    border-left: 1px solid var(--keylines-02);
+    padding-left: 15px;
+    padding-right: 16px;
+      
+    &.dx-state-hover {
+      background: var(--states-hover-bg-01);
+      border-left: 4px solid var(--states-hover-primary) !important;
+      padding-left: 12px !important;
+    }
+
+    &:focus-visible {
+      outline: 4px solid var(--states-focus-01);
+    }
+  }
+  
+  ::ng-deep.dx-state-focused > .dx-treeview-item {
+    background-color: var(--states-selected) !important;
+    border-left: 4px solid var(--states-focus-01) !important;
+    color: var(--typography-primary) !important;
+    padding-left: 12px !important;
+  }
+  
+  ::ng-deep.dx-treeview-toggle-item-visibility {
+    display: none;
+  }
+  
+  ::ng-deep.dx-state-hover {
+    background: var()
+  }
+  
+  ::ng-deep.dx-scrollable-content > .dx-treeview-node-container > .dx-treeview-node {
+    padding-left: 0px;
+
+    > .dx-item {
+      border-left: none;
+      padding-left: 16px;
+    }
+  }
+
+  ::ng-deep.dx-item-content {
+    width: 100%;
+  }
+}
+
+.content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.tree-view {
+  background: var(--base-02);
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.tree-icon {
+  padding-right: 12px;
+}
+
+.tree-left-content {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tree-right-content {
+  display: flex;
+  gap: 12px;
+}
+
+.expand-button {
+  background: none;
+  border: none;
+  padding: 0px;
+  color: var(--typography-primary);
+}
+
+.tree-view-text {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.tree-header {
+  flex-shrink: 0;
+  width: 100%;
+  border-bottom: 1px solid var(--keylines-01);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px;
+  gap: 12px;
+  background: var(--base-02);
+  box-sizing: border-box;
+}
+
+button {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title-text {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+
+  display: flex;
+  align-items: center;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+
+  color: var(--typography-primary);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.access-buttons {
+  gap: 4px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.collapsed-tree {
+  width: 36px;
+  background: var(--base-02);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 50%;
+  box-sizing: border-box;
+}
+
+.collapsed-title {
+  color: var(--typography-tertiary);
+
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  /* identical to box height, or 133% */
+
+  display: flex;
+  align-items: center;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+  transform: rotate(-90deg);
+
+  white-space: nowrap;
+}
