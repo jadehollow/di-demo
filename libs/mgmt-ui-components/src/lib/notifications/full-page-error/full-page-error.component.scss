@@ -1,8 +1,35 @@
 .di-page-error-wrapper { 
-  .error-wrapper {
+  .info {
+    background: var(--notify-general);
+    .icon-wrapper {
+      background: var(--notify-general-02);
+    }
+  }
+  
+  .warning {
+    background: var(--notify-warning);
+    .icon-wrapper {
+      background: var(--notify-warning-02);
+    }
+  }
+  
+  .error {
+    background: var(--notify-error);
+    .icon-wrapper {
+      background: var(--notify-error-02);
+    }
+  }
+  
+  .success {
+    background: var(--notify-success);
+    .icon-wrapper {
+      background: var(--notify-success-02);
+    }
+  }
+
+  .full-page-wrapper {
     max-width: 100%;
     width: 701px;
-    background: var(--notify-error);
     border-radius: 4px;
     padding: 8px;
     display: flex;

@@ -3,6 +3,7 @@ import { FullPageErrorComponent } from './full-page-error.component';
 import { CommonModule } from '@angular/common';
 import { DxToastModule } from 'devextreme-angular';
 import { MgmtIconLibModule } from '@mgmt-icon-lib';
+import { NotificationType } from '../toast-notification/toast-notification.component';
 
 export default {
   title: 'FullPageErrorComponent',
@@ -13,8 +14,15 @@ export default {
       imports: [ CommonModule, DxToastModule, MgmtIconLibModule ],
     })
   ],
+  argTypes: {
+    notificationType: {
+      options: NotificationType,
+      control: 'select'
+    }
+  },
   args: {
     visible: false,
+    notificationType: NotificationType.INFO
   }
 } as Meta<FullPageErrorComponent>;
 

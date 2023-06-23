@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, NgModule, Output, ViewEncapsulation } from '@angular/core';
 import { MgmtIconLibModule } from '@mgmt-icon-lib';
 import { DxToastModule } from 'devextreme-angular';
+import { NotificationType } from '../toast-notification/toast-notification.component';
 
 @Component({
   selector: 'di-full-page-error',
@@ -10,6 +11,7 @@ import { DxToastModule } from 'devextreme-angular';
   encapsulation: ViewEncapsulation.None,
 })
 export class FullPageErrorComponent {
+  @Input() notificationType: NotificationType = NotificationType.ERROR;
   @Input() my: string = 'bottom';
   @Input() at: string = 'bottom';
   @Input() of: string = '';

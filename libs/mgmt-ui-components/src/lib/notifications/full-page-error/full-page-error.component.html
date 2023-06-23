@@ -15,7 +15,7 @@
   >
   </dxo-position>
   <div *dxTemplate="let data of 'content'">
-    <div class="dark-mode error-wrapper">
+    <div class="dark-mode full-page-wrapper" [ngClass]="notificationType">
       <div class="icon-wrapper">
         <di-icon class="icon" name="alert-circle" size="md"></di-icon>
       </div>
