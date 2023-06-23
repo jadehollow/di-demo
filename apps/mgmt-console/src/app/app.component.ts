@@ -72,6 +72,7 @@ export class AppComponent {
         text: 'YOUR PRODUCTS',
         tabIndex: 0,
         elementAttr: { 'aria-label': 'Your products' },
+        activeStateEnabled: false,
       },
       {
         id: 2,
