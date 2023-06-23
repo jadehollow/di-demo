@@ -1,8 +1,12 @@
 import { CommonModule, DOCUMENT } from '@angular/common';
-import { Component, Inject, NgModule } from '@angular/core';
+import {Component, EventEmitter, Inject, NgModule, Output, ViewChild} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ToolbarComponentModule } from '../toolbar/toolbar.component';
-import {DxButtonModule, DxToolbarModule} from 'devextreme-angular';
+import {
+  DxButtonModule,
+  DxDrawerModule,
+  DxListModule,
+} from 'devextreme-angular';
 import notify from 'devextreme/ui/notify';
 import { iconNames } from '@mgmt-icon-lib';
 import { Router } from '@angular/router';
@@ -15,8 +19,12 @@ import { Router } from '@angular/router';
 export class NavBarComponent {
   toolbarItems: any;
   userName: string = 'User Name';
+  @Output() onClick: EventEmitter<string> = new EventEmitter();
 
-  constructor(private router: Router, @Inject(DOCUMENT) private document: Document) {
+  constructor(
+    private router: Router,
+    @Inject(DOCUMENT) private document: Document
+  ) {
     this.document.body.classList.add('light-mode');
 
     this.toolbarItems = [
@@ -40,9 +48,7 @@ export class NavBarComponent {
         name: 'drawerBtn',
         locateInMenu: 'never',
         html: '<i class="dx-icon-logo"></i>',
-        onClick: () => {
-          notify('Drawer button has been clicked!');
-        },
+        onClick: (e: any) => { this.onClick.emit(e) }
       },
       // Dashboard Button
       {
@@ -97,7 +103,7 @@ export class NavBarComponent {
         widget: 'dxButton',
         cssClass: 'policies-btn',
         options: {
-          icon: iconNames['protected-entity'],
+          icon: iconNames['policy'],
           elementAttr: { 'aria-label': 'Go to policies page' },
           hint: 'Go to policies',
           text: 'Policies',
@@ -121,7 +127,7 @@ export class NavBarComponent {
         widget: 'dxButton',
         cssClass: 'assets-btn',
         options: {
-          icon: iconNames['monitor'],
+          icon: iconNames['threat-type-monitoring'],
           elementAttr: { 'aria-label': 'Go to assets page' },
           hint: 'Go to assets',
           text: 'Assets',
@@ -145,7 +151,7 @@ export class NavBarComponent {
         widget: 'dxButton',
         cssClass: 'reports-btn',
         options: {
-          icon: iconNames['log'],
+          icon: iconNames['report'],
           elementAttr: { 'aria-label': 'Go to reports page' },
           hint: 'Go to reports',
           text: 'Reports',
@@ -169,7 +175,7 @@ export class NavBarComponent {
         widget: 'dxButton',
         cssClass: 'logs-btn',
         options: {
-          icon: iconNames['book'],
+          icon: iconNames['log'],
           elementAttr: { 'aria-label': 'Go to logs page' },
           hint: 'Go to logs',
           text: 'Logs',
@@ -273,7 +279,6 @@ export class NavBarComponent {
         location: 'after',
         name: 'themeBtn',
         locateInMenu: 'always',
-        // html: '<di-toggle [value]="false"></di-toggle>',
         onClick: () => {
           notify('Theme button has been clicked!');
         },
@@ -298,7 +303,7 @@ export class NavBarComponent {
               this.document.body.classList.add('dark-mode');
               this.document.body.classList.remove('light-mode');
             }
-          }
+          },
         },
         location: 'after',
         name: 'themeSwitch',
@@ -358,16 +363,16 @@ export class NavBarComponent {
       },
     ];
   }
-
 }
 
 @NgModule({
   imports: [
     BrowserModule,
     CommonModule,
-    DxToolbarModule,
     ToolbarComponentModule,
     DxButtonModule,
+    DxDrawerModule,
+    DxListModule,
   ],
   exports: [NavBarComponent],
   declarations: [NavBarComponent],
