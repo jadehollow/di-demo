@@ -365,4 +365,7 @@ export const Primary = {
     toolbarItems: navbarItems,
     userName: userName,
   },
+  parameters: {
+    chromatic: { delay: 800 },
+  },
 };

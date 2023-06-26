@@ -6,6 +6,8 @@ Run `nx serve mgmt-console` to serve the mgmt-console app.
 
 Run `nx run mgmt-storybook-host:storybook` to serve storybook.
 
+Run `npx nx serve mgmt-storybook-host:build-storybook` to build storybook.
+
 ## Understand this workspace
 
 Run `nx g c <component-name> --module <module-name>` or `nx g @nrwl/angular:component <component-name> --project=<project-name>` or `nx g component <component-name> --project=<project-name> --module=<module-name>` to generate a new component.
