@@ -8,6 +8,8 @@ Run `nx run mgmt-storybook-host:storybook` to serve storybook.
 
 Run `npx nx serve mgmt-storybook-host:build-storybook` to build storybook.
 
+Run `npx chromatic --$(grep project-token .env) -d=dist/storybook/mgmt-storybook-host` to build chromatic.
+
 ## Understand this workspace
 
 Run `nx g c <component-name> --module <module-name>` or `nx g @nrwl/angular:component <component-name> --project=<project-name>` or `nx g component <component-name> --project=<project-name> --module=<module-name>` to generate a new component.

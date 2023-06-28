@@ -1,15 +1,25 @@
-
-
 module.exports = {
   stories: ['../../**/src/lib/**/*.stories.@(js|jsx|ts|tsx|mdx)'],
-  addons: ['@storybook/addon-essentials', 'storybook-dark-mode'],
+  addons: [
+    '@storybook/addon-essentials',
+    {
+      name: '@storybook/addon-styling',
+      options: {
+        sass: {
+          implementation: require('sass'),
+        },
+      },
+    },
+    'storybook-dark-mode',
+    '@storybook/preset-scss',
+  ],
   framework: {
     name: '@storybook/angular',
-    options: {}
+    options: {},
   },
   docs: {
-    autodocs: true
-  }
+    autodocs: true,
+  },
 };
 
 // To customize your webpack configuration you can use the webpackFinal field.
