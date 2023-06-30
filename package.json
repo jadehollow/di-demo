@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "private": true,
-  "homepage": "http://jadehollow.github.io/di-demo",
+  "homepage": "https://jadehollow.github.io/di-demo",
   "scripts": {
     "predeploy": "npm run build-storybook",
     "deploy-storybook": "gh-pages -d storybook-static",
