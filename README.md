@@ -6,6 +6,10 @@ Run `nx serve mgmt-console` to serve the mgmt-console app.
 
 Run `nx run mgmt-storybook-host:storybook` to serve storybook.
 
+Run `npx chromatic --$(grep project-token .env) -d=dist/storybook/mgmt-storybook-host` to build chromatic.
+
+Run `gh-pages -d dist/storybook/mgmt-storybook-host` to deploy storybook to github pages.
+
 ## Understand this workspace
 
 Run `nx g c <component-name> --module <module-name>` or `nx g @nrwl/angular:component <component-name> --project=<project-name>` or `nx g component <component-name> --project=<project-name> --module=<module-name>` to generate a new component.
