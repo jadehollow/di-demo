@@ -1,4 +1,4 @@
-import '!style-loader!css-loader!sass-loader!../src/assets/styles.css';
+import '!style-loader!css-loader!sass-loader!../src/assets/styles.scss';
 
 import { themes } from '@storybook/theming';
 
