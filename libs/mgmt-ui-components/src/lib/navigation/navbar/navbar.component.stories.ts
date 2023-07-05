@@ -3,6 +3,7 @@ import { NavBarComponent } from './navbar.component';
 import { CommonModule } from '@angular/common';
 import { iconNames } from '@mgmt-icon-lib';
 import { ToolbarComponent } from '../toolbar/toolbar.component';
+import { DxSwitchModule } from 'devextreme-angular/ui/switch';
 import notify from 'devextreme/ui/notify';
 
 export default {
@@ -11,7 +12,7 @@ export default {
   decorators: [
     moduleMetadata({
       declarations: [NavBarComponent, ToolbarComponent],
-      imports: [CommonModule],
+      imports: [CommonModule, DxSwitchModule],
     }),
   ],
 } as Meta<NavBarComponent>;
@@ -289,15 +290,15 @@ const navbarItems = [
       value: true,
       switchedOffText: '',
       switchedOnText: '',
-      // onValueChanged: (e: any) => {
-      //   if (e.value) {
-      //     document.body.classList.add('light-mode');
-      //     document.body.classList.remove('dark-mode');
-      //   } else {
-      //     document.body.classList.add('dark-mode');
-      //     document.body.classList.remove('light-mode');
-      //   }
-      // }
+      onValueChanged: (e: any) => {
+        if (e.value) {
+          document.body.classList.add('light-mode');
+          document.body.classList.remove('dark-mode');
+        } else {
+          document.body.classList.add('dark-mode');
+          document.body.classList.remove('light-mode');
+        }
+      }
     },
     location: 'after',
     name: 'themeSwitch',

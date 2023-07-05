@@ -8,8 +8,6 @@ Run `nx run mgmt-storybook-host:storybook` to serve storybook.
 
 Run `npx nx serve mgmt-storybook-host:build-storybook` to build storybook.
 
-Run `npx chromatic --$(grep project-token .env) -d=dist/storybook/mgmt-storybook-host` to build chromatic.
-
 Run `gh-pages -d dist/storybook/mgmt-storybook-host` to deploy storybook to github pages.
 
 ## Understand this workspace
